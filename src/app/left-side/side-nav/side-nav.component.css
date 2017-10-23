@@ -1,5 +1,5 @@
-.example-container {
-    width: 500px;
+  .container {
+    width: 66.6%;
     height: 300px;
     border: 1px solid rgba(0, 0, 0, 0.5);
   }
@@ -11,6 +11,20 @@
     justify-content: center;
   }
   
-  .example-sidenav {
+  .left-sidenav {
+    background-color: rgba(172, 33, 33, 0.863);
     padding: 20px;
+
+    overflow:hidden;
+    z-index: 1;
+    transition: width 0.7s; 
+    -webkit-transition: width 0.7 !important;
   }
+
+  /* md-sidenav, 
+  md-sidenav.md-locked-open, 
+  md-sidenav.md-closed.md-locked-open-add-active {
+      min-width: 200px !important;
+      width: auto !important;
+      max-width: 400px !important;
+  }  */
