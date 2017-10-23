@@ -3,7 +3,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatSidenavModule } from '@angular/material';
+import { MatSidenavModule, MatToolbarModule, MatButtonModule, MatMenuModule, MatIconModule } from '@angular/material';
+
 
 
 /*Some components (mat-slide-toggle, mat-slider, matTooltip) rely on HammerJS 
@@ -16,19 +17,25 @@ import { MatSidenavModule } from '@angular/material';
 import { AppComponent } from './app.component';
 import { BannerComponent } from './top/banner/banner.component';
 import { SideNavComponent } from './left-side/side-nav/side-nav.component';
+import { ToolbarMenuComponent } from './top/toolbar-menu/toolbar-menu.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     BannerComponent,
-    SideNavComponent
+    SideNavComponent,
+    ToolbarMenuComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
     MatSidenavModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatMenuModule,
+    MatIconModule,
     ReactiveFormsModule
   ],
   providers: [],
