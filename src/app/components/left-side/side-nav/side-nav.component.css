@@ -12,9 +12,9 @@
   }
   
   .left-sidenav {
+    display: flex;    
     background-color: rgba(172, 33, 33, 0.863);
-    padding: 20px;
-
+    padding: 2px;
     overflow:hidden;
     z-index: 1;
     transition: width 0.7s; 

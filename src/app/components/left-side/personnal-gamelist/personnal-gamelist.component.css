@@ -1,0 +1,19 @@
+:host(.active) {
+    border-width: 3px;
+}
+
+/* .image-et-titre {
+    
+}
+
+.liste-de-jeux {
+    
+} */
+
+.img {
+    display: inline;
+}
+
+.titre{
+    display: inline;
+}

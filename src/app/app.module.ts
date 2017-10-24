@@ -1,9 +1,16 @@
+/* Angular */
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatSidenavModule, MatToolbarModule, MatButtonModule, MatMenuModule, MatIconModule } from '@angular/material';
+import { HttpModule } from '@angular/http';
+
+/* Material Design */
+import {  MatSidenavModule, 
+          MatToolbarModule,
+          MatButtonModule,
+          MatMenuModule,
+          MatIconModule } from '@angular/material';
 
 
 
@@ -13,11 +20,12 @@ import { MatSidenavModule, MatToolbarModule, MatButtonModule, MatMenuModule, Mat
 * npm install --save hammerjs
 */
 
-/* our components */
+/* Composants */
 import { AppComponent } from './app.component';
 import { BannerComponent } from './top/banner/banner.component';
-import { SideNavComponent } from './left-side/side-nav/side-nav.component';
 import { ToolbarMenuComponent } from './top/toolbar-menu/toolbar-menu.component';
+import { SideNavComponent } from './components/left-side/side-nav/side-nav.component';
+import { PersonnalGamelistComponent } from './components/left-side/personnal-gamelist/personnal-gamelist.component';
 
 
 @NgModule({
@@ -25,18 +33,20 @@ import { ToolbarMenuComponent } from './top/toolbar-menu/toolbar-menu.component'
     AppComponent,
     BannerComponent,
     SideNavComponent,
-    ToolbarMenuComponent
+    ToolbarMenuComponent,
+    PersonnalGamelistComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
+    HttpModule,
     MatSidenavModule,
     MatToolbarModule,
     MatButtonModule,
     MatMenuModule,
-    MatIconModule,
-    ReactiveFormsModule
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

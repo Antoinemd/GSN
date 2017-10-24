@@ -1,0 +1,16 @@
+<mat-nav-list>
+  <!-- <md-list-item routerLink="1" routerLinkActive="active" > -->
+    <mat-list-item>
+      <!-- <section class="jeux"> -->
+        <div class="liste-de-jeux" *ngFor="let jeux of ArrayInfosUser">
+          <div class="image-et-titre" *ngFor="let jeu of jeux.listeJeux">
+            <!-- jeu: {{jeu.img}} -->
+            <img src="../../../../assets/{{jeu.img}}" height="50px" width="50px">
+            <div class="titre">titre d'un jeu</div>
+            
+          </div>
+        </div>
+      <!-- </section> -->
+      <!-- <div fxFlex="10"></div>-->
+    </mat-list-item>
+</mat-nav-list>
