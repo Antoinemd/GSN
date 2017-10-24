@@ -1,33 +1,32 @@
 [
   {
-    "nom": 9464,
-    "prenom": "function(){return e.surname=c.getItem(\"surnames\"),e.surname}",
-    "idPseudo": 9464,
-    "avatar": "b85988cb-278e-4345-91ff-88a1aa29e88b",
-    "email": "wheelerschmidt@medicroix.com",
+    "nom": "POK",
+    "prenom": "Jean",
+    "idPseudo": "Trucidator38 ",
+    "avatar": "../../../children-game_dribble.png",
+    "email": "jean.pok@grosmail.com",
+    "password":"joueur",
     "listeJeux": [
       {
-        "_idGame": "59edfc6fc487313a0a95ac28",
-        "nomJeu": 0,
-        "img": "dd450d2f-864b-4b28-af34-bbf6b6343d35",
-        "description": false,
-        "siteWeb": "occaecat commodo Lorem minim tempor ad proident eiusmod amet minim consectetur minim Lorem ipsum cillum ut anim nulla exercitation quis"
-      }
-    ]
-  },
-  {
-    "nom": 9464,
-    "prenom": "function(){return e.surname=c.getItem(\"surnames\"),e.surname}",
-    "idPseudo": 9464,
-    "avatar": "553ccfdf-a915-40c1-923a-3c44b2d9f166",
-    "email": "wheelerschmidt@medicroix.com",
-    "listeJeux": [
+        "_idGame": "59ee0fba2a50e132bebfe3a0",
+        "nomJeu": "Blade and Soul",
+        "img": "img/icons/bns-ico.png",
+        "description": "nulla ad anim ut magna laboris velit velit nisi aliqua officia cupidatat dolor sit magna eu veniam eiusmod laboris sit",
+        "siteWeb": "www.bladeandsoul.com"
+      },
       {
-        "_idGame": "59edfc6ffbaf36320492c075",
-        "nomJeu": 0,
-        "img": "f78483c2-cb46-438f-af9e-ccd3622aa58f",
-        "description": true,
-        "siteWeb": "magna exercitation mollit in laborum dolore quis occaecat aliqua ea et sint occaecat Lorem esse elit qui laborum quis deserunt"
+        "_idGame": "59ee0fbafd4d6de8a3d2d992",
+        "nomJeu": "The Witcher 3: Wild Hunt",
+        "img": "img/icons/witcher3-ico.png",
+        "description": "esse voluptate tempor dolor eu ex magna elit adipisicing aute amet est eu aute nisi mollit ex ipsum laboris non",
+        "siteWeb": "www.thewitcher.com/"
+      },
+      {
+        "_idGame": "59ee0fbab476fa7b2d81bb9f",
+        "nomJeu": "Destiny 2",
+        "img": "img/icons/destiny2-ico.png",
+        "description": "officia et velit ad sunt non ipsum laboris veniam ad est dolor deserunt excepteur non aute aute enim cupidatat ex",
+        "siteWeb": "www.destinythegame.com/"
       }
     ]
   }

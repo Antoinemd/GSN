@@ -3,6 +3,5 @@
     top: 10;
     left: 0;
     width: 100%;
-    /*flex: 1 1 auto;*/
-
+    flex: 1 1 auto;
   }
