@@ -1,13 +1,41 @@
 
-<section class="catalogue-wrapper">
+<div class="containerX" fxFlex>
     
     <h2>Catalogue des jeux</h2>
 
-    <md-grid-list cols="4" rowHeight="200px">
+    <div class="container"  fxLayout="row" 
+                            fxLayout.xs="column" 
+                            fxLayoutWrap="wrap">
+      <div *ngFor="let jeu of ArrayCatalogueJeux">
+        <div class="item">
+          <div class="image">
+            <img src="../../../assets/{{jeu.img}}" alt="jeu {{jeu.nom}}">
+          </div>
+          
+          <div class="infos">
+            <mat-grid-tile-footer>
+              <h4 mat-line>{{jeu.nom}}</h4>
+              
+              <button mat-icon-button (click)="showDetails(model)">
+                  <mat-icon>info</mat-icon>
+              </button>
+              
+              <span mat-line>
+                <a href="{{jeu.siteWeb}}">Site officiel</a>
+              </span>
+            </mat-grid-tile-footer>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    
+
+    <!-- <md-grid-list cols="4" rowHeight="200px">
       <md-grid-tile *ngFor="let jeu of ArrayCatalogueJeux">
         <img src="../../../assets/{{jeu.img}}" alt="jeu {{jeu.nom}}">
         
-        <!-- footer of the image! -->
         <md-grid-tile-footer>
             <h3 md-line>{{jeu.nom}}</h3>
             <span md-line>{{jeu.status}}</span>
@@ -17,20 +45,6 @@
         </md-grid-tile-footer>
 
       </md-grid-tile>
-    </md-grid-list>
+    </md-grid-list> -->
 
 
-    <!-- <div class="carte-de-produit" *ngFor="let obj of entreeTab">
-      <div class="image-produit">
-        <img src="../../../assets/{{obj.url}}" width="200" height="200">
-      </div>
-    <div class="infos-produit">
-      <h4> {{obj.type}} </h4>
-      <h5> {{obj.nom}} - {{obj.prix}}€</h5>
-      <p
-        class="description"> {{obj.description}} 
-      </p>
-      <button (click)="addEntree(this.obj)"><i class="glyphiconAdd material-icons">add_circle_outline</i></button>
-    </div>
-  </div> -->
-</section>

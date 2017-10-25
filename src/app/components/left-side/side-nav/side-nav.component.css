@@ -5,12 +5,12 @@
     border: 1px solid rgba(0, 0, 0, 0.5);
   }
   
-  .sidenav-content {
+  /* .sidenav-content { */
     /* display: flex; */
-    height: 100%;
+    /* height: 100%; */
     /* align-items: center; */
     /* justify-content: center; */
-  }
+  /* } */
   
   .left-sidenav {
 
@@ -18,7 +18,7 @@
     background-color: rgba(172, 33, 33, 0.863);
     padding: 2px;
     overflow:hidden;
-    z-index: 1;
+    z-index: 10;
     -webkit-transition: width 0.7s;
     -moz-transition: width 0.7s;
     -o-transition: width 0.7s;
