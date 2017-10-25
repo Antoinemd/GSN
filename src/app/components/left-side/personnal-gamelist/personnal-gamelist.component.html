@@ -1,3 +1,4 @@
+<div class="nav-content">
 <mat-nav-list>
   <!-- <md-list-item routerLink="1" routerLinkActive="active" > -->
     <mat-list-item>
@@ -5,12 +6,17 @@
         <div class="liste-de-jeux" *ngFor="let jeux of ArrayInfosUser">
           <div class="image-et-titre" *ngFor="let jeu of jeux.listeJeux">
             <!-- jeu: {{jeu.img}} -->
-            <img src="../../../../assets/{{jeu.img}}" height="50px" width="50px">
-            <div class="titre">titre d'un jeu</div>
-            
+            <div class="icone">
+              <img src="../../../../assets/{{jeu.img}}" height="50px" width="50px"/>
+            </div>
+            <div class="titre">
+              <!-- TODO: créer un router et définir les routes -->
+              <a mat-button routerLink=".">{{jeu.nomJeu}}</a>
+            </div>
           </div>
         </div>
       <!-- </section> -->
       <!-- <div fxFlex="10"></div>-->
     </mat-list-item>
 </mat-nav-list>
+</div>

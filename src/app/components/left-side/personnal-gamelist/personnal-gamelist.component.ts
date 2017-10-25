@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+/* Composants */
+import { SideNavComponent } from '../side-nav/side-nav.component';
+
 /* Services */
 import { ReturnJsonArrayService } from '../../../services/return-json-array.service';
 
@@ -13,21 +16,13 @@ import { ReturnJsonArrayService } from '../../../services/return-json-array.serv
 export class PersonnalGamelistComponent implements OnInit {
 
   ArrayInfosUser: any;
-  // teaInfoTest: Object = {};
-
+  
   constructor(private _ReturnJsonArrayService: ReturnJsonArrayService) { 
   }
 
   ngOnInit() {
-    this.getInfosJoueur();        
+    this.getInfosJoueur();   
   }
-
-  // getInfosJoueurData(){
-  //   this._ReturnJsonArrayService.getData() 
-  //   .subscribe(data => {
-  //     this.teaInfoTest = data;
-  //   });
-  // }
 
   getInfosJoueur() {
     this._ReturnJsonArrayService.getUser1_Service()

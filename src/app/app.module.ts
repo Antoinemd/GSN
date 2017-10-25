@@ -26,6 +26,7 @@ import { BannerComponent } from './top/banner/banner.component';
 import { ToolbarMenuComponent } from './top/toolbar-menu/toolbar-menu.component';
 import { SideNavComponent } from './components/left-side/side-nav/side-nav.component';
 import { PersonnalGamelistComponent } from './components/left-side/personnal-gamelist/personnal-gamelist.component';
+import { CatalogueJeuxComponent } from './components/catalogue-jeux/catalogue-jeux.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { PersonnalGamelistComponent } from './components/left-side/personnal-gam
     BannerComponent,
     SideNavComponent,
     ToolbarMenuComponent,
-    PersonnalGamelistComponent
+    PersonnalGamelistComponent,
+    CatalogueJeuxComponent
   ],
   imports: [
     BrowserModule,

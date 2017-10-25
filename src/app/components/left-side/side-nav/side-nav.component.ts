@@ -10,10 +10,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SideNavComponent implements OnInit {
 
-  sizeIcon: number;
   sideNavWidth: number;
   sideOpacity: number;
-
 
   constructor() { 
   }
@@ -21,7 +19,6 @@ export class SideNavComponent implements OnInit {
   ngOnInit() {
     this.sideNavWidth = 55; // unit: px
     this.sideOpacity = 0.5;
-    // this.getInfosJoueur();    
   }
 
   widthUp(){
@@ -31,7 +28,7 @@ export class SideNavComponent implements OnInit {
   }
 
   widthDown(){
-    this.sideNavWidth = 10;
+    this.sideNavWidth = 55; // unit: px
     this.sideOpacity = 0.5;
     console.log("decrease sidenav width");
   }
