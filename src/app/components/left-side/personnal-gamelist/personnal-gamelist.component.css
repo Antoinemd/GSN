@@ -1,19 +1,26 @@
-:host(.active) {
-    border-width: 3px;
-}
+/* .liste-de-jeux {
+    width: 100%;    
+}  */
 
-/* .image-et-titre {
+.image-et-titre {
+    margin-top: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    height: 55px;
+    overflow:hidden;
+    white-space:nowrap;     
+    z-index: 10;
     
 }
 
-.liste-de-jeux {
-    
-} */
-
-.img {
-    display: inline;
+.titre {
+    padding-top: 5px;
+    padding-left: 5px;
+    color: whitesmoke;
 }
 
-.titre{
-    display: inline;
+.icone {
+    padding-right: 2px;
 }
+

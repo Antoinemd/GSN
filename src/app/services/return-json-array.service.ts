@@ -11,19 +11,25 @@ import 'rxjs/add/operator/map';
 export class ReturnJsonArrayService {
 
   userJeuxJsonPath = '../../../assets/json/user1.json';
+  catalogueJeuxJsonPath = '../../../assets/json/catalogueJeux.json';
 
   constructor(private _http: Http) {
 
   }
 
-  getData() {
-    return this._http.get(this.userJeuxJsonPath)
-      .map(res => res.json().data)
-  }
+  // getData() {
+  //   return this._http.get(this.userJeuxJsonPath)
+  //     .map(res => res.json().data)
+  // }
 
   getUser1_Service(): Observable<any> {
     return this._http.get(this.userJeuxJsonPath)
       .map((response: Response) => response.json());
+  }
+
+  getCatalogueJeux_Service(): Observable<any> {
+    return this._http.get(this.catalogueJeuxJsonPath)
+    .map((response: Response) => response.json());
   }
     
 

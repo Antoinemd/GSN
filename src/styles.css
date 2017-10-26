@@ -9,3 +9,14 @@ pink-bluegrey.css
 purple-green.css 
 */
 
+ /* some basic resets */
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Roboto, sans-serif;
+}
+
+.app{
+    /* emmet h100vh */
+    /* height: 100vh;    */
+}

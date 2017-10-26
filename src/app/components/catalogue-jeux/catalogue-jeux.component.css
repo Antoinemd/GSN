@@ -1,0 +1,42 @@
+h2 {
+    text-align: center;
+}
+
+.container {
+    position: relative;
+
+    /* width: 100%; */
+    /* height: 500px; */
+    /* margin-left: 60px; */
+    /* border: 1px solid black; */
+    /* margin-left: 40px;     */
+}
+
+.item {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 20px;
+    border: 1px solid blue;
+
+    /* équivalent: flex: 0 0 50px; */
+    flex-grow: 0;     /* do not grow   - initial value: 0 */
+    flex-shrink: 0;   /* do not shrink - initial value: 1 */
+    flex-basis: 50px; /* em = width/height  - initial value: auto */
+}
+
+.image > img {
+    width: 200px;
+}
+
+.infos {
+    text-align: center;
+}
+
+mat-grid-tile-footer {
+    background: lightblue;
+}
+
+
+
+
+  
