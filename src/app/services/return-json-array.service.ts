@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 
 // TODO Création d'une interface ?
@@ -13,13 +14,15 @@ export class ReturnJsonArrayService {
   userJeuxJsonPath = '../../../assets/json/user1.json';
   catalogueJeuxJsonPath = '../../../assets/json/catalogueJeux.json';
 
+  isVisibleSource: BehaviorSubject <boolean> = new BehaviorSubject(false);
+  
+
   constructor(private _http: Http) {
 
   }
 
-  // getData() {
-  //   return this._http.get(this.userJeuxJsonPath)
-  //     .map(res => res.json().data)
+  // getMenuStatus_Service(): boolean {
+
   // }
 
   getUser1_Service(): Observable<any> {

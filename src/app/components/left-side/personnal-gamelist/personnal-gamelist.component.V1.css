@@ -1,0 +1,26 @@
+/* .liste-de-jeux {
+    width: 100%;    
+}  */
+
+.image-et-titre {
+    margin-top: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    height: 55px;
+    overflow:hidden;
+    white-space:nowrap;     
+    z-index: 10;
+    
+}
+
+.titre {
+    padding-top: 5px;
+    padding-left: 5px;
+    color: whitesmoke;
+}
+
+.icone {
+    padding-right: 2px;
+}
+

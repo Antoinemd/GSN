@@ -1,38 +1,58 @@
 import { Component, OnInit } from '@angular/core';
 
-/* Pipes */
-// import { KeysPipe } from '../../../pipes/keys.pipe';
+/* Services */
+import { NotifyStateMenuService } from '../../../services/notify-state-menu.service';
 
 @Component({
   selector: 'app-side-nav',
   templateUrl: './side-nav.component.html',
   styleUrls: ['./side-nav.component.css'],
+  providers:[NotifyStateMenuService]
 })
+
 export class SideNavComponent implements OnInit {
 
   sideNavWidth: number;
   sideOpacity: number;
 
-  constructor() { 
+  isVisible: boolean;
+  
+  constructor(private notifyStateMenuService: NotifyStateMenuService) { 
+
   }
 
   ngOnInit() {
-    this.sideNavWidth = 55; // unit: px
+    this.sideNavWidth = 60; // unit: px
     this.sideOpacity = 0.5;
+    this.isVisible = false;
   }
 
-  widthUp(){
+  widthUp(): void {
     this.sideNavWidth = 200; // unit: px
     this.sideOpacity = 1;
-    console.log("increase sidenav width");
+    this.isVisible = true;
+    console.log("increase");
+    this.sendMessage();
   }
 
-  widthDown(){
-    this.sideNavWidth = 55; // unit: px
+  widthDown(): void {
+    this.sideNavWidth = 60; // unit: px
     this.sideOpacity = 0.5;
-    console.log("decrease sidenav width");
+    this.isVisible = false;
+    console.log("decrease");
+    this.sendMessage();
+  }
+
+  sendMessage(): void {
+    // send message to subscribers via observable subject
+    // this.notifyStateMenuService.sendMessage('isVisible: '+this.isVisible);
+    this.notifyStateMenuService.sendMessage(this.isVisible);
+    
   }
 
 
-
+  clearMessage(): void {
+    // clear message
+    this.notifyStateMenuService.clearMessage();
+  }
 }
