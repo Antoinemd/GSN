@@ -28,6 +28,7 @@ import { ToolbarMenuComponent } from './top/toolbar-menu/toolbar-menu.component'
 import { SideNavComponent } from './components/left-side/side-nav/side-nav.component';
 import { PersonnalGamelistComponent } from './components/left-side/personnal-gamelist/personnal-gamelist.component';
 import { CatalogueJeuxComponent } from './components/catalogue-jeux/catalogue-jeux.component';
+import { UserFormComponent } from './components/user-form/user-form.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { CatalogueJeuxComponent } from './components/catalogue-jeux/catalogue-je
     SideNavComponent,
     ToolbarMenuComponent,
     PersonnalGamelistComponent,
-    CatalogueJeuxComponent
+    CatalogueJeuxComponent,
+    UserFormComponent
   ],
   imports: [
     BrowserModule,
