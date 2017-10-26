@@ -2,8 +2,8 @@ h2 {
     text-align: center;
 }
 
-.container {
-    /* position: relative; */
+.containerX {
+    margin-top: 150px;
 }
 
 .item {

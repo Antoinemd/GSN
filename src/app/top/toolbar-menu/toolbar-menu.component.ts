@@ -15,6 +15,12 @@ export class ToolbarMenuComponent implements OnInit {
   ngOnInit() {
   }
 
+
+  openDialog() {
+
+    
+  }
+
 }
 
 /*export class DialogResultExample {

@@ -4,21 +4,30 @@
     height: 600px;
     border: 1px solid rgba(0, 0, 0, 0.5);
   }
+
+  /* .mat-drawer-content mat-sidenav-content {
+    z-index: 20;
+  } */
+  /* .mat-sidenav-content{
+    margin-top: 128px;
+  } */
   
-  /* .sidenav-content { */
+  .sidenav-content {
+    /* z-index: 1; */
     /* display: flex; */
     /* height: 100%; */
     /* align-items: center; */
     /* justify-content: center; */
-  /* } */
+  }
   
   .left-sidenav {
-
-    /* display: flex;     */
+    margin-top: 128px;
+    /* margin-left: 0px; */
+    position: fixed;
     background-color: rgba(255, 95, 71, 0.863);
     padding: 2px;
     overflow:hidden;
-    z-index: 10;
+    z-index: 1;
     -webkit-transition: width 0.7s;
     -moz-transition: width 0.7s;
     -o-transition: width 0.7s;
