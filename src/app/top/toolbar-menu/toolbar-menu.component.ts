@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {MatDialogModule, MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import { UserFormComponent } from '../../components/user-form/user-form.component';
+
 
 @Component({
   selector: 'app-toolbar-menu',
@@ -13,3 +16,27 @@ export class ToolbarMenuComponent implements OnInit {
   }
 
 }
+
+/*export class DialogResultExample {
+  selectedOption: string;
+
+  constructor(public dialog: MatDialog) {}
+
+  openDialog() {
+    let dialogRef = this.dialog.open(DialogResultExampleDialog);
+    dialogRef.afterClosed().subscribe(result => {
+      this.selectedOption = result;
+    });
+  }
+}
+
+
+@Component({
+  selector: 'dialog-result-example-dialog',
+  templateUrl: './dialog-result-example-dialog.html',
+})
+export class DialogResultExampleDialog {
+  constructor(public dialogRef: MatDialogRef<DialogResultExampleDialog>) {
+  
+  }
+}*/
