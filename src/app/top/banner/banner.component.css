@@ -1,7 +1,15 @@
 .tiptop {
     position: fixed;
-    top: 10;
     left: 0;
     width: 100%;
     flex: 1 1 auto;
+    position: fixed;
+    top: 0px;
+    z-index: 61;
   }
+
+
+mat-toolbar {
+  position: fixed;
+  z-index: 61;
+}

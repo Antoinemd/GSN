@@ -22,7 +22,7 @@ export class SideNavComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.sideNavWidth = 60; // unit: px
+    this.sideNavWidth = 65; // unit: px
     this.sideOpacity = 0.5;
     this.isVisible = false;
   }
@@ -36,7 +36,7 @@ export class SideNavComponent implements OnInit {
   }
 
   widthDown(): void {
-    this.sideNavWidth = 60; // unit: px
+    this.sideNavWidth = 65; // unit: px
     this.sideOpacity = 0.5;
     this.isVisible = false;
     console.log("decrease");
