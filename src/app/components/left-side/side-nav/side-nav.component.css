@@ -1,6 +1,6 @@
   .container {
     margin: 0;
-    width: 66.6%;
+    width: 75%;
     height: 600px;
     border: 1px solid rgba(0, 0, 0, 0.5);
   }
@@ -15,7 +15,7 @@
   .left-sidenav {
 
     /* display: flex;     */
-    background-color: rgba(172, 33, 33, 0.863);
+    background-color: rgba(255, 95, 71, 0.863);
     padding: 2px;
     overflow:hidden;
     z-index: 10;
