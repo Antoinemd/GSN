@@ -7,24 +7,24 @@
 }  
 
 .image-et-titre {
- 
     display:inline-block;    
     z-index: 1;
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
 }
 
+/* au passage de la souris sur un jeu du menu */
 .image-et-titre:hover {
     background-color: rgb(53, 118, 238);
 }
 
 .titre {
     display: inline-block;
-    border: 1px solid green;
+    /* border: 1px solid green; */
     color: whitesmoke;
 }
 
-.icone {
-    /* position: relative; */
+/* .icone { 
+    position: relative;
     border: 1px solid slateblue;
 }
-
+*/
