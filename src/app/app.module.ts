@@ -11,7 +11,8 @@ import {  MatSidenavModule,
           MatToolbarModule,
           MatButtonModule,
           MatMenuModule,
-          MatIconModule } from '@angular/material';
+          MatIconModule,
+          MatGridListModule,MatGridList } from '@angular/material';
 
 
 
@@ -52,7 +53,8 @@ import { UserFormComponent } from './components/user-form/user-form.component';
     MatButtonModule,
     MatMenuModule,
     MatIconModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
