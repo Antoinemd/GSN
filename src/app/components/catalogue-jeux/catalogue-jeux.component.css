@@ -27,9 +27,24 @@ h2 {
     text-align: center;
 }
 
-mat-grid-tile-footer {
-    background: lightblue;
+  
+ .mat-grid-tile .mat-grid-tile-footer, .mat-grid-tile .mat-grid-tile-header {
+    /* background: lightblue; */
+    background: rgba(0,0,0,.75);
+    
 }
+
+
+.sortList {
+    margin-bottom: 30px;
+    margin-top: 20px;
+    padding-right: 30px;
+}
+
+.material-icons { 
+    color: rgba(219, 40, 40, 0.829); 
+}
+
 
 
 
