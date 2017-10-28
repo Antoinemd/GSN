@@ -13,9 +13,12 @@
           <!-- https://github.com/angular/material/issues/2242
           utilisation de 2 méthodes pour 'reconstruire' le menu apres selection
           d'un choix,car le html et les <mat-icon> ne sont pas supportées -->
-          <mat-icon class="material-icons"> 
+          
+            <mat-icon class="material-icons md-24"> 
             {{categorie.icone}}
           </mat-icon>
+
+          
           {{categorie.viewValue}}
         </mat-option>
       </mat-select>
@@ -36,7 +39,12 @@
       <mat-grid-tile-footer>
         <h2 mat-line>{{jeu.nom}}</h2>
         <span mat-line><a href="{{jeu.siteWeb}}">Site officiel</a></span>
-        <mat-icon>infos</mat-icon>
+        
+        <!-- 2 façons d'importer une icone,mat-icon étant plus 
+          reservé pour les formats d'icones svg -->
+        <mat-icon class="material-icons md-36">info</mat-icon>
+        <!-- <i class="material-icons md-36">info</i> -->
+        
       </mat-grid-tile-footer>
     </mat-grid-tile>
   </mat-grid-list>
