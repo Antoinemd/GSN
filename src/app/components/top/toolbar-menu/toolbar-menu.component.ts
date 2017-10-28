@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialogModule, MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
-import { UserFormComponent } from '../../components/user-form/user-form.component';
+import { UserFormComponent } from '../../user-form/user-form.component';
 
 
 @Component({

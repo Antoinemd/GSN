@@ -12,7 +12,10 @@ import {  MatSidenavModule,
           MatButtonModule,
           MatMenuModule,
           MatIconModule,
-          MatGridListModule,MatGridList } from '@angular/material';
+          MatGridListModule,
+          MatGridList,
+          MatAutocompleteModule,
+          MatSlideToggleModule } from '@angular/material';
 
 
 
@@ -24,12 +27,14 @@ import {  MatSidenavModule,
 
 /* Composants */
 import { AppComponent } from './app.component';
-import { BannerComponent } from './top/banner/banner.component';
-import { ToolbarMenuComponent } from './top/toolbar-menu/toolbar-menu.component';
+import { BannerComponent } from './components/top/banner/banner.component';
+import { ToolbarMenuComponent } from './components/top/toolbar-menu/toolbar-menu.component';
 import { SideNavComponent } from './components/left-side/side-nav/side-nav.component';
 import { PersonnalGamelistComponent } from './components/left-side/personnal-gamelist/personnal-gamelist.component';
 import { CatalogueJeuxComponent } from './components/catalogue-jeux/catalogue-jeux.component';
 import { UserFormComponent } from './components/user-form/user-form.component';
+import { Searchbv3Component } from './components/searchbv3/searchbv3.component';
+import { SearchbarComponent } from './components/searchbar/searchbar.component';
 
 
 @NgModule({
@@ -40,7 +45,9 @@ import { UserFormComponent } from './components/user-form/user-form.component';
     ToolbarMenuComponent,
     PersonnalGamelistComponent,
     CatalogueJeuxComponent,
-    UserFormComponent
+    UserFormComponent,
+    SearchbarComponent,
+    Searchbv3Component
   ],
   imports: [
     BrowserModule,
@@ -54,8 +61,9 @@ import { UserFormComponent } from './components/user-form/user-form.component';
     MatMenuModule,
     MatIconModule,
     FlexLayoutModule,
-    MatGridListModule
-  ],
+    MatGridListModule,
+    MatAutocompleteModule,
+    MatSlideToggleModule  ],
   providers: [],
   bootstrap: [AppComponent]
 })
