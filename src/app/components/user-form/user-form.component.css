@@ -9,7 +9,7 @@ h1 {
     box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.2);
   }
   
-  form {
+  .login-form {
     box-sizing: border-box;
     width: 260px;
     margin: 100px auto 0;
