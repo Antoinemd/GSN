@@ -1,0 +1,20 @@
+<form class="search-form">
+  <mat-form-field class="game-box">
+    <input matInput placeholder="Game" aria-label="Game" [matAutocomplete]="auto" [formControl]="gameCtrl">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let game of filteredGames | async" [value]="game.name">
+        <img style="vertical-align:middle;" aria-hidden src="{{game.flag}}" height="25" />
+        <span>{{ game.name }}</span>
+        <small>Genre: {{game.genre}}</small>
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+
+ <!-- <br />
+  
+    <mat-slide-toggle
+      [checked]="gameCtrl.disabled"
+      (change)="gameCtrl.disabled ? gameCtrl.enable() : gameCtrl.disable()">
+      Disable Input?
+    </mat-slide-toggle>-->
+</form>
