@@ -12,7 +12,7 @@ import { NotifyStateMenuService } from '../../../services/notify-state-menu.serv
   selector: 'app-personnal-gamelist',
   templateUrl: './personnal-gamelist.component.html',
   styleUrls: ['./personnal-gamelist.component.css'],
-  providers:[ReturnJsonArrayService]
+  providers: [ReturnJsonArrayService]
 })
 
 export class PersonnalGamelistComponent implements OnInit {
@@ -23,19 +23,21 @@ export class PersonnalGamelistComponent implements OnInit {
   message: boolean;
 
   subscription: Subscription;
-  
-  constructor(private _ReturnJsonArrayService: ReturnJsonArrayService,private notifyStateMenuService: NotifyStateMenuService) { 
+
+  constructor(private _ReturnJsonArrayService: ReturnJsonArrayService, private notifyStateMenuService: NotifyStateMenuService) {
     // subscribe to home component messages
     this.subscription = this.notifyStateMenuService.getMessage()
-      .subscribe(message => { this.message = message; }),
-      () => console.log('message: ', this.message);    
+      .subscribe(message => { this.message = message; })
+      // ,() => console.log('message: ', this.message)
+      ;
   }
 
   ngOnInit() {
-    this.getInfosJoueur(); 
+    this.getInfosJoueur();
   }
-  
+
   // unsubscribe to ensure no memory leaks
+  // tslint:disable-next-line:use-life-cycle-interface
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }
@@ -47,7 +49,7 @@ export class PersonnalGamelistComponent implements OnInit {
   getInfosJoueur() {
     this._ReturnJsonArrayService.getUser1_Service()
     .subscribe(infoUser => this.ArrayInfosUser = infoUser,
-    error => console.log('erreurs: ',error),
+    error => console.log('erreurs: ', error),
     () => console.log('Completed loading of JSON file: ', this.ArrayInfosUser));
   }
 }

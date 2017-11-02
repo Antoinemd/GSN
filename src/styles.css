@@ -6,7 +6,7 @@
 deeppurple-amber.css
 indigo-pink.css
 pink-bluegrey.css
-purple-green.css 
+purple-green.css
 */
 
  /* some basic resets */
@@ -30,3 +30,13 @@ body {
 /* Rules for using icons as white on a dark background. */
 .material-icons.md-light { color: rgba(255, 255, 255, 1); }
 .material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+
+/* Règle de style pour les boites de dialogues mat-dialog-container */
+.mat-dialog-container {
+  /* background-color: #000; */
+  margin: auto;
+  text-align: center;
+  height: 400px;
+  width: 600px;
+  max-width: 50% !important;
+}

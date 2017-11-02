@@ -18,7 +18,12 @@ import {  MatSidenavModule,
           MatAutocompleteModule,
           MatSlideToggleModule,
           MatInputModule,
-          MatFormFieldControl } from '@angular/material';
+          MatFormFieldControl,
+          MatCardModule,
+          MatDialogModule
+          // MatDialogConfig,
+          // MatDialogRef
+        } from '@angular/material';
 
 
 /*Some components (mat-slide-toggle, mat-slider, matTooltip) rely on HammerJS
@@ -34,6 +39,7 @@ import { ToolbarMenuComponent } from './components/top/toolbar-menu/toolbar-menu
 import { SideNavComponent } from './components/left-side/side-nav/side-nav.component';
 import { PersonnalGamelistComponent } from './components/left-side/personnal-gamelist/personnal-gamelist.component';
 import { CatalogueJeuxComponent } from './components/catalogue-jeux/catalogue-jeux.component';
+import { DialogueJeuxComponent } from './components/catalogue-jeux/dialogue-jeux/dialogue-jeux.component';
 import { UserFormComponent } from './components/user-form/user-form.component';
 import { Searchbv3Component } from './components/searchbv3/searchbv3.component';
 import { SearchbarComponent } from './components/searchbar/searchbar.component';
@@ -50,7 +56,8 @@ import { SearchbarComponent } from './components/searchbar/searchbar.component';
     CatalogueJeuxComponent,
     UserFormComponent,
     SearchbarComponent,
-    Searchbv3Component
+    Searchbv3Component,
+    DialogueJeuxComponent
   ],
   imports: [
     BrowserModule,
@@ -69,7 +76,11 @@ import { SearchbarComponent } from './components/searchbar/searchbar.component';
     MatAutocompleteModule,
     MatSlideToggleModule,
     MatInputModule,
+    MatCardModule,
+    MatButtonModule,
+    MatDialogModule
   ],
+  entryComponents: [ DialogueJeuxComponent ],
   providers: [],
   bootstrap: [AppComponent]
 })

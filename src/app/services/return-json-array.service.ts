@@ -15,7 +15,6 @@ export class ReturnJsonArrayService {
   catalogueJeuxJsonPath = '../../../assets/json/catalogueJeux.json';
 
   isVisibleSource: BehaviorSubject <boolean> = new BehaviorSubject(false);
-  
 
   constructor(private _http: Http) {
 
@@ -34,6 +33,5 @@ export class ReturnJsonArrayService {
     return this._http.get(this.catalogueJeuxJsonPath)
     .map((response: Response) => response.json());
   }
-    
 
 }
