@@ -4,22 +4,28 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { FlexLayoutModule } from "@angular/flex-layout";
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 
 /* Material Design */
-import {  MatSidenavModule, 
+import {  MatSidenavModule,
           MatToolbarModule,
           MatButtonModule,
           MatMenuModule,
+          MatIconModule,
+          MatGridListModule,
+          MatGridList,
+          MatSelectModule,
           MatAutocompleteModule,
           MatSlideToggleModule,
-          MatIconModule,
-          MatGridListModule,MatGridList,
-          MatSelectModule } from '@angular/material';
+          MatInputModule,
+          MatFormFieldControl,
+          MatDialogModule,
+          MatCardModule,
+           } from '@angular/material';
 
 
-
-/*Some components (mat-slide-toggle, mat-slider, matTooltip) rely on HammerJS 
+/*Some components (mat-slide-toggle, mat-slider, matTooltip) rely on HammerJS
 * for gestures. In order to get the full feature-set of these components, HammerJS
 * must be loaded into the application.
 * npm install --save hammerjs
@@ -35,6 +41,9 @@ import { CatalogueJeuxComponent } from './components/catalogue-jeux/catalogue-je
 import { UserFormComponent } from './components/user-form/user-form.component';
 import { Searchbv3Component } from './components/searchbv3/searchbv3.component';
 import { SearchbarComponent } from './components/searchbar/searchbar.component';
+import { SubsFormComponent } from './components/subs-form/subs-form.component';
+import { BotComponent } from './components/bot/bot.component';
+import { ArticleComponent } from './components/article/article.component';
 
 
 @NgModule({
@@ -47,7 +56,10 @@ import { SearchbarComponent } from './components/searchbar/searchbar.component';
     CatalogueJeuxComponent,
     UserFormComponent,
     SearchbarComponent,
-    Searchbv3Component
+    Searchbv3Component,
+    SubsFormComponent,
+    BotComponent,
+    ArticleComponent
   ],
   imports: [
     BrowserModule,
@@ -62,8 +74,13 @@ import { SearchbarComponent } from './components/searchbar/searchbar.component';
     MatIconModule,
     FlexLayoutModule,
     MatGridListModule,
+    MatSelectModule,
     MatAutocompleteModule,
-    MatSlideToggleModule  ],
+    MatSlideToggleModule,
+    MatInputModule,
+    MatDialogModule,
+    MatCardModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

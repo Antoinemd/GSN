@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialogModule, MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import {MatMenuModule} from '@angular/material';
 import { UserFormComponent } from '../../user-form/user-form.component';
 
 
@@ -18,7 +19,6 @@ export class ToolbarMenuComponent implements OnInit {
 
   openDialog() {
 
-    
   }
 
 }
@@ -43,6 +43,6 @@ export class ToolbarMenuComponent implements OnInit {
 })
 export class DialogResultExampleDialog {
   constructor(public dialogRef: MatDialogRef<DialogResultExampleDialog>) {
-  
+
   }
 }*/
