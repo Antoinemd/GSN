@@ -1,0 +1,49 @@
+<div class="containerX">
+  <div *ngIf="!isLogged;else logged_content">
+    <div class="friendList">
+      <p> Il semblerait que vous ne soyez pas connecté ou pas encore inscrit ! </p>
+
+      <div class="button">
+        <button mat-button (click)="seConnecter()">Connexion</button>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #logged_content>
+
+    <div class="friendListLogged">
+      <div xLayout="row" fxLayoutAlign="start center" >
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <div *ngFor="let state of status">
+            <button mat-menu-item (click)="setPlayerStatement(this.state)">
+              <mat-icon>
+                <div id="circle" [ngStyle]="{'background':state.icone}"></div>
+              </mat-icon>
+              <span>{{state.viewValue}}</span>
+            </button>
+          </div>
+        </mat-menu>
+
+        <div *ngFor="let data of ArrayProfileJoueur">
+            {{ data.idPseudo }}
+        </div>
+      </div>
+
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <div class="status" fxFlexOffset="10">
+          <mat-icon>
+            <div id="circle" [ngStyle]="{'background':playerState.icone}"></div>
+          </mat-icon>
+        </div>
+        <div>
+            <span>{{playerState.viewValue}}</span>
+          <!-- Vous êtes: {{playerState}} -->
+        </div>
+      </div>
+    </div>
+  </ng-template>
+
+</div>

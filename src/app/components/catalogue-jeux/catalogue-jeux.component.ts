@@ -17,6 +17,8 @@ import { DialogueJeuxComponent } from './dialogue-jeux/dialogue-jeux.component';
 })
 export class CatalogueJeuxComponent implements OnInit {
 
+  /***** attributs *****/
+  // Tableau contenant la liste de tous les jeux du site
   ArrayCatalogueJeux: any;
 
   // valeur selectionné pour le trie après la selection d'un choix
@@ -36,7 +38,7 @@ export class CatalogueJeuxComponent implements OnInit {
 
   // résultat pour le formulaire
   public result: any;
-
+  /*********************** */
 
   constructor( private _ReturnJsonArrayService: ReturnJsonArrayService,
                private dialogueService: DialogsService ) {

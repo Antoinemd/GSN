@@ -17,14 +17,20 @@ import { NotifyStateMenuService } from '../../../services/notify-state-menu.serv
 
 export class PersonnalGamelistComponent implements OnInit {
 
+  // TODO remplacer par le service de connexion
+  // boolean permettant de savoir si l'utilisateur est connecté ou non
+  isLogged = false;
+
+  // tableau contenant les infos JSON de l'utilisateur1
   ArrayInfosUser: any;
 
-  message1: any;
+  // message1: any;
   message: boolean;
 
   subscription: Subscription;
 
-  constructor(private _ReturnJsonArrayService: ReturnJsonArrayService, private notifyStateMenuService: NotifyStateMenuService) {
+  constructor(private _ReturnJsonArrayService: ReturnJsonArrayService,
+              private notifyStateMenuService: NotifyStateMenuService) {
     // subscribe to home component messages
     this.subscription = this.notifyStateMenuService.getMessage()
       .subscribe(message => { this.message = message; })

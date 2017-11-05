@@ -16,6 +16,12 @@ body {
     font-family: Roboto, sans-serif;
 }
 
+.mat-drawer-content mat-sidenav-content {
+  width: 75% !important;
+
+}
+
+
 /* propriétés globales des icones */
 /* Rules for sizing the icon. */
 .material-icons.md-18 { font-size: 18px; }

@@ -28,6 +28,39 @@
         "description": "officia et velit ad sunt non ipsum laboris veniam ad est dolor deserunt excepteur non aute aute enim cupidatat ex",
         "siteWeb": "www.destinythegame.com/"
       }
+    ],
+    "friendList":[
+      {
+        "pseudo": "user2",
+        "status": "online",
+        "listeJeux": [
+          {
+            "jeu1": "accun jeux"
+          }
+        ]
+      },
+      {
+        "pseudo": "user3",
+        "status": "away",
+        "listeJeux": [
+          {
+            "jeu1": "Blade and Soul",
+            "jeu2": "Final Fantasy XIV",
+            "jeu3": "World Of Warcraft"
+          }
+        ]
+      },
+      {
+        "pseudo": "user4",
+        "status": "offline",
+        "listeJeux": [
+          {
+            "jeu1": "Unreal Tournament",
+            "jeu2": "League of Legends",
+            "jeu3": "Rocket League"
+          }
+        ]
+      }
     ]
   }
 ]

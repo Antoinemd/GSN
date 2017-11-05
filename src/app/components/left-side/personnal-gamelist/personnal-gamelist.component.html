@@ -1,18 +1,24 @@
 Ma liste
 <div class="nav-content">
-  <div  class="containerX" *ngFor="let jeux of ArrayInfosUser" fxFlex>
-    <div  class="image-et-titre" *ngFor="let jeu of jeux.listeJeux"
-          fxLayout="row" fxLayoutAlign="start center">
-      <div class="icone">
-        <img src="../../../../assets/{{jeu.img}}" height="60px" width="60px"/>
-      </div>
-      <a mat-button class="bouton" routerLink=".">
-        <div class="titre" *ngIf="(message&&message.boolean)==true">
-          {{jeu.nomJeu}}
-        </div>
-      </a>
-    </div>
+  <div *ngIf="!isLogged;else logged_content">
+    contenu non logged
   </div>
+
+  <ng-template #logged_content>
+    <div  class="containerX" *ngFor="let jeux of ArrayInfosUser" fxFlex>
+      <div  class="image-et-titre" *ngFor="let jeu of jeux.listeJeux"
+            fxLayout="row" fxLayoutAlign="start center">
+        <div class="icone">
+          <img src="../../../../assets/{{jeu.img}}" height="60px" width="60px"/>
+        </div>
+        <a mat-button class="bouton" routerLink=".">
+          <div class="titre" *ngIf="(message&&message.boolean)==true">
+            {{jeu.nomJeu}}
+          </div>
+        </a>
+      </div>
+    </div>
+  </ng-template>
 </div>
 
 V2

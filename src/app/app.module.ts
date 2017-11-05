@@ -43,6 +43,7 @@ import { DialogueJeuxComponent } from './components/catalogue-jeux/dialogue-jeux
 import { UserFormComponent } from './components/user-form/user-form.component';
 import { Searchbv3Component } from './components/searchbv3/searchbv3.component';
 import { SearchbarComponent } from './components/searchbar/searchbar.component';
+import { FriendListComponent } from './components/friend-list/friend-list.component';
 
 
 
@@ -57,7 +58,8 @@ import { SearchbarComponent } from './components/searchbar/searchbar.component';
     UserFormComponent,
     SearchbarComponent,
     Searchbv3Component,
-    DialogueJeuxComponent
+    DialogueJeuxComponent,
+    FriendListComponent
   ],
   imports: [
     BrowserModule,

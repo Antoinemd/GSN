@@ -1,11 +1,4 @@
-.tb-menu{
-    position: fixed;
+.tb-menu {
     width: 100%;
 }
 
-mat-toolbar{
-    position: fixed;
-    z-index: 61;
-    margin-top: 64px;
-    
-} 
