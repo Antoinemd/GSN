@@ -2,6 +2,21 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.2.
 
+## Installation
+### Step 1: Install Angular Material and Angular CDK
+
+npm install --save @angular/material @angular/cdk
+
+### Step 2: Animations
+
+npm install --save @angular/animations
+
+### Step 3: Gesture Support
+
+npm install --save hammerjs
+
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

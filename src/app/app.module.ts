@@ -6,6 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
+
 /* Material Design */
 import {  MatSidenavModule,
           MatToolbarModule,
@@ -20,8 +21,8 @@ import {  MatSidenavModule,
           MatInputModule,
           MatFormFieldControl,
           MatDialogModule,
-          MatCardModule 
-        } from '@angular/material';
+          MatCardModule,
+           } from '@angular/material';
 
 
 /*Some components (mat-slide-toggle, mat-slider, matTooltip) rely on HammerJS
@@ -60,7 +61,7 @@ import { FriendListComponent } from './components/friend-list/friend-list.compon
     Searchbv3Component,
     SubsFormComponent,
     BotComponent,
-    ArticleComponent
+    ArticleComponent,
     DialogueJeuxComponent,
     FriendListComponent
   ],
@@ -81,8 +82,8 @@ import { FriendListComponent } from './components/friend-list/friend-list.compon
     MatAutocompleteModule,
     MatSlideToggleModule,
     MatInputModule,
-    // MatCardModule,
-    MatDialogModule
+    MatDialogModule,
+    MatCardModule
   ],
   entryComponents: [ DialogueJeuxComponent ],
   providers: [],

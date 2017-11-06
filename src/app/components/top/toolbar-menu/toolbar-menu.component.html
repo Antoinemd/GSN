@@ -4,7 +4,15 @@
       <button mat-button>News</button>      
       <button mat-button>Forum</button>
       <button mat-button>Messages</button>      
-      <button mat-button (click)="openDialog()">Connexion</button>
+      <!--button mat-button (click)="openDialog()">Connexion</button-->
+      <!--button mat-button [matMenuTriggerFor]="loginform">Login</button>
+      
+      <mat-menu #loginform="matMenu">
+        <button mat-button [matMenuTriggerFor]="login">Connexion</button>
+        <button mat-menu-item [matMenuTriggerFor]="login">Connexion</button>
+        <button mat-button [matMenuTriggerFor]="subscr">Inscription</button>
+      </mat-menu-->
+      
     </span>
 </mat-toolbar>
   
