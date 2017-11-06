@@ -6,6 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
+
 /* Material Design */
 import {  MatSidenavModule,
           MatToolbarModule,
@@ -18,7 +19,10 @@ import {  MatSidenavModule,
           MatAutocompleteModule,
           MatSlideToggleModule,
           MatInputModule,
-          MatFormFieldControl } from '@angular/material';
+          MatFormFieldControl,
+          MatDialogModule,
+          MatCardModule,
+           } from '@angular/material';
 
 
 /*Some components (mat-slide-toggle, mat-slider, matTooltip) rely on HammerJS
@@ -37,7 +41,9 @@ import { CatalogueJeuxComponent } from './components/catalogue-jeux/catalogue-je
 import { UserFormComponent } from './components/user-form/user-form.component';
 import { Searchbv3Component } from './components/searchbv3/searchbv3.component';
 import { SearchbarComponent } from './components/searchbar/searchbar.component';
-
+import { SubsFormComponent } from './components/subs-form/subs-form.component';
+import { BotComponent } from './components/bot/bot.component';
+import { ArticleComponent } from './components/article/article.component';
 
 
 @NgModule({
@@ -50,7 +56,10 @@ import { SearchbarComponent } from './components/searchbar/searchbar.component';
     CatalogueJeuxComponent,
     UserFormComponent,
     SearchbarComponent,
-    Searchbv3Component
+    Searchbv3Component,
+    SubsFormComponent,
+    BotComponent,
+    ArticleComponent
   ],
   imports: [
     BrowserModule,
@@ -69,6 +78,8 @@ import { SearchbarComponent } from './components/searchbar/searchbar.component';
     MatAutocompleteModule,
     MatSlideToggleModule,
     MatInputModule,
+    MatDialogModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

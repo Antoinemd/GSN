@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {MatCardModule} from '@angular/material';
+import {MatFormFieldModule} from '@angular/material';
+
 
 @Component({
   selector: 'app-user-form',
