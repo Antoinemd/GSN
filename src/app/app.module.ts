@@ -38,12 +38,14 @@ import { ToolbarMenuComponent } from './components/top/toolbar-menu/toolbar-menu
 import { SideNavComponent } from './components/left-side/side-nav/side-nav.component';
 import { PersonnalGamelistComponent } from './components/left-side/personnal-gamelist/personnal-gamelist.component';
 import { CatalogueJeuxComponent } from './components/catalogue-jeux/catalogue-jeux.component';
+import { DialogueJeuxComponent } from './components/catalogue-jeux/dialogue-jeux/dialogue-jeux.component';
 import { UserFormComponent } from './components/user-form/user-form.component';
 import { Searchbv3Component } from './components/searchbv3/searchbv3.component';
 import { SearchbarComponent } from './components/searchbar/searchbar.component';
 import { SubsFormComponent } from './components/subs-form/subs-form.component';
 import { BotComponent } from './components/bot/bot.component';
 import { ArticleComponent } from './components/article/article.component';
+import { FriendListComponent } from './components/friend-list/friend-list.component';
 
 
 @NgModule({
@@ -59,7 +61,9 @@ import { ArticleComponent } from './components/article/article.component';
     Searchbv3Component,
     SubsFormComponent,
     BotComponent,
-    ArticleComponent
+    ArticleComponent,
+    DialogueJeuxComponent,
+    FriendListComponent
   ],
   imports: [
     BrowserModule,
@@ -81,6 +85,7 @@ import { ArticleComponent } from './components/article/article.component';
     MatDialogModule,
     MatCardModule
   ],
+  entryComponents: [ DialogueJeuxComponent ],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -3,7 +3,7 @@ h2 {
 }
 
 .containerX {
-    margin-top: 150px;
+  padding: 8px;
 }
 
 .item {
@@ -20,20 +20,19 @@ h2 {
 
 .image > img {
     width: 200px;
-    height: 200;
+    height: 200px;
 }
 
-.infos {
+/* .boutonInfos {
     text-align: center;
-}
+} */
 
-  
+
  .mat-grid-tile .mat-grid-tile-footer, .mat-grid-tile .mat-grid-tile-header {
     /* background: lightblue; */
     background: rgba(0,0,0,.75);
-    
-}
 
+}
 
 .sortList {
     margin-bottom: 30px;
@@ -43,20 +42,47 @@ h2 {
 
 
 /* re-définition des propriétés des icones hérités de styles.css */
-.material-icons.md-18 { 
+.material-icons.md-18 {
     font-size: 18px;
-    color: rgba(219, 40, 40, 0.829); 
+    color: rgba(219, 40, 40, 0.829);
 }
-.material-icons.md-24 { 
-    font-size: 24px; 
-    color: rgba(219, 40, 40, 0.829); 
+.material-icons.md-24 {
+    font-size: 24px;
+    color: rgba(219, 40, 40, 0.829);
 }
-.material-icons.md-36 { 
+.material-icons.md-36 {
     font-size: 36px;
-    color: rgba(219, 40, 40, 0.829); 
+    color: rgba(219, 40, 40, 0.829);
 }
 .material-icons.md-48 {
     font-size: 48px;
-    color: rgba(219, 40, 40, 0.829); 
+    color: rgba(219, 40, 40, 0.829);
 }
+
+/* footer des mosaiques */
+
+  /* .mat-grid-tile-footer {
+    margin: auto;
+  } */
+
+.footerIcon {
+text-align: center;
+}
+
+.titreImagette {
+  text-align: center;
+}
+
+/* .linkIcon {
+  padding-top: 10px
+} */
+/*
+.infosIcon {
+  text-align: right;
+}
+
+.addIcon{
+  text-align: right;
+} */
+
 

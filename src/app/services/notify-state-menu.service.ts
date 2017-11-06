@@ -10,7 +10,7 @@ export class NotifyStateMenuService {
   constructor() { }
 
   private subject = new Subject<any>();
-      
+
   // sendMessage(message: string) {
   //     this.subject.next({ text: message });
   // }
@@ -18,11 +18,11 @@ export class NotifyStateMenuService {
   sendMessage(message: boolean) {
     this.subject.next({ boolean: message });
   }
-      
+
   clearMessage() {
     this.subject.next();
   }
-      
+
   getMessage(): Observable<any> {
     return this.subject.asObservable();
   }

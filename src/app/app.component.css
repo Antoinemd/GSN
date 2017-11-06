@@ -1,0 +1,29 @@
+.top {
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  z-index: 61;
+  text-align: center;
+}
+
+/* .banner {
+
+}
+.nav {
+} */
+
+
+.wrapper {
+  margin-top: 128px;
+  /* width: 100%; */
+}
+
+
+/* .friendList{
+  max-width: 10%;
+} */
+
+/* .sideAndContent { */
+  /* width: 75%; */
+  /* height: auto; */
+/* } */

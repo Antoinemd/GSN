@@ -1,13 +1,13 @@
 
 <mat-sidenav-container class="container" >
-  <mat-sidenav #sidenav class="left-sidenav" mode="side" opened="true"
+  <mat-sidenav #sidenav class="leftSidenav" mode="side" opened="true"
                [ngStyle]="{'width': sideNavWidth + 'px', opacity: sideOpacity}"
                (mouseover)="widthUp()" (mouseleave)="widthDown()">
 
     <app-personnal-gamelist></app-personnal-gamelist>
   </mat-sidenav>
 
-  <div class="sidenav-content">
+  <div class="sidenavContent">
     <app-catalogue-jeux></app-catalogue-jeux>
   </div>
 

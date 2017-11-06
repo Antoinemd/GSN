@@ -1,0 +1,32 @@
+.containerX {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  width: 14vw;
+  position: fixed;
+}
+
+.friendListNotLogged {
+  text-align: center;
+  padding: 10px;
+}
+
+#circle {
+  width: 20px;
+  height: 20px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+  background: red;
+}
+
+#circleFriends {
+  width: 15px;
+  height: 15px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+  background: red;
+}
+
+.status {
+  margin-top: 10px;
+}
