@@ -13,7 +13,7 @@ export class FriendListComponent implements OnInit {
 
   // TODO remplacer par le service de connexion
   // Permet de savoir si l'utilisateur est connecté ou non
-  isLogged = true;
+  isLogged = false;
 
   // Tableau contenant le profile du joueur à charger via le service
   ArrayProfileJoueur: any;
@@ -32,7 +32,7 @@ export class FriendListComponent implements OnInit {
   playerState: any;
 
   constructor( private _ReturnJsonArrayService: ReturnJsonArrayService ) {
-
+    
   }
 
   // par défaut on est connecté en Ligne
@@ -41,7 +41,9 @@ export class FriendListComponent implements OnInit {
     this.getProfileJoueur(); // récupération des données à l'initialisation du composant
     // this.pseudoJoueur = this.ArrayProfileJoueur[0].idPseudo;
     this.playerState = {value: 'online', viewValue: 'En ligne', icone: '#2F9395'};
-    console.log('arrayJ: ', this.ArrayProfileJoueur);
+    // console.log('arrayJ: ', this.ArrayProfileJoueur);
+
+    this.getFriendStatus();
   }
 
   getProfileJoueur (): void {
@@ -55,6 +57,16 @@ export class FriendListComponent implements OnInit {
     // console.log('test: ', state);
     this.playerState = state;
     console.log('playerstate: ', this.playerState);
+  }
+
+  getFriendStatus(): string {
+    // console.log('friend state: ', this.ArrayProfileJoueur[0].friendList[0]);
+    console.log('array: ', this.ArrayProfileJoueur);
+    return 'statement';
+  }
+
+  setFriendStatus(): void {
+
   }
 
 

@@ -1,6 +1,7 @@
 <div class="containerX">
+  <!-- Template à affichcher si l'utilisateur n'est pas connecté -->
   <div *ngIf="!isLogged;else logged_content">
-    <div class="friendList">
+    <div class="friendListNotLogged">
       <p> Il semblerait que vous ne soyez pas connecté ou pas encore inscrit ! </p>
 
       <div class="button">
@@ -9,9 +10,11 @@
     </div>
   </div>
 
+  <!-- Template à afficher si l'utilisateur est connecté -->
   <ng-template #logged_content>
-
+  
     <div class="friendListLogged">
+      <!-- Menu permettant de changer le status de l'utilisateur -->
       <div xLayout="row" fxLayoutAlign="start center" >
         <button mat-icon-button [matMenuTriggerFor]="menu">
           <mat-icon>more_vert</mat-icon>
@@ -26,12 +29,14 @@
             </button>
           </div>
         </mat-menu>
-
+        
+        <!-- Affichage du pseudo -->
         <div *ngFor="let data of ArrayProfileJoueur">
             {{ data.idPseudo }}
         </div>
       </div>
 
+      <!-- Affichage du status/dispo de l'utilisateur -->
       <div fxLayout="row" fxLayoutAlign="start center">
         <div class="status" fxFlexOffset="10">
           <mat-icon>
@@ -40,7 +45,26 @@
         </div>
         <div>
             <span>{{playerState.viewValue}}</span>
-          <!-- Vous êtes: {{playerState}} -->
+        </div>
+      </div>
+
+      <!-- Affichage des amis du l'utilisateur -->
+      <span> <h3 matLine>Liste d'amis</h3></span>
+      <div>
+        <div *ngFor="let infosJoueur of ArrayProfileJoueur">
+          <div *ngFor="let friend of infosJoueur.friendList" 
+                fxLayout="row" fxLayoutAlign="start center"> 
+            <mat-icon>
+              <!-- rajouter le ngStyle -->
+              <div id="circleFriends" >
+                {{ friend.status }}  
+              </div>
+            </mat-icon>
+            <div>
+              {{ friend.pseudo }}
+            </div>
+          </div>
+
         </div>
       </div>
     </div>

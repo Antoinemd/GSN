@@ -19,10 +19,8 @@ import {  MatSidenavModule,
           MatSlideToggleModule,
           MatInputModule,
           MatFormFieldControl,
-          MatCardModule,
-          MatDialogModule
-          // MatDialogConfig,
-          // MatDialogRef
+          MatDialogModule,
+          MatCardModule 
         } from '@angular/material';
 
 
@@ -43,8 +41,10 @@ import { DialogueJeuxComponent } from './components/catalogue-jeux/dialogue-jeux
 import { UserFormComponent } from './components/user-form/user-form.component';
 import { Searchbv3Component } from './components/searchbv3/searchbv3.component';
 import { SearchbarComponent } from './components/searchbar/searchbar.component';
+import { SubsFormComponent } from './components/subs-form/subs-form.component';
+import { BotComponent } from './components/bot/bot.component';
+import { ArticleComponent } from './components/article/article.component';
 import { FriendListComponent } from './components/friend-list/friend-list.component';
-
 
 
 @NgModule({
@@ -58,6 +58,9 @@ import { FriendListComponent } from './components/friend-list/friend-list.compon
     UserFormComponent,
     SearchbarComponent,
     Searchbv3Component,
+    SubsFormComponent,
+    BotComponent,
+    ArticleComponent
     DialogueJeuxComponent,
     FriendListComponent
   ],
@@ -78,8 +81,7 @@ import { FriendListComponent } from './components/friend-list/friend-list.compon
     MatAutocompleteModule,
     MatSlideToggleModule,
     MatInputModule,
-    MatCardModule,
-    MatButtonModule,
+    // MatCardModule,
     MatDialogModule
   ],
   entryComponents: [ DialogueJeuxComponent ],
