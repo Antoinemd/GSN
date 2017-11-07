@@ -9,6 +9,8 @@
   width: 400px;
 }
 
-input {
+.inputfield {
     width: 300px;
+    background : white;
+    color: black;
 }
