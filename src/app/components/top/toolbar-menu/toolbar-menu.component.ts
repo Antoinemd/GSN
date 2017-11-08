@@ -10,6 +10,9 @@ import {MatDialogModule,
 /* Composants */
 import { UserFormComponent } from '../../block-login/user-form/user-form.component';
 import { SearchbarComponent } from '../../searchbar/searchbar.component';
+import { Router } from '@angular/router';
+
+import { LoginService } from '../../../services/login.service';
 
 
 @Component({
@@ -19,9 +22,37 @@ import { SearchbarComponent } from '../../searchbar/searchbar.component';
 })
 export class ToolbarMenuComponent implements OnInit {
 
-  constructor() { }
+  // estLogged: boolean;
+  
+  // acc_connected: string;
+  private userIsLogged = false;
+
+  constructor(private router: Router, 
+              private loginService: LoginService) { }
 
   ngOnInit() {
+
+    // this.estLogged = this.loginService.getUserLoggedIn();
+    // this.setBtnValue();
+    
+    this.loginService.subjectUserIsLoggedIn.subscribe(
+      (estConnecte: boolean) => {
+        if(estConnecte === true){
+          this.userIsLogged = true;
+        } else {
+          this.userIsLogged = false;
+        }
+      });
+  }
+
+  onLogout():void {
+    this.loginService.setUserLoggedOut();
+    this.router.navigate(['/'])
+  }
+
+  
+  isUserLogged(): void {
+    console.log('user logged ? ', this.userIsLogged);
   }
 
   

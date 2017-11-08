@@ -3,18 +3,19 @@ import { Component, OnInit } from '@angular/core';
 /* Services */
 import { ReturnJsonArrayService } from '../../services/return-json-array.service';
 import { LoginService } from '../../services/login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-friend-list',
   templateUrl: './friend-list.component.html',
   styleUrls: ['./friend-list.component.css'],
-  providers: [ReturnJsonArrayService, LoginService]
+  providers: [ReturnJsonArrayService]
 })
 export class FriendListComponent implements OnInit {
 
   // TODO remplacer par le service de connexion
   // Permet de savoir si l'utilisateur est connecté ou non
-  isUserLoggedIn: boolean;
+  private userIsLogged = false;
 
   // Tableau contenant le profile du joueur à charger via le service
   ArrayProfileJoueur: any;
@@ -42,19 +43,29 @@ export class FriendListComponent implements OnInit {
   ]
 
   constructor( private _ReturnJsonArrayService: ReturnJsonArrayService, 
-    private user: LoginService ) {
+               private loginService: LoginService,
+               private router: Router ) {
       
   }
 
   // par défaut on est connecté en Ligne
   ngOnInit() {
+
+    this.loginService.subjectUserIsLoggedIn.subscribe(
+      (estConnecte: boolean) => {
+        if(estConnecte === true){
+          this.userIsLogged = true;
+        } else {
+          this.userIsLogged = false;
+        }
+      });
     
-    this.isUserLoggedIn = this.user.getUserLoggedIn();
-    console.log('utilisateur connecté ?', this.isUserLoggedIn);
+    // this.isUserLoggedIn = this.login.getUserLoggedIn();
+    // console.log('utilisateur connecté ?', this.isUserLoggedIn);
 
     // TODO: changer cet appel lors de la connection du joueur
     this.getProfileJoueur(); // récupération des données à l'initialisation du composant
-    this.playerState = {value: 'online', viewValue: 'En ligne', icone: '#2F9395'};
+    this.playerState = { value: 'online', viewValue: 'En ligne', icone: '#2F9395' };
   }
 
   getProfileJoueur (): void {
@@ -65,13 +76,17 @@ export class FriendListComponent implements OnInit {
   }
 
   setPlayerStatement(state): void {
-    // console.log('test: ', state);
     this.playerState = state;
     console.log('playerstate: ', this.playerState);
   }
 
-  seConnecter(state): void {
-    console.log('check loggin: ', this.user.getUserLoggedIn());
+  onClick(): void {
+    console.log('ouech alors');
+    this.router.navigate(['/login']);
+  }
+
+  test () {
+    console.log('état: ',this.userIsLogged);
   }
 
 }

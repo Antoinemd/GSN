@@ -20,7 +20,7 @@ export class PersonnalGamelistComponent implements OnInit {
 
   // TODO remplacer par le service de connexion
   // boolean permettant de savoir si l'utilisateur est connecté ou non
-  isLogged: boolean;
+  private userIsLogged = false;
 
   // tableau contenant les infos JSON de l'utilisateur1
   ArrayInfosUser: any;
@@ -32,17 +32,24 @@ export class PersonnalGamelistComponent implements OnInit {
 
   constructor(private _ReturnJsonArrayService: ReturnJsonArrayService,
               private notifyStateMenuService: NotifyStateMenuService,
-              private user: LoginService ) {
+              private longinService: LoginService ) {
     // subscribe to home component messages
     this.subscription = this.notifyStateMenuService.getMessage()
-      .subscribe(message => { this.message = message; })
-      // ,() => console.log('message: ', this.message)
-      ;
+      .subscribe(message => { this.message = message; });
   }
 
   ngOnInit() {
     this.getInfosJoueur();
-    this.isLogged = this.user.getUserLoggedIn();
+    // this.isLogged = this.longinService.getUserLoggedIn();
+
+    this.longinService.subjectUserIsLoggedIn.subscribe(
+      (estConnecte: boolean) => {
+        if(estConnecte === true){
+          this.userIsLogged = true;
+        } else {
+          this.userIsLogged = false;
+        }
+      });
   }
 
   // unsubscribe to ensure no memory leaks

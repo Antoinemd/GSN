@@ -1,10 +1,10 @@
 Ma liste
 <div class="nav-content">
-  <div *ngIf="!isLogged;else logged_content">
+  <div *ngIf="!userIsLogged;else loggedContent">
     contenu non logged
   </div>
 
-  <ng-template #logged_content>
+  <ng-template #loggedContent>
     <div  class="containerX" *ngFor="let jeux of ArrayInfosUser" fxFlex>
       <div  class="image-et-titre" *ngFor="let jeu of jeux.listeJeux"
             fxLayout="row" fxLayoutAlign="start center">

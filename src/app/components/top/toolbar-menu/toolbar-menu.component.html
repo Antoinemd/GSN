@@ -2,10 +2,20 @@
     <!-- <span class="tb-menu"> -->
       <div class="tb-menu" fxLayout="row" fxLayoutAlign="center center">
         <div><a mat-button routerLink="/actualites">Actualités</a></div>   
-        <div><a mat-button routerLink="catalogue">Catalogue</a></div> 
-        <div><button mat-button>Forum</button></div>
-        <div><button mat-button>Messages</button></div>
-        <div><a mat-button routerLink="/login">Connexion</a></div>
+        <div><a mat-button routerLink="/catalogue">Catalogue</a></div> 
+        <!-- <div><button mat-button>Forum</button></div>
+        <div><button mat-button>Messages</button></div> -->
+        <div class="button">
+            <button mat-button (click)="isUserLogged()">test</button>
+        </div>
+        <div *ngIf="!userIsLogged;else unlogContent">
+          <a mat-button routerLink="/login">Connexion</a>
+        </div>        
+        <ng-template #unlogContent>
+          <div>
+            <a mat-button (click)="onLogout()">Deconnexion</a>
+          </div>
+        </ng-template>
       <div class="searchBlock" fxLayout="row" fxLayoutAlign="start center">
           <div class="searchBar">
             <app-searchbar></app-searchbar>

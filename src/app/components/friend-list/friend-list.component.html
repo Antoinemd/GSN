@@ -1,18 +1,19 @@
 <div class="containerX">
   <!-- Template à affichcher si l'utilisateur n'est pas connecté -->
-  <div *ngIf="!this.isUserLoggedIn; else loggedContent">
+  <div *ngIf="!userIsLogged;else loggedContent" fxLayout="row" fxLayoutAlign="center center" >
     <div class="friendListNotLogged">
       <p> Il semblerait que vous ne soyez pas connecté ou pas encore inscrit ! </p>
 
-      <div class="button">
-        <button mat-button (click)="seConnecter(this.isUserLoggedIn)">Connexion</button>
+      <div>
+        <button mat-button (click)="onClick()">Connexion</button>
+        <button mat-button (click)="test()">test</button>
+        
       </div>
     </div>
   </div>
 
   <!-- Template à afficher si l'utilisateur est connecté -->
   <ng-template #loggedContent>
-  
     <div class="friendListLogged">
       <!-- Menu permettant de changer le status de l'utilisateur -->
       <div xLayout="row" fxLayoutAlign="start center" >
@@ -77,5 +78,4 @@
       </div>
     </div>
   </ng-template>
-
 </div>

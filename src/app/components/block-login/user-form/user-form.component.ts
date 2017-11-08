@@ -7,6 +7,7 @@ import { MatCardModule,
 
 /* Services */ 
 import { LoginService } from '../../../services/login.service';
+import { NgForm } from '@angular/forms';
 
 
 @Component({
@@ -17,26 +18,33 @@ import { LoginService } from '../../../services/login.service';
 export class UserFormComponent implements OnInit {
 
   constructor( private router:Router, 
-               private user:LoginService) { }
+               private loginService:LoginService) { }
 
 
   ngOnInit() {
   }
 
-  loginUser(e) {
+  loginUser(e, form: NgForm) {
     e.preventDefault();
     console.log(e);
-    let username = e.target.elements[0].value;
-    let password = e.target.elements[1].value;
+    console.log('form: ', form);
+    // let username = e.target.elements[0].value;
+    // let password = e.target.elements[1].value;
+    const username = form.value.pseudo;
+    const password = form.value.password;
 
     if(username === 'Trucidator38' && password === 'joueur') {
       console.log('login ok');
-      this.user.setUserLoggedIn();
-      this.router.navigate(['feeds']);
+      // this.loginService.setUserLoggedIn();
+      this.onLogin();
+      this.router.navigate(['/']);
     }
 
     console.log('login: ',username, ' ',password);
     return false;
   }
 
+  onLogin() {
+    this.loginService.subjectUserIsLoggedIn.next(true);
+  }
 }

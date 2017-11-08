@@ -1,15 +1,17 @@
-<form class="full-form" (ngSubmit)="loginUser($event)">
+<form class="full-form" (ngSubmit)="loginUser($event, f)" #f="ngForm">
   <div><h1>Déjà membre ?<br>Connectez-vous !</h1>
     <div class="connexion-form" fxLayout="column" fxLayoutAlign="space-around center" >
       <h2>Connexion</h2>
       <hr>
 
       <mat-form-field>
-        <input matInput placeholder="Pseudo" type="text" required="ffdsf">
+        <input matInput placeholder="Pseudo" type="text" id="pseudo" 
+               name="pseudo"required="" ngModel>
       </mat-form-field>
       
       <mat-form-field>
-        <input matInput placeholder="Mot de Passe" type="password" required="">
+        <input matInput placeholder="Mot de Passe" type="password" id="password"
+               name="password" required="" ngModel>
       </mat-form-field>
       <div class="input">
         <button class="grow" mat-button type="submit">Connexion</button>

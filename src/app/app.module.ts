@@ -59,18 +59,28 @@ import { LoginService } from './services/login.service';
 import { AuthguardGuard } from './authGuard/authguard.guard';
 
 /* Routages des composants */
+// créer un module routing.modul
 const appRoutes:Routes = [
   // {
-  //   path:'accueil',
-  //   component: LoginAndSubscribeComponent
+  //   path:'acceuil',
+  //   component: AppComponent,
+  //   canActivateChild: [AuthguardGuard],
+  //   children:[
+  //     { path:':friendlist', component: FriendListComponent }
+  //   ]
   // },
   {
     path:'login',
     component: LoginAndSubscribeComponent
   },
   {
-    path:'actualites',
-    component: FilActualiteComponent
+    path:'actualites', 
+    // canActivate: [AuthguardGuard], 
+    canActivateChild: [AuthguardGuard],component: FilActualiteComponent,
+    children:[
+      { path: ':global', component: GlobalNewsComponent },
+      { path: ':personnal', component: PersonnalNewsComponent }
+    ]
   },
   {
     path:'catalogue',
