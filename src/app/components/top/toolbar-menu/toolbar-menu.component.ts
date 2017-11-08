@@ -1,7 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import {MatDialogModule, MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
-import {MatMenuModule} from '@angular/material';
-// import { UserFormComponent } from '../../user-form/user-form.component';
+
+/* Material */ 
+import {MatDialogModule, 
+        MatDialog, 
+        MatDialogRef, 
+        MAT_DIALOG_DATA,
+        MatMenuModule } from '@angular/material';
+
+/* Composants */
+import { UserFormComponent } from '../../block-login/user-form/user-form.component';
+import { SearchbarComponent } from '../../searchbar/searchbar.component';
 
 
 @Component({

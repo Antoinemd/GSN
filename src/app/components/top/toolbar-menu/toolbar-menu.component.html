@@ -1,9 +1,24 @@
 <mat-toolbar color="warn">
-    <span class="tb-menu">
-      Toolbar Menu
-      <button mat-button>News</button>      
-      <button mat-button>Forum</button>
-      <button mat-button>Messages</button>      
+    <!-- <span class="tb-menu"> -->
+      <div class="tb-menu" fxLayout="row" fxLayoutAlign="center center">
+        <div><a mat-button routerLink="/actualites">Actualités</a></div>   
+        <div><a mat-button routerLink="catalogue">Catalogue</a></div> 
+        <div><button mat-button>Forum</button></div>
+        <div><button mat-button>Messages</button></div>
+        <div><a mat-button routerLink="/login">Connexion</a></div>
+      <div class="searchBlock" fxLayout="row" fxLayoutAlign="start center">
+          <div class="searchBar">
+            <app-searchbar></app-searchbar>
+          </div>
+          <div>
+            <button mat-button class="linkIcon">
+              <i class="material-icons md-24">search</i>
+            </button>
+          </div>
+        </div>
+       
+      </div>
+
       <!--button mat-button (click)="openDialog()">Connexion</button-->
       <!--button mat-button [matMenuTriggerFor]="loginform">Login</button>
       
@@ -13,6 +28,6 @@
         <button mat-button [matMenuTriggerFor]="subscr">Inscription</button>
       </mat-menu-->
       
-    </span>
+    <!-- </span> -->
 </mat-toolbar>
   

@@ -71,6 +71,10 @@ const appRoutes:Routes = [
   {
     path:'actualites',
     component: FilActualiteComponent
+  },
+  {
+    path:'catalogue',
+    component:CatalogueJeuxComponent
   }
   // {
   //   path:'friendList',
