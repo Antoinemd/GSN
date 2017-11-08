@@ -19,7 +19,7 @@
         "nomJeu": "The Witcher 3",
         "img": "img/icons/witcher3-ico.png",
         "description": "esse voluptate tempor dolor eu ex magna elit adipisicing aute amet est eu aute nisi mollit ex ipsum laboris non",
-        "siteWeb": "www.thewitcher.com/"
+        "siteWeb": "http://thewitcher.com/en/witcher3"
       },
       {
         "_idGame": "59ee0fbab476fa7b2d81bb9f",
@@ -33,6 +33,7 @@
       {
         "pseudo": "user2",
         "status": "online",
+        "statusColor": "#2F9395",
         "listeJeux": [
           {
             "jeu1": "accun jeux"
@@ -42,6 +43,7 @@
       {
         "pseudo": "user3",
         "status": "away",
+        "statusColor": "#F7D969",
         "listeJeux": [
           {
             "jeu1": "Blade and Soul",
@@ -53,6 +55,7 @@
       {
         "pseudo": "user4",
         "status": "offline",
+        "statusColor": "#5A5050",
         "listeJeux": [
           {
             "jeu1": "Unreal Tournament",

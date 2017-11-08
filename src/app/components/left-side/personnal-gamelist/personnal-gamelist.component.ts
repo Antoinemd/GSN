@@ -7,6 +7,7 @@ import { Subscription } from 'rxjs/Subscription';
 /* Services */
 import { ReturnJsonArrayService } from '../../../services/return-json-array.service';
 import { NotifyStateMenuService } from '../../../services/notify-state-menu.service';
+import { LoginService } from '../../../services/login.service';
 
 @Component({
   selector: 'app-personnal-gamelist',
@@ -19,7 +20,7 @@ export class PersonnalGamelistComponent implements OnInit {
 
   // TODO remplacer par le service de connexion
   // boolean permettant de savoir si l'utilisateur est connecté ou non
-  isLogged = false;
+  isLogged: boolean;
 
   // tableau contenant les infos JSON de l'utilisateur1
   ArrayInfosUser: any;
@@ -30,7 +31,8 @@ export class PersonnalGamelistComponent implements OnInit {
   subscription: Subscription;
 
   constructor(private _ReturnJsonArrayService: ReturnJsonArrayService,
-              private notifyStateMenuService: NotifyStateMenuService) {
+              private notifyStateMenuService: NotifyStateMenuService,
+              private user: LoginService ) {
     // subscribe to home component messages
     this.subscription = this.notifyStateMenuService.getMessage()
       .subscribe(message => { this.message = message; })
@@ -40,6 +42,7 @@ export class PersonnalGamelistComponent implements OnInit {
 
   ngOnInit() {
     this.getInfosJoueur();
+    this.isLogged = this.user.getUserLoggedIn();
   }
 
   // unsubscribe to ensure no memory leaks

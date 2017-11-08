@@ -32,14 +32,14 @@
     "nom": "League of Legends",
     "img": "img/icons/lol-ico.png",
     "description": " Inspiré du mod DotA (Defense of the Ancients) de Warcraft III, League of Legends est un MOBA, une arène de bataille en ligne multijoueur. Dans le mode classique, deux équipes de cinq joueurs s'affrontent dans des parties qui durent en moyenne entre 40 minutes et dont l'objectif est de détruire la base ennemie. Évoluant dans un univers heroic-fantasy, chaque joueur incarne un champion différent, aux capacités uniques, qu'il choisit à chaque début de partie. Des modes aléatoires sont également présents, ainsi que des événements saisonniers qui apportent un souffle de nouveauté.",
-    "siteWeb": "euw.leagueoflegends.com/fr/"
+    "siteWeb": "https://euw.leagueoflegends.com/fr/"
   },
   {
     "_idGame": 6,
     "nom": "Rocket League",
     "img": "img/icons/rocketleague-ico.png",
     "description": "Jeu de d'action et de sport, Rocket League vous plonge dans dans des matchs d'arène où votre but sera de marquer des buts. Vous pourrez mettre au point différentes tactiques, soit éviter les attaques des joueurs ennemis pour aller marquer, soit démolir la défense.",
-    "siteWeb": "www.rocketleague.com/‎"
+    "siteWeb": "https://https://www.rocketleague.com/www.rocketleague.com/‎"
   },
   {
     "_idGame": 7,
@@ -53,7 +53,7 @@
     "nom": "The Witcher 3: Wild Hunt",
     "img": "img/icons/witcher3-ico.png",
     "description": "The Witcher 3 : Wild Hunt est un Action-RPG se déroulant dans un monde ouvert. Troisième épisode de la série du même nom, inspirée des livres du polonais Andrzej Sapkowski, cet opus relate la fin de l'histoire de Geralt de Riv.",
-    "siteWeb": "www.thewitcher.com/"
+    "siteWeb": "http://thewitcher.com/en/witcher3"
   },
   {
     "_idGame": 9,
