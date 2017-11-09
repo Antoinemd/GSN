@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 /* Services */
 import { ReturnJsonArrayService } from '../../services/return-json-array.service';
@@ -11,9 +11,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./friend-list.component.css'],
   providers: [ReturnJsonArrayService]
 })
-export class FriendListComponent implements OnInit {
 
-  // TODO remplacer par le service de connexion
+export class FriendListComponent implements OnInit, OnDestroy {
+
   // Permet de savoir si l'utilisateur est connecté ou non
   private userIsLogged = false;
 
@@ -49,7 +49,7 @@ export class FriendListComponent implements OnInit {
   }
 
   // par défaut on est connecté en Ligne
-  ngOnInit() {
+  ngOnInit(): void {
 
     this.loginService.subjectUserIsLoggedIn.subscribe(
       (estConnecte: boolean) => {
@@ -66,6 +66,10 @@ export class FriendListComponent implements OnInit {
     // TODO: changer cet appel lors de la connection du joueur
     this.getProfileJoueur(); // récupération des données à l'initialisation du composant
     this.playerState = { value: 'online', viewValue: 'En ligne', icone: '#2F9395' };
+  }
+
+  ngOnDestroy(): void {
+    this.loginService.subjectUserIsLoggedIn.unsubscribe();
   }
 
   getProfileJoueur (): void {

@@ -16,7 +16,7 @@ import { LoginService } from '../../../services/login.service';
   providers: [ReturnJsonArrayService]
 })
 
-export class PersonnalGamelistComponent implements OnInit {
+export class PersonnalGamelistComponent implements OnInit, OnDestroy {
 
   // TODO remplacer par le service de connexion
   // boolean permettant de savoir si l'utilisateur est connecté ou non
@@ -32,7 +32,7 @@ export class PersonnalGamelistComponent implements OnInit {
 
   constructor(private _ReturnJsonArrayService: ReturnJsonArrayService,
               private notifyStateMenuService: NotifyStateMenuService,
-              private longinService: LoginService ) {
+              private loginService: LoginService ) {
     // subscribe to home component messages
     this.subscription = this.notifyStateMenuService.getMessage()
       .subscribe(message => { this.message = message; });
@@ -40,9 +40,8 @@ export class PersonnalGamelistComponent implements OnInit {
 
   ngOnInit() {
     this.getInfosJoueur();
-    // this.isLogged = this.longinService.getUserLoggedIn();
 
-    this.longinService.subjectUserIsLoggedIn.subscribe(
+    this.loginService.subjectUserIsLoggedIn.subscribe(
       (estConnecte: boolean) => {
         if(estConnecte === true){
           this.userIsLogged = true;
@@ -52,10 +51,12 @@ export class PersonnalGamelistComponent implements OnInit {
       });
   }
 
+  
   // unsubscribe to ensure no memory leaks
   // tslint:disable-next-line:use-life-cycle-interface
   ngOnDestroy() {
     this.subscription.unsubscribe();
+    this.loginService.subjectUserIsLoggedIn.unsubscribe();
   }
 
   getMenusStaus() {

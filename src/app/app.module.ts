@@ -22,6 +22,7 @@ import {  MatSidenavModule,
           MatFormFieldControl,
           MatDialogModule,
           MatCardModule,
+          MatTabsModule
            } from '@angular/material';
 
 
@@ -61,31 +62,20 @@ import { AuthguardGuard } from './authGuard/authguard.guard';
 /* Routages des composants */
 // créer un module routing.modul
 const appRoutes:Routes = [
-  // {
-  //   path:'acceuil',
-  //   component: AppComponent,
-  //   canActivateChild: [AuthguardGuard],
-  //   children:[
-  //     { path:':friendlist', component: FriendListComponent }
-  //   ]
-  // },
-  {
-    path:'login',
-    component: LoginAndSubscribeComponent
-  },
-  {
-    path:'actualites', 
+  { path: '', redirectTo: 'actualites', pathMatch: 'full'}, 
+  {   path:'login', component: LoginAndSubscribeComponent },
+  {   path:'actualites', 
     // canActivate: [AuthguardGuard], 
-    canActivateChild: [AuthguardGuard],component: FilActualiteComponent,
-    children:[
-      { path: ':global', component: GlobalNewsComponent },
-      { path: ':personnal', component: PersonnalNewsComponent }
-    ]
+    // canActivateChild: [AuthguardGuard],component: FilActualiteComponent,
+    component: FilActualiteComponent,
+    // children:[
+
+      // { path: ':FilActu', component: FilActualiteComponent}
+    // ]
   },
-  {
-    path:'catalogue',
-    component:CatalogueJeuxComponent
-  }
+  {   path: 'general', component: GlobalNewsComponent },
+  {   path: 'personnel', component: PersonnalNewsComponent },
+  {   path: 'catalogue', component:CatalogueJeuxComponent }
   // {
   //   path:'friendList',
   //   canActivate:[AuthguardGuard],
@@ -136,7 +126,8 @@ const appRoutes:Routes = [
     MatInputModule,
     MatDialogModule,
     MatCardModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    MatTabsModule
   ],
   entryComponents: [ DialogueJeuxComponent ],
   providers: [LoginService,AuthguardGuard],

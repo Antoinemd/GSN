@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 /* Material */ 
 import {MatDialogModule, 
@@ -20,7 +20,7 @@ import { LoginService } from '../../../services/login.service';
   templateUrl: './toolbar-menu.component.html',
   styleUrls: ['./toolbar-menu.component.css']
 })
-export class ToolbarMenuComponent implements OnInit {
+export class ToolbarMenuComponent implements OnInit, OnDestroy {
 
   // estLogged: boolean;
   
@@ -43,6 +43,10 @@ export class ToolbarMenuComponent implements OnInit {
           this.userIsLogged = false;
         }
       });
+  }
+
+  ngOnDestroy() {
+    this.loginService.subjectUserIsLoggedIn.unsubscribe();    
   }
 
   onLogout():void {
