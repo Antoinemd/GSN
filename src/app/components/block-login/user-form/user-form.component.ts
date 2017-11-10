@@ -37,7 +37,7 @@ export class UserFormComponent implements OnInit {
       console.log('login ok');
       // this.loginService.setUserLoggedIn();
       this.onLogin();
-      this.router.navigate(['/']);
+      this.router.navigate(['/actualites/generales']);
     }
 
     console.log('login: ',username, ' ',password);

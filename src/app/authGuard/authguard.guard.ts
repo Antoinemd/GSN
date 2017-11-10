@@ -20,12 +20,7 @@ export class AuthguardGuard implements CanActivate, CanActivateChild {
                 private router: Router ){
     
   }
-  // canActivate(
-  //   next: ActivatedRouteSnapshot,
-  //   state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-  //   return this.user.getUserLoggedIn();
-
-  
+   
   canActivate(route: ActivatedRouteSnapshot, 
               state: RouterStateSnapshot): boolean | Observable<boolean> | Promise<boolean> {
     return this.loginService.isAuthenticated()
@@ -46,3 +41,4 @@ export class AuthguardGuard implements CanActivate, CanActivateChild {
   }
   
 }
+;

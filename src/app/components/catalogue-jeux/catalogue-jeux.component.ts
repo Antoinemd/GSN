@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material';
+import { MatDialog, MatSnackBar } from '@angular/material';
 
 
 /* Services */
@@ -41,7 +41,8 @@ export class CatalogueJeuxComponent implements OnInit {
   /*********************** */
 
   constructor( private _ReturnJsonArrayService: ReturnJsonArrayService,
-               private dialogueService: DialogsService ) {
+               private dialogueService: DialogsService,
+               public snackBar:MatSnackBar ) {
 
   }
 
@@ -83,6 +84,7 @@ export class CatalogueJeuxComponent implements OnInit {
     () => console.log('Completed loading of JSON file: ', this.ArrayCatalogueJeux));
   }
 
+  // TODO fonctionnel: à implémenter en fin de projet
   orderBy(): void {
     for (let i = 0; i < this.sortBy.length; i++) {
       // var element = this.foods[i];
@@ -100,6 +102,16 @@ export class CatalogueJeuxComponent implements OnInit {
 
       }
     }
+  }
+
+  openSnackBar() {
+    // avec un simple message
+    this.snackBar.open("Le jeu à été ajouté à votre collection! ")
+    
+    // avec un composant
+    // this.snackBar.openFromComponent(CatalogueJeuxComponent, {
+    //   duration: 3000,
+    // });
   }
 
   public openDialog(titre: string, desc: string) {

@@ -22,8 +22,9 @@ import {  MatSidenavModule,
           MatFormFieldControl,
           MatDialogModule,
           MatCardModule,
-          MatTabsModule
-           } from '@angular/material';
+          MatTabsModule,
+          MatSnackBarModule
+        } from '@angular/material';
 
 
 /*Some components (mat-slide-toggle, mat-slider, matTooltip) rely on HammerJS
@@ -62,27 +63,16 @@ import { AuthguardGuard } from './authGuard/authguard.guard';
 /* Routages des composants */
 // créer un module routing.modul
 const appRoutes:Routes = [
-  { path: '', redirectTo: 'actualites', pathMatch: 'full'}, 
-  {   path:'login', component: LoginAndSubscribeComponent },
-  {   path:'actualites', 
-    // canActivate: [AuthguardGuard], 
-    // canActivateChild: [AuthguardGuard],component: FilActualiteComponent,
-    component: FilActualiteComponent,
-    // children:[
-
-      // { path: ':FilActu', component: FilActualiteComponent}
-    // ]
+  // { path: '', redirectTo: 'actualites', pathMatch: 'full'}, 
+  { path:'login', component: LoginAndSubscribeComponent },
+  { path:'actualites', component: FilActualiteComponent,
+    canActivateChild: [AuthguardGuard],
+    children:[
+      { path:'generales', component: GlobalNewsComponent },
+      { path:'personnelles', component: PersonnalNewsComponent },
+    ]
   },
-  {   path: 'general', component: GlobalNewsComponent },
-  {   path: 'personnel', component: PersonnalNewsComponent },
-  {   path: 'catalogue', component:CatalogueJeuxComponent }
-  // {
-  //   path:'friendList',
-  //   canActivate:[AuthguardGuard],
-  //   component: FriendListComponent
-  // },
-  //  pour le test on met le composant feeds
-
+  { path:'catalogue', component:CatalogueJeuxComponent }
 ]
 
 @NgModule({
@@ -127,7 +117,8 @@ const appRoutes:Routes = [
     MatDialogModule,
     MatCardModule,
     RouterModule.forRoot(appRoutes),
-    MatTabsModule
+    MatTabsModule,
+    MatSnackBarModule
   ],
   entryComponents: [ DialogueJeuxComponent ],
   providers: [LoginService,AuthguardGuard],

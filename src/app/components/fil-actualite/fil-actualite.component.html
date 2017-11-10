@@ -1,14 +1,16 @@
-<!-- fil-actualite works! : déconnecté<br> -->
-<p>
-    Bienvenue sur votre page d'actualités ! 
-    Ne manquez aucune nouvelles sur les jeux et les nouveautés qui vous intéressent !
-</p>
-<hr>
+
 <div class="containerX">
+    
+    <h2 style="text-align: center">
+        Bienvenue sur votre page d'actualités ! 
+    </h2>
+    <p style="text-align: center">
+        Ne manquez aucune nouvelles sur les jeux et les nouveautés qui vous intéressent !
+    </p>
+    <hr>
     <div style="padding: 5px;">
-        <h1>Angular Material 2 Tab Example using md-tab-nav-bar and md-tab-link.</h1>
         <nav mat-tab-nav-bar >
-            <a  mat-tab-link
+            <a  mat-tab-link 
                 *ngFor="let routeLink of routeLinks; let i = index;"
                 [routerLink]="routeLink.link"
                 routerLinkActive="mat-tab-link-active"
