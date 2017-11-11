@@ -7,6 +7,7 @@ import { Subscription } from 'rxjs/Subscription';
 /* Services */
 import { ReturnJsonArrayService } from '../../../services/return-json-array.service';
 import { NotifyStateMenuService } from '../../../services/notify-state-menu.service';
+import { LoginService } from '../../../services/login.service';
 
 @Component({
   selector: 'app-personnal-gamelist',
@@ -15,11 +16,11 @@ import { NotifyStateMenuService } from '../../../services/notify-state-menu.serv
   providers: [ReturnJsonArrayService]
 })
 
-export class PersonnalGamelistComponent implements OnInit {
+export class PersonnalGamelistComponent implements OnInit, OnDestroy {
 
   // TODO remplacer par le service de connexion
   // boolean permettant de savoir si l'utilisateur est connecté ou non
-  isLogged = false;
+  private userIsLogged = false;
 
   // tableau contenant les infos JSON de l'utilisateur1
   ArrayInfosUser: any;
@@ -30,22 +31,32 @@ export class PersonnalGamelistComponent implements OnInit {
   subscription: Subscription;
 
   constructor(private _ReturnJsonArrayService: ReturnJsonArrayService,
-              private notifyStateMenuService: NotifyStateMenuService) {
+              private notifyStateMenuService: NotifyStateMenuService,
+              private loginService: LoginService ) {
     // subscribe to home component messages
     this.subscription = this.notifyStateMenuService.getMessage()
-      .subscribe(message => { this.message = message; })
-      // ,() => console.log('message: ', this.message)
-      ;
+      .subscribe(message => { this.message = message; });
   }
 
   ngOnInit() {
     this.getInfosJoueur();
+
+    this.loginService.subjectUserIsLoggedIn.subscribe(
+      (estConnecte: boolean) => {
+        if(estConnecte === true){
+          this.userIsLogged = true;
+        } else {
+          this.userIsLogged = false;
+        }
+      });
   }
 
+  
   // unsubscribe to ensure no memory leaks
   // tslint:disable-next-line:use-life-cycle-interface
   ngOnDestroy() {
     this.subscription.unsubscribe();
+    this.loginService.subjectUserIsLoggedIn.unsubscribe();
   }
 
   getMenusStaus() {

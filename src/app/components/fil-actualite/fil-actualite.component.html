@@ -1,0 +1,43 @@
+
+<div class="containerX">
+    
+    <h2 style="text-align: center">
+        Bienvenue sur votre page d'actualités ! 
+    </h2>
+    <p style="text-align: center">
+        Ne manquez aucune nouvelles sur les jeux et les nouveautés qui vous intéressent !
+    </p>
+    <hr>
+    <div style="padding: 5px;">
+        <nav mat-tab-nav-bar >
+            <a  mat-tab-link 
+                *ngFor="let routeLink of routeLinks; let i = index;"
+                [routerLink]="routeLink.link"
+                routerLinkActive="mat-tab-link-active"
+                #rla="routerLinkActive"
+                [active]="activeLinkIndex === i"
+                (click)="activeLinkIndex = i"
+                [routerLinkActiveOptions]="{exact: true}"
+            >
+                {{routeLink.label}}
+            </a>
+        </nav>
+        <router-outlet></router-outlet>
+    </div>
+    
+  <!-- <app-global-news></app-global-news>
+
+  <app-personnal-news></app-personnal-news> -->
+</div>
+
+<!-- <nav md-tab-nav-bar>
+    <a md-tab-link *ngFor="let tab of tabs"
+      [routerLink]="[tab.path]"
+      routerLinkActive
+      #rla="routerLinkActive"
+      [routerLinkActiveOptions]="{exact: true}"
+      [active]="rla.isActive">
+      {{ tab.label }}
+    </a>
+  </nav> -->
+

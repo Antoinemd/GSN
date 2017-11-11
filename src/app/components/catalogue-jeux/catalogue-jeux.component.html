@@ -41,21 +41,31 @@
         <h1 mat-line class="titreImagette">
           {{jeu.nom}}
         </h1>
-        <span mat-line class="footerIcon">
-          <!-- Site web -->
-          <!-- <a mat-icon-button routerLink="."><i class="material-icons md-36">link</i></a> -->
-          <button mat-icon-button class="linkIcon">
-            <a href="{{jeu.siteWeb}}"> <i class="material-icons md-36">http</i> </a>
-          </button>
+        <span mat-line class="footerIcon" fxLayout="row" fxLayoutAlign="center center">
+          <div class="iconBtn">
+            <!-- Site web -->
+            <!-- <a mat-icon-button routerLink="."><i class="material-icons md-36">link</i></a> -->
+            <button mat-icon-button class="linkIcon">
+              <a href="{{jeu.siteWeb}}"> <i class="material-icons md-36">http</i> </a>
+            </button>
+          </div>
 
-          <!-- Result from dialog: {{ result }} -->
-          <button class="infosIcon" mat-icon-button (click)="openDialog(jeu.nom,jeu.description)">
-            <i class="material-icons md-36">info</i>
-          </button>
+          <div class="iconBtn">
+            <!-- Result from dialog: {{ result }} -->
+            <button class="infosIcon" mat-icon-button (click)="openDialog(jeu.nom,jeu.description)">
+              <i class="material-icons md-36">info</i>
+            </button>
+          </div>
 
-          <button class="addIcon" mat-icon-button>
-            <i class="material-icons md-36">add_circle</i>
-          </button>
+          <!-- TODO: rendre ce boutton visible uniquement si l'utilisateur est loggé -->
+          <div class="iconBtn">
+            <button mat-icon-button 
+                    class="addIcon" 
+                    (click)="openSnackBar()"
+                    aria-label="Jeux ajouté">
+              <i class="material-icons md-36">add_circle</i>
+            </button>
+         </div>
         </span>
         <!-- 2 façons d'importer une icone,mat-icon étant plus
         reservé pour les formats d'icones svg -->

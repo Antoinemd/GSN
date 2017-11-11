@@ -66,16 +66,20 @@ h2 {
   } */
 
 .footerIcon {
-text-align: center;
+    text-align: center;
 }
 
 .titreImagette {
-  text-align: center;
+    text-align: center;
 }
 
-/* .linkIcon {
-  padding-top: 10px
-} */
+.linkIcon {
+    padding-top: 10px
+}
+
+.iconBtn {
+    margin-right: 10px;
+}
 /*
 .infosIcon {
   text-align: right;

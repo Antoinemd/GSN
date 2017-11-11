@@ -2,7 +2,9 @@
     width: 100%;
 }
 
-.search {
+.searchBlock {
+    margin-left: 30px;
+}
+.searchBar {
     z-index: 62;
 }
-

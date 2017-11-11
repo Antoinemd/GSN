@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 /* Services */
 import { NotifyStateMenuService } from '../../../services/notify-state-menu.service';
+import { LoginService } from '../../../services/login.service';
 
 @Component({
   selector: 'app-side-nav',
@@ -25,6 +26,7 @@ export class SideNavComponent implements OnInit {
     this.sideNavWidth = 65; // unit: px
     this.sideOpacity = 0.5;
     this.isVisible = false;
+
   }
 
   widthUp(): void {

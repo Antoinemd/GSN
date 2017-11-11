@@ -1,0 +1,37 @@
+.container {
+    margin-top: 20px;   
+}
+
+.article {
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+}
+  
+.game-icon {
+/* background-image: url('http://material.angular.io/assets/img/examples/shiba1.jpg'); */
+background-size: cover;
+}
+
+.text {
+    text-align: justify;
+}
+
+.actionButton {
+text-align: center;
+}
+
+.separator {
+    margin-top: 20px;
+}
+
+.material-icons.md-24 {
+    font-size: 24px;
+    color: rgba(219, 40, 40, 0.829);
+
+}
+
+.iconBtn {
+    margin-top: 10px;
+    margin-right: 5px;
+}
