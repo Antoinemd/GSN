@@ -53,7 +53,7 @@ import { FriendListComponent } from './components/friend-list/friend-list.compon
 import { RouterModule, Routes } from '@angular/router';
 import { FilActualiteComponent } from './components/fil-actualite/fil-actualite.component';
 import { GlobalNewsComponent } from './components/fil-actualite/global-news/global-news.component';
-import { PersonnalNewsComponent } from './components/fil-actualite/personnal-news/personnal-news.component';
+import { PersonnalWallComponent } from './components/fil-actualite/personnal-wall/personnal-wall.component';
 
 /* Services */
 import { LoginService } from './services/login.service';
@@ -63,13 +63,13 @@ import { AuthguardGuard } from './authGuard/authguard.guard';
 /* Routages des composants */
 // créer un module routing.modul
 const appRoutes:Routes = [
-  // { path: '', redirectTo: 'actualites', pathMatch: 'full'}, 
+  { path: '', redirectTo: 'generales', pathMatch: 'full'}, 
   { path:'login', component: LoginAndSubscribeComponent },
   { path:'actualites', component: FilActualiteComponent,
     canActivateChild: [AuthguardGuard],
     children:[
       { path:'generales', component: GlobalNewsComponent },
-      { path:'personnelles', component: PersonnalNewsComponent },
+      { path:'personnelles', component: PersonnalWallComponent },
     ]
   },
   { path:'catalogue', component:CatalogueJeuxComponent }
@@ -95,7 +95,7 @@ const appRoutes:Routes = [
     FriendListComponent,
     FilActualiteComponent,
     GlobalNewsComponent,
-    PersonnalNewsComponent
+    PersonnalWallComponent
   ],
   imports: [
     BrowserModule,

@@ -1,8 +1,24 @@
 <!-- article #1 -->
-<div class="container" fxLayout="row" fxLayoutAlign="center center">
+<button (click)="test()">test</button>
+<p>
+  En mode Déconnecté: liste d'articles random: derniers jeux, patch etc..
+  
+  L'onglet news personnal publication personnelle contient un message d'inormation 
+  comme quoi il faut etre connecté pour accéder à cette partie
+</p>
+<p>
+    En mode Connecté: globale news contient des articles concernant la collection de jeux de 
+    l'utilisateur et le personal(composant à renommer) news contient les  publications peronnelles
+  </p>
+
+<div *ngIf="!userIsLogged;else loggedContent"> <!-- Div pour le ngIf: actu générale non connecté -->  
+  <div class="container" fxLayout="row" fxLayoutAlign="center center">
     <mat-card class="article">
       <mat-card-header>
-        <div mat-card-avatar class="game-icon"></div>
+        <div mat-card-avatar class="game-icon">
+        <img src= "http://material.angular.io/assets/img/examples/shiba1.jpg" 
+             width="40px" height="40px">
+        </div>
         <mat-card-title>League of Legends Finals</mat-card-title>
         <mat-card-subtitle>SK Telecom VS Samsung Galaxy : Le choc</mat-card-subtitle>
       </mat-card-header>
@@ -15,62 +31,73 @@
             La compétition s'annonce plus serrée que jamais...
         </p>
       </mat-card-content>
+      <!-- boutton daction "like" -->
       <mat-card-actions class="actionButton">
-          <button mat-button>
+        <button mat-button>
+          <div fxLayout="row" fxLayoutAlign="center center">
+            <div class="iconBtn"><i class="material-icons md-24">plus_one</i></div>
+            <div>LIKE</div>
+          </div>
+        </button>
+        <!-- boutton daction "share" -->
+        <button mat-button>
             <div fxLayout="row" fxLayoutAlign="center center">
-              <div class="iconBtn"><i class="material-icons md-24">plus_one</i></div>
-              <div>LIKE</div>
-            </div>
-          </button>
-
-          <button mat-button>
-            <div fxLayout="row" fxLayoutAlign="center center">
-              <div class="iconBtn"><i class="material-icons md-24">share</i></div>
-              <div>SHARE</div>
-            </div>
-          </button>
-        </mat-card-actions>
+            <div class="iconBtn"><i class="material-icons md-24">share</i></div>
+            <div>SHARE</div>
+          </div>
+        </button>
+      </mat-card-actions>
     </mat-card>
   </div>
   <hr class="separator">
 
   <!-- article #2 -->
   <div class="container" fxLayout="row" fxLayoutAlign="center center">
-      <mat-card class="article">
-        <mat-card-header>
-          <div mat-card-avatar class="game-icon">
-              <img src= "http://image.jeuxvideo.com/medias-md/151025/1510248549-8403-card.jpg" 
-              width="40px" height="40px">
+    <mat-card class="article">
+      <mat-card-header>
+        <div mat-card-avatar class="game-icon">
+        <img src= "http://image.jeuxvideo.com/medias-md/151025/1510248549-8403-card.jpg" 
+             width="40px" height="40px">
+        </div>
+        <mat-card-title>League of Legends Finals</mat-card-title>
+        <mat-card-subtitle>SK Telecom VS Samsung Galaxy : Le choc</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src="http://image.jeuxvideo.com/medias-md/151025/1510248549-8403-card.jpg" alt="Icône du Jeu">
+      <mat-card-content>
+        <p class="text">
+          Alors que les fans attendent avec impatience le 26 janvier prochain pour mettre les mains sur 
+          Monster Hunter World, Capcom dévoile aujourd'hui de nouveaux éléments autour du jeu.
+          Premièrement, le Star's Ship, une taverne implantée à l'intérieur d'un énorme galion qui
+          fera office de hub social pour le jeu. Les joueurs pourront y commercer et 
+          modifier leurs équipement, accéder au bonus en ligne, participer à des mini-jeux, 
+          et même du combat aux poings à la manière de The Witcher 3. Également, les joueurs 
+          pourront y prendre ou rendre leurs quêtes, accéder au multijoueurs et aux leaderboards. Et bien évidemment, acheter et boire des godets.
+        </p>
+      </mat-card-content>
+      <mat-card-actions class="actionButton">
+        <button mat-button>
+          <div fxLayout="row" fxLayoutAlign="center center">
+            <div class="iconBtn"><i class="material-icons md-24">plus_one</i></div>
+            <div>LIKE</div>
           </div>
-          <mat-card-title>League of Legends Finals</mat-card-title>
-          <mat-card-subtitle>SK Telecom VS Samsung Galaxy : Le choc</mat-card-subtitle>
-        </mat-card-header>
-        <img mat-card-image src="http://image.jeuxvideo.com/medias-md/151025/1510248549-8403-card.jpg" alt="Icône du Jeu">
-        <mat-card-content>
-          <p class="text">
-              Alors que les fans attendent avec impatience le 26 janvier prochain pour mettre les mains sur 
-              Monster Hunter World, Capcom dévoile aujourd'hui de nouveaux éléments autour du jeu.
-              Premièrement, le Star's Ship, une taverne implantée à l'intérieur d'un énorme galion qui
-              fera office de hub social pour le jeu. Les joueurs pourront y commercer et 
-              modifier leurs équipement, accéder au bonus en ligne, participer à des mini-jeux, 
-              et même du combat aux poings à la manière de The Witcher 3. Également, les joueurs 
-              pourront y prendre ou rendre leurs quêtes, accéder au multijoueurs et aux leaderboards. Et bien évidemment, acheter et boire des godets.
-          </p>
-        </mat-card-content>
-        <mat-card-actions class="actionButton">
-          <button mat-button>
-            <div fxLayout="row" fxLayoutAlign="center center">
-              <div class="iconBtn"><i class="material-icons md-24">plus_one</i></div>
-              <div>LIKE</div>
-            </div>
-          </button>
+        </button>
+        
+        <button mat-button>
+          <div fxLayout="row" fxLayoutAlign="center center">
+            <div class="iconBtn"><i class="material-icons md-24">share</i></div>
+            <div>SHARE</div>
+          </div>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div> <!-- Fin du contenu Non connecté-->
 
-          <button mat-button>
-            <div fxLayout="row" fxLayoutAlign="center center">
-              <div class="iconBtn"><i class="material-icons md-24">share</i></div>
-              <div>SHARE</div>
-            </div>
-          </button>
-        </mat-card-actions>
-      </mat-card>
+<!-- Début du template Contenu Connecté -->
+<ng-template #loggedContent>
+    <div>
+      TEMPLATE du contenu connecté
     </div>
+</ng-template>
+        
+
