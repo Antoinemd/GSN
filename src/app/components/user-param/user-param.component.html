@@ -1,23 +1,48 @@
+<div class="title">
+    <h1>Paramètres</h1>
+</div>
 
-<div class="containerX" fxLayout="row" fxLayoutAlign="center start">
-
-  <div class="idItems" fxLayout="column" fxLayoutAlign="start center" >
+<div class="containerX" *ngFor="let infoUser of ArrayInfosUsers"fxLayout="row" fxLayoutAlign="space-around none">
+  <div class="inputFields" fxLayout="column" fxLayoutAlign="start center" >
     <form>
+
+      <div>
+        <mat-card-title>Informations personnelles:</mat-card-title>
+      </div>
+
       <div>
         <mat-form-field class="example-full-width">
-          <input matInput placeholder="user_pseudo" value="Pseudo">
+          <input matInput placeholder="Votre pseudo:" value="{{infoUser.idPseudo}}">
         </mat-form-field>
       </div>
 
       <div>
         <mat-form-field class="example-full-width">
-          <input matInput placeholder="nom_user" value="Nom">
+          <input matInput placeholder="Votre nom:" value="{{infoUser.nom}}">
         </mat-form-field>
       </div>
 
       <div>
         <mat-form-field class="example-full-width">
-          <input matInput placeholder="prénom_user" value="Prénom">
+          <input matInput placeholder="Votre prénom" value="{{infoUser.prenom}}">
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Votre adresse e-mail" value="{{infoUser.email}}">
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Votre mot de passe" value="" type="password">
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Conformer votre mot de passe" value="" type="password">
         </mat-form-field>
       </div>
 
@@ -25,21 +50,24 @@
   </div>
 
 
-  <div>
+  <div fxLayout="column" fxLayoutAlign="start center">
     <div>
         <mat-card-title-group>
-          <mat-card-title>titre</mat-card-title>
-          <div class="divAvatar">
+          <div>
+            <mat-card-title class="title">Avatar:</mat-card-title>
+          </div>
+          <div>
             <img class="avatar" mat-card-mat-image src="../../../assets/img/avatar/children-game_dribbble.png">
           </div>
         </mat-card-title-group>
+       
+        <div class="btn">
+            <button mat-raised-button>Parcourir</button>
+        </div>
+  
     </div>
-
-    <div>
-      <button>Action</button>
-    </div>
-
   </div>
-
-
+  <div class="btn">
+      <button mat-raised-button>Sauvegarder</button>
+  </div>
 </div>

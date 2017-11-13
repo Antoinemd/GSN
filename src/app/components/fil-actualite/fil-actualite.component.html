@@ -10,7 +10,7 @@
     <hr>
     <div style="padding: 5px;">
         <nav mat-tab-nav-bar >
-            <a  mat-tab-link 
+            <!-- <a  mat-tab-link 
                 *ngFor="let routeLink of routeLinks; let i = index;"
                 [routerLink]="routeLink.link"
                 routerLinkActive="mat-tab-link-active"
@@ -20,7 +20,16 @@
                 [routerLinkActiveOptions]="{exact: true}"
             >
                 {{routeLink.label}}
-            </a>
+            </a> -->
+
+            <a mat-tab-link
+            *ngFor="let routeLink of routeLinks; let i = index"
+            [routerLink]="routeLink.link"
+            routerLinkActive #rla="routerLinkActive"
+            [active]="rla.isActive"
+            [routerLinkActiveOptions]="{exact: true}">
+           {{routeLink.label}}
+         </a>
         </nav>
         <router-outlet></router-outlet>
     </div>

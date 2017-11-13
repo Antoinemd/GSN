@@ -2,13 +2,19 @@
   padding: 8px;
 }
 
-
-.divAvatar{
+.title{
   text-align: center;
-
 }
 
+.example-full-width {
+  width: 100%;
+}
 
-.avatar {
-  width: 25%;
+img {
+  width: 200px;
+  height: 200px;;
+}
+
+.btn{
+  margin-top: 20px;
 }
