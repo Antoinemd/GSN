@@ -54,26 +54,28 @@ import { RouterModule, Routes } from '@angular/router';
 import { FilActualiteComponent } from './components/fil-actualite/fil-actualite.component';
 import { GlobalNewsComponent } from './components/fil-actualite/global-news/global-news.component';
 import { PersonnalWallComponent } from './components/fil-actualite/personnal-wall/personnal-wall.component';
+import { UserParamComponent } from './components/user-param/user-param.component';
 
 /* Services */
 import { LoginService } from './services/login.service';
 /* Authguard */
 import { AuthguardGuard } from './authGuard/authguard.guard';
+import { SnackBarComponent } from './components/catalogue-jeux/snack-bar/snack-bar.component';
 
 /* Routages des composants */
 // créer un module routing.modul
-const appRoutes:Routes = [
-  { path: '', redirectTo: 'generales', pathMatch: 'full'}, 
-  { path:'login', component: LoginAndSubscribeComponent },
-  { path:'actualites', component: FilActualiteComponent,
+const appRoutes: Routes = [
+  // { path: '', redirectTo: 'generales', pathMatch: 'full'},
+  { path: 'login', component: LoginAndSubscribeComponent },
+  { path: 'actualites', component: FilActualiteComponent,
     canActivateChild: [AuthguardGuard],
-    children:[
-      { path:'generales', component: GlobalNewsComponent },
-      { path:'personnelles', component: PersonnalWallComponent },
+    children: [
+      { path: 'generales', component: GlobalNewsComponent },
+      { path: 'personnelles', component: PersonnalWallComponent },
     ]
   },
-  { path:'catalogue', component:CatalogueJeuxComponent }
-]
+  { path: 'catalogue', component: CatalogueJeuxComponent }
+];
 
 @NgModule({
   declarations: [
@@ -83,6 +85,7 @@ const appRoutes:Routes = [
     ToolbarMenuComponent,
     PersonnalGamelistComponent,
     CatalogueJeuxComponent,
+    SnackBarComponent,
     UserFormComponent,
     LoginAndSubscribeComponent,
     UserFormSubscribeComponent,
@@ -95,7 +98,8 @@ const appRoutes:Routes = [
     FriendListComponent,
     FilActualiteComponent,
     GlobalNewsComponent,
-    PersonnalWallComponent
+    PersonnalWallComponent,
+    UserParamComponent,
   ],
   imports: [
     BrowserModule,
@@ -121,7 +125,7 @@ const appRoutes:Routes = [
     MatSnackBarModule
   ],
   entryComponents: [ DialogueJeuxComponent ],
-  providers: [LoginService,AuthguardGuard],
+  providers: [LoginService, AuthguardGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {  Router } from '@angular/router';
 
 /* Components */
@@ -14,20 +14,19 @@ import { LoginService } from '../../services/login.service';
   styleUrls: ['./fil-actualite.component.css']
 })
 export class FilActualiteComponent implements OnInit {
-  
+
   private userIsLogged = false;
   // private tabActivated = 'disabled';
 
-  // Sub Router des onglet du tableau 
-  routeLinks: any[];  
+  // Sub Router des onglet du tableau
+  routeLinks: any[];
   activeLinkIndex = -1;
-  
+
   constructor(private router: Router,
               private loginService: LoginService) {
-    
+
     this.routeLinks = [
       {
-        
         label: 'Actualités générales',
         link: './generales',
         index: 0
@@ -44,20 +43,17 @@ export class FilActualiteComponent implements OnInit {
 
     this.loginService.subjectUserIsLoggedIn.subscribe(
       (estConnecte: boolean) => {
-        if(estConnecte === true){
+        if (estConnecte === true) {
           this.userIsLogged = true;
         } else {
           this.userIsLogged = false;
         }
-    });   
-
-    // activer/desactiver l'onglet si l'utilisateur est loggé ou non
-    // this.tabActivated = this.userIsLogged ? '' : 'disabled';
+    });
 
     this.router.events.subscribe((res) => {
         this.activeLinkIndex = this.routeLinks.indexOf(this.routeLinks
           .find(tab => tab.link === '.' + this.router.url));
-    });   
+    });
   }
 
   // ngOnDestroy(): void {

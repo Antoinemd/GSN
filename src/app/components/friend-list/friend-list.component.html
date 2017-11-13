@@ -7,7 +7,7 @@
       <div>
         <button mat-button (click)="onClick()">Connexion</button>
         <button mat-button (click)="test()">test</button>
-        
+
       </div>
     </div>
   </div>
@@ -54,18 +54,18 @@
       <hr>
 
       <!-- Affichage des amis du l'utilisateur -->
-      <span style="text-align: center"> 
+      <span style="text-align: center">
         <h3 matLine>Liste d'amis</h3>
       </span>
       <div class="friendsBlock">
         <div *ngFor="let infosJoueur of ArrayProfileJoueur">
-          <div *ngFor="let friend of infosJoueur.friendList" 
-                fxLayout="row" fxLayoutAlign="start center"> 
-            <button class="button" mat-button (click)="onClick">
+          <div *ngFor="let friend of infosJoueur.friendList"
+                fxLayout="row" fxLayoutAlign="start center">
+            <button class="button" mat-button (click)="descFriends()">
               <div fxLayout="row" fxLayoutAlign="start center">
                 <mat-icon>
-                  <div id="circleFriends" [ngStyle]="{'background':friend.statusColor}"> 
-                    {{ friend.status }}  
+                  <div id="circleFriends" [ngStyle]="{'background':friend.statusColor}">
+                    {{ friend.status }}
                   </div>
                 </mat-icon>
                 <div>

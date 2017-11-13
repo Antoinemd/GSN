@@ -4,22 +4,29 @@ import { Subject } from 'rxjs/Subject';
 @Injectable()
 export class LoginService {
 
+  // private userIsLogged = false;
+
   // indique si l'utilisateur est conecté ou non
-  //un obserbale peut prendre jusqu'a 3 callback: normal data / errors / complete
-  subjectUserIsLoggedIn = new Subject();
+  // un obserbale peut prendre jusqu'a 3 callback: normal data / errors / complete
+  subjectUserIsLoggedIn = new Subject<boolean>();
 
-  constructor() { 
+  constructor() {
     this.subjectUserIsLoggedIn.next(false);
   }
-  
-  setUserLoggedIn():void {
+
+  setUserLoggedIn(): void {
     this.subjectUserIsLoggedIn.next(true);
+    // this.userIsLogged = true;
   }
 
-  setUserLoggedOut():void {
+  setUserLoggedOut(): void {
     this.subjectUserIsLoggedIn.next(false);
-    
+    // this.userIsLogged = false;
   }
+
+  // returnLogginStatus(): boolean {
+  //   return this.userIsLogged;
+  // }
 
   isAuthenticated() {
     const promise = new Promise(

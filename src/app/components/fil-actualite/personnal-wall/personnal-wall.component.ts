@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+/* Service */
+import { LoginService } from '../../../services/login.service';
 @Component({
   selector: 'app-personnal-wall',
   templateUrl: './personnal-wall.component.html',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PersonnalWallComponent implements OnInit {
 
-  constructor() { }
+  private userIsLogged = false;
+
+  constructor(private loginService: LoginService) { }
 
   ngOnInit() {
+    this.loginService.subjectUserIsLoggedIn.subscribe(
+      (estConnecte: boolean) => {
+        if (estConnecte === true) {
+          this.userIsLogged = true;
+        } else {
+          this.userIsLogged = false;
+        }
+      });
   }
 
 }

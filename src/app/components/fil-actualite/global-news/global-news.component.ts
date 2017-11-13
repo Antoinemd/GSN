@@ -11,23 +11,22 @@ import { LoginService } from '../../../services/login.service';
 export class GlobalNewsComponent implements OnInit {
 
   private userIsLogged = false;
-  
 
-  constructor( private loginService:LoginService) { }
+  constructor( private loginService: LoginService) { }
 
   ngOnInit() {
 
     this.loginService.subjectUserIsLoggedIn.subscribe(
       (estConnecte: boolean) => {
-        if(estConnecte === true){
+        if (estConnecte === true) {
           this.userIsLogged = true;
         } else {
           this.userIsLogged = false;
         }
       });
   }
-  
-  test(){
+
+  test() {
     console.log('on est en mode connecté ?: ', this.userIsLogged);
   }
   // ngOnDestroy(): void {

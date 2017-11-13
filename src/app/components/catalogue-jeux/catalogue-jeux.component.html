@@ -1,6 +1,8 @@
 
 <!-- <div class="containerX" fxFlexOffset="2%" > -->
 <div class="containerX">
+    <button mat-button (click)="test()">test</button>
+
 
   <h2>Catalogue des jeux V2</h2>
 
@@ -58,9 +60,9 @@
           </div>
 
           <!-- TODO: rendre ce boutton visible uniquement si l'utilisateur est loggé -->
-          <div class="iconBtn">
-            <button mat-icon-button 
-                    class="addIcon" 
+          <div *ngIf="getuserIsLogged()" class="iconBtn">
+            <button mat-icon-button
+                    class="addIcon"
                     (click)="openSnackBar()"
                     aria-label="Jeux ajouté">
               <i class="material-icons md-36">add_circle</i>
