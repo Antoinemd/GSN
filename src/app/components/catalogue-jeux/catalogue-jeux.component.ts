@@ -9,6 +9,7 @@ import { LoginService } from '../../services/login.service';
 
 /* Components */
 import { DialogueJeuxComponent } from './dialogue-jeux/dialogue-jeux.component';
+import { SnackBarComponent } from './snack-bar/snack-bar.component';
 
 @Component({
   selector: 'app-catalogue-jeux',
@@ -20,7 +21,7 @@ import { DialogueJeuxComponent } from './dialogue-jeux/dialogue-jeux.component';
 export class CatalogueJeuxComponent implements OnInit {
 
 
-  /***** attributs *****/
+  /***** attributes *****/
   // Tableau contenant la liste de tous les jeux du site
   ArrayCatalogueJeux: any;
 
@@ -44,6 +45,9 @@ export class CatalogueJeuxComponent implements OnInit {
 
   // boolean login
   private userIsLogged = false;
+  color = 'accent';
+  checked = false;
+  disabled = false;
   /*********************** */
 
   constructor(  private loginService: LoginService, private _ReturnJsonArrayService: ReturnJsonArrayService,
@@ -78,6 +82,16 @@ export class CatalogueJeuxComponent implements OnInit {
 
   getuserIsLogged(): boolean {
     return this.userIsLogged;
+  }
+
+  onSwitch(value): void {
+    if (value.checked === true) {
+      // this.device = 1;
+      this.userIsLogged = true;
+    } else {
+      // this.device = 0;
+      this.userIsLogged = false;
+    }
   }
 
 
@@ -142,13 +156,16 @@ export class CatalogueJeuxComponent implements OnInit {
     }
   }
 
-  openSnackBar() {
+  openSnackBar(nomJeu) {
     // avec un simple message
-    this.snackBar.open('Le jeu à été ajouté à votre collection! ');
+    // this.snackBar.open('simple message ');
+    this.snackBar.open(nomJeu,' a bien été ajouté à votre collection !', {
+      duration: 3000,
+    });
 
     // avec un composant
-    // this.snackBar.openFromComponent(CatalogueJeuxComponent, {
-    //   duration: 3000,
+    // this.snackBar.openFromComponent(SnackBarComponent, {
+    //   duration: 500,
     // });
   }
 

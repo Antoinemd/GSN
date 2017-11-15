@@ -40,6 +40,7 @@ import { ToolbarMenuComponent } from './components/top/toolbar-menu/toolbar-menu
 import { SideNavComponent } from './components/left-side/side-nav/side-nav.component';
 import { PersonnalGamelistComponent } from './components/left-side/personnal-gamelist/personnal-gamelist.component';
 import { CatalogueJeuxComponent } from './components/catalogue-jeux/catalogue-jeux.component';
+import { SnackBarComponent } from './components/catalogue-jeux/snack-bar/snack-bar.component';
 import { DialogueJeuxComponent } from './components/catalogue-jeux/dialogue-jeux/dialogue-jeux.component';
 import { UserFormComponent } from './components/block-login/user-form/user-form.component';
 import { LoginAndSubscribeComponent } from './components/block-login/login-and-subscribe/login-and-subscribe.component';
@@ -60,7 +61,7 @@ import { UserParamComponent } from './components/user-param/user-param.component
 import { LoginService } from './services/login.service';
 /* Authguard */
 import { AuthguardGuard } from './authGuard/authguard.guard';
-import { SnackBarComponent } from './components/catalogue-jeux/snack-bar/snack-bar.component';
+import { SearchResultsComponent } from './components/search-results/search-results.component';
 
 /* Routages des composants */
 // créer un module routing.modul
@@ -100,6 +101,7 @@ const appRoutes: Routes = [
     GlobalNewsComponent,
     PersonnalWallComponent,
     UserParamComponent,
+    SearchResultsComponent,
   ],
   imports: [
     BrowserModule,
