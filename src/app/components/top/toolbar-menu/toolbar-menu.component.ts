@@ -49,7 +49,7 @@ export class ToolbarMenuComponent implements OnInit {
 
   onLogout(): void {
     this.loginService.setUserLoggedOut();
-    this.router.navigate(['/']);
+    this.router.navigate(['/actualites/generales'])
   }
 
 
