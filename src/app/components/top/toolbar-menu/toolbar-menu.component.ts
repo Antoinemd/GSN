@@ -51,7 +51,7 @@ export class ToolbarMenuComponent implements OnInit, OnDestroy {
 
   onLogout():void {
     this.loginService.setUserLoggedOut();
-    this.router.navigate(['/'])
+    this.router.navigate(['/actualites/generales'])
   }
 
   
