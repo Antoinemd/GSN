@@ -16,7 +16,7 @@
             <a mat-button (click)="onLogout()">Deconnexion</a>
           </div>
         </ng-template>
-      <div class="searchBlock" fxLayout="row" fxLayoutAlign="start center">
+        <div class="searchBlock" fxLayout="row" fxLayoutAlign="start center">
           <div class="searchBar">
             <app-searchbar></app-searchbar>
           </div>
@@ -24,6 +24,19 @@
             <button mat-button class="linkIcon">
               <i class="material-icons md-24">search</i>
             </button>
+          </div>
+        </div>
+        <div *ngIf="userIsLogged" fxLayout="row" fxLayoutAlign="end center">
+          <div class="usericon">
+              <img src="https://pbs.twimg.com/profile_images/779792649591062529/zySsXy9U.jpg" width="60px" height="60px">
+          </div>
+          <div>
+            <p class="username">
+              Bonjour Nagarian
+              <a class="userprofil" href="blabla">Profil</a>
+              <img src="http://nonprofitquarterly.org/wp-content/blogs.dir/56/files/2017/08/red-cross-x.jpg" width="12px" height="12px">
+            </p>
+            <!--<a class="userprofil" href="bleble">Messages(0)</a>-->
           </div>
         </div>
        

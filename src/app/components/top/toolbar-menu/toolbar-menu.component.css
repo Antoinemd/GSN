@@ -8,3 +8,20 @@
 .searchBar {
     z-index: 62;
 }
+
+.usericon {
+
+}
+
+.username {
+    padding-left: 10px;
+    font-size: 15px;
+    color : rgb(124, 104, 104);
+    margin-bottom: 10px;
+}
+
+.userprofil {
+    padding-left: 10px;
+    color: orange;
+    font-size: 15px;
+}
