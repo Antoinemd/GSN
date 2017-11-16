@@ -1,8 +1,5 @@
-.containerX {
-    padding: 8px;
-}
+.containerX { padding: 8px; }
 
+.title{ text-align: center; margin-top: 20px; margin-bottom: 20px; }
 
-.mat-tab-link{
-    width: 50%;
-}
+.mat-tab-link { width: 50%; }

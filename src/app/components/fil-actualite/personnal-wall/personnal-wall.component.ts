@@ -10,7 +10,10 @@ import { LoginService } from '../../../services/login.service';
 export class PersonnalWallComponent implements OnInit {
 
   private userIsLogged = false;
-
+  color = 'accent';
+  checked = false;
+  disabled = false;
+  
   constructor(private loginService: LoginService) { }
 
   ngOnInit() {
@@ -22,6 +25,20 @@ export class PersonnalWallComponent implements OnInit {
           this.userIsLogged = false;
         }
       });
+  }
+
+  onSwitch(value): void {
+    if (value.checked === true) {
+      // this.device = 1;
+      this.userIsLogged = true;
+    } else {
+      // this.device = 0;
+      this.userIsLogged = false;
+    }
+  }
+
+  getuserIsLogged(): boolean {
+    return this.userIsLogged;
   }
 
 }

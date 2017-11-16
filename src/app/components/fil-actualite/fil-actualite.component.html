@@ -1,52 +1,46 @@
 
 <div class="containerX">
+    <mat-card class="title">
+        <mat-card-content>
+            <mat-card-title>Bienvenue sur votre page d'actualités !</mat-card-title>
+        </mat-card-content>
+    </mat-card>
     
-    <h2 style="text-align: center">
+    <!-- <h2 style="text-align: center">
         Bienvenue sur votre page d'actualités ! 
-    </h2>
-    <p style="text-align: center">
-        Ne manquez aucune nouvelles sur les jeux et les nouveautés qui vous intéressent !
-    </p>
-    <hr>
-    <div style="padding: 5px;">
-        <nav mat-tab-nav-bar >
-            <!-- <a  mat-tab-link 
-                *ngFor="let routeLink of routeLinks; let i = index;"
-                [routerLink]="routeLink.link"
-                routerLinkActive="mat-tab-link-active"
-                #rla="routerLinkActive"
-                [active]="activeLinkIndex === i"
-                (click)="activeLinkIndex = i"
-                [routerLinkActiveOptions]="{exact: true}"
-            >
+    </h2> -->
+    <mat-card class="grid-card">
+        <mat-card-content>
+            <mat-card-subtitle style="text-align:center">	
+                Ne manquez plus aucune nouvelle sur les jeux et les nouveautés qui vous intéressent !
+            </mat-card-subtitle>
+            
+            <div style="padding: 5px;">
+                <nav mat-tab-nav-bar >
+                    <!-- <a  mat-tab-link 
+                        *ngFor="let routeLink of routeLinks; let i = index;"
+                        [routerLink]="routeLink.link"
+                        routerLinkActive="mat-tab-link-active"
+                        #rla="routerLinkActive"
+                        [active]="activeLinkIndex === i"
+                        (click)="activeLinkIndex = i"
+                        [routerLinkActiveOptions]="{exact: true}"
+                    >
+                        {{routeLink.label}}
+                    </a> -->
+
+                    <a mat-tab-link
+                    *ngFor="let routeLink of routeLinks; let i = index"
+                    [routerLink]="routeLink.link"
+                    routerLinkActive #rla="routerLinkActive"
+                    [active]="rla.isActive"
+                    [routerLinkActiveOptions]="{exact: true}">
                 {{routeLink.label}}
-            </a> -->
-
-            <a mat-tab-link
-            *ngFor="let routeLink of routeLinks; let i = index"
-            [routerLink]="routeLink.link"
-            routerLinkActive #rla="routerLinkActive"
-            [active]="rla.isActive"
-            [routerLinkActiveOptions]="{exact: true}">
-           {{routeLink.label}}
-         </a>
-        </nav>
-        <router-outlet></router-outlet>
-    </div>
-    
-  <!-- <app-global-news></app-global-news>
-
-  <app-personnal-news></app-personnal-news> -->
+                </a>
+                </nav>
+                <router-outlet></router-outlet>
+            </div>
+        </mat-card-content>
+    </mat-card>
 </div>
-
-<!-- <nav md-tab-nav-bar>
-    <a md-tab-link *ngFor="let tab of tabs"
-      [routerLink]="[tab.path]"
-      routerLinkActive
-      #rla="routerLinkActive"
-      [routerLinkActiveOptions]="{exact: true}"
-      [active]="rla.isActive">
-      {{ tab.label }}
-    </a>
-  </nav> -->
 

@@ -9,19 +9,24 @@
     z-index: 62;
 }
 
-.usericon {
-
+.param {
+    padding: 6px;
 }
 
-.username {
+.user-icon {
+    width: 64px;
+    height: 64px;
+}
+
+/* .username {
     padding-left: 10px;
     font-size: 15px;
     color : rgb(124, 104, 104);
     margin-bottom: 10px;
-}
+} */
 
-.userprofil {
+/* .userprofil {
     padding-left: 10px;
     color: orange;
     font-size: 15px;
-}
+} */

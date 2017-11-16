@@ -1,5 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Subscription } from 'rxjs/Subscription';
+import { Component, OnInit } from '@angular/core';
 
 /* Services */
 import { ReturnJsonArrayService } from '../../services/return-json-array.service';
@@ -12,12 +11,10 @@ import { LoginService } from '../../services/login.service';
   providers: [ReturnJsonArrayService]
   
 })
-export class UserParamComponent implements OnInit, OnDestroy {
+export class UserParamComponent implements OnInit {
 
   private ArrayInfosUsers:any;
   private userIsLogged = false;
-  subscription: Subscription;
-  
 
   constructor( private _returnJsonArrayService:ReturnJsonArrayService,
                private _loginService:LoginService ) {
@@ -35,10 +32,6 @@ export class UserParamComponent implements OnInit, OnDestroy {
         }
       });
     
-  }
-
-  ngOnDestroy() {
-    this.subscription.unsubscribe();
   }
 
   getInfosJoueur() {

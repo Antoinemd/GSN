@@ -15,8 +15,8 @@ import { LoginService } from '../../services/login.service';
 })
 export class FilActualiteComponent implements OnInit {
 
+  // boolean de login
   private userIsLogged = false;
-  // private tabActivated = 'disabled';
 
   // Sub Router des onglet du tableau
   routeLinks: any[];
@@ -58,10 +58,5 @@ export class FilActualiteComponent implements OnInit {
           .find(tab => tab.link === '.' + this.router.url));
     });
   }
-
-  // ngOnDestroy(): void {
-  //   this.loginService.subjectUserIsLoggedIn.unsubscribe();
-  // }
-
 
 }
