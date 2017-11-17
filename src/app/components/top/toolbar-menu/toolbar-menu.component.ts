@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 /* Material */
 import {MatDialogModule,
@@ -10,8 +11,8 @@ import {MatDialogModule,
 /* Composants */
 import { UserFormComponent } from '../../block-login/user-form/user-form.component';
 import { SearchbarComponent } from '../../searchbar/searchbar.component';
-import { Router } from '@angular/router';
 
+/* Services */
 import { LoginService } from '../../../services/login.service';
 
 
@@ -52,6 +53,9 @@ export class ToolbarMenuComponent implements OnInit {
     this.router.navigate(['/actualites/generales'])
   }
 
+  onSearch(): void {
+    this.router.navigate(['/rechercher']);
+  }
 
   isUserLogged(): void {
     console.log('user logged ? ', this.userIsLogged);

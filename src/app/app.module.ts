@@ -23,7 +23,9 @@ import {  MatSidenavModule,
           MatDialogModule,
           MatCardModule,
           MatTabsModule,
-          MatSnackBarModule
+          MatSnackBarModule,
+          MatRadioModule,
+          MatCheckboxModule
         } from '@angular/material';
 
 
@@ -76,7 +78,8 @@ const appRoutes: Routes = [
     ]
   },
   { path: 'catalogue', component: CatalogueJeuxComponent },
-  { path: 'parametres', component: UserParamComponent, canActivate: [AuthguardGuard] }
+  { path: 'parametres', component: UserParamComponent, canActivate: [AuthguardGuard] },
+  { path: 'rechercher', component: SearchResultsComponent }
 ];
 
 @NgModule({
@@ -125,7 +128,9 @@ const appRoutes: Routes = [
     MatCardModule,
     RouterModule.forRoot(appRoutes),
     MatTabsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatRadioModule,
+    MatCheckboxModule
   ],
   entryComponents: [ DialogueJeuxComponent ],
   providers: [LoginService, AuthguardGuard],
