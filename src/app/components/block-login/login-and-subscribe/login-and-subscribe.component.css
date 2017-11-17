@@ -1,8 +1,7 @@
-.connexion {
-    width: 50%;
-}
+.containerX { padding: 8px; }
 
-.sub {
-    width: 50%;    
-}
+.title{ text-align: center; margin-top: 20px; margin-bottom: 20px; }
 
+.connexion { width: 50%; }
+
+.sub { width: 50%; }

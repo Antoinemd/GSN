@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 
 /* Composants */
@@ -16,7 +16,7 @@ import { LoginService } from '../../../services/login.service';
   providers: [ReturnJsonArrayService]
 })
 
-export class PersonnalGamelistComponent implements OnInit, OnDestroy {
+export class PersonnalGamelistComponent implements OnInit {
 
   // TODO remplacer par le service de connexion
   // boolean permettant de savoir si l'utilisateur est connecté ou non
@@ -43,7 +43,7 @@ export class PersonnalGamelistComponent implements OnInit, OnDestroy {
 
     this.loginService.subjectUserIsLoggedIn.subscribe(
       (estConnecte: boolean) => {
-        if(estConnecte === true){
+        if (estConnecte === true) {
           this.userIsLogged = true;
         } else {
           this.userIsLogged = false;
@@ -51,12 +51,12 @@ export class PersonnalGamelistComponent implements OnInit, OnDestroy {
       });
   }
 
-  
+
   // unsubscribe to ensure no memory leaks
   // tslint:disable-next-line:use-life-cycle-interface
   ngOnDestroy() {
     this.subscription.unsubscribe();
-    this.loginService.subjectUserIsLoggedIn.unsubscribe();
+    // this.loginService.subjectUserIsLoggedIn.unsubscribe();
   }
 
   getMenusStaus() {

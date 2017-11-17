@@ -5,9 +5,11 @@ import { MatDialog, MatSnackBar } from '@angular/material';
 /* Services */
 import { ReturnJsonArrayService } from '../../services/return-json-array.service';
 import { DialogsService } from '../../services/dialogs.service';
+import { LoginService } from '../../services/login.service';
 
 /* Components */
 import { DialogueJeuxComponent } from './dialogue-jeux/dialogue-jeux.component';
+import { SnackBarComponent } from './snack-bar/snack-bar.component';
 
 @Component({
   selector: 'app-catalogue-jeux',
@@ -15,9 +17,11 @@ import { DialogueJeuxComponent } from './dialogue-jeux/dialogue-jeux.component';
   styleUrls: ['./catalogue-jeux.component.css'],
   providers: [ReturnJsonArrayService, DialogsService]
 })
+
 export class CatalogueJeuxComponent implements OnInit {
 
-  /***** attributs *****/
+
+  /***** attributes *****/
   // Tableau contenant la liste de tous les jeux du site
   ArrayCatalogueJeux: any;
 
@@ -38,17 +42,65 @@ export class CatalogueJeuxComponent implements OnInit {
 
   // résultat pour le formulaire
   public result: any;
+
+  // boolean login
+  private userIsLogged = false;
+  color = 'accent';
+  checked = false;
+  disabled = false;
   /*********************** */
 
-  constructor( private _ReturnJsonArrayService: ReturnJsonArrayService,
-               private dialogueService: DialogsService,
-               public snackBar:MatSnackBar ) {
+  constructor(  private loginService: LoginService, private _ReturnJsonArrayService: ReturnJsonArrayService,
+                private dialogueService: DialogsService, public snackBar: MatSnackBar ) {
 
+                    // console.log('init before : ', this.userIsLogged);
+                    // this.userIsLogged = this.loginService.returnLogginStatus();
+                    // console.log('init after : ', this.userIsLogged);
   }
+
 
   ngOnInit() {
+
+
+
+    // récupération du catalogue
     this.getCatalogueJeux();
+
+    this.loginService.subjectUserIsLoggedIn.subscribe(
+      (estConnecte: boolean) => {
+        if (estConnecte === true) {
+          this.userIsLogged = true;
+        } else {
+          this.userIsLogged = false;
+        }
+      });
   }
+
+  // ngOnDestroy(): void {
+  //   // this.loginService.subjectUserIsLoggedIn.unsubscribe();
+  // }
+
+  getuserIsLogged(): boolean {
+    return this.userIsLogged;
+  }
+
+  onSwitch(value): void {
+    if (value.checked === true) {
+      // this.device = 1;
+      this.userIsLogged = true;
+    } else {
+      // this.device = 0;
+      this.userIsLogged = false;
+    }
+  }
+
+
+  test () {
+    // console.log('loggin service: ', this.loginService.returnLogginStatus());
+
+    console.log('loggin composant: ', this.userIsLogged);
+  }
+
 
   /**
    *  Sur la selection d'un élément, remplace l'attribut 'icone' par la chaine vide
@@ -63,7 +115,7 @@ export class CatalogueJeuxComponent implements OnInit {
     for (let i = 0; i < this.sortBy.length; i++) {
       this.sortBy[i].icone = '';
     }
-    console.log('la valeur selectionnée est: ', this.selectedValue)    ;
+    console.log('la valeur selectionnée est: ', this.selectedValue);
   }
 
   /**
@@ -104,13 +156,16 @@ export class CatalogueJeuxComponent implements OnInit {
     }
   }
 
-  openSnackBar() {
+  openSnackBar(nomJeu) {
     // avec un simple message
-    this.snackBar.open("Le jeu à été ajouté à votre collection! ")
-    
+    // this.snackBar.open('simple message ');
+    this.snackBar.open(nomJeu,' a bien été ajouté à votre collection !', {
+      duration: 3000,
+    });
+
     // avec un composant
-    // this.snackBar.openFromComponent(CatalogueJeuxComponent, {
-    //   duration: 3000,
+    // this.snackBar.openFromComponent(SnackBarComponent, {
+    //   duration: 500,
     // });
   }
 
