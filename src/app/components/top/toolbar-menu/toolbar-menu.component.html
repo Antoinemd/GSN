@@ -8,14 +8,7 @@
         <div class="button">
             <button mat-button (click)="isUserLogged()">test</button>
         </div>
-        <div *ngIf="!userIsLogged;else unlogContent">
-          <a mat-button routerLink="/login">Connexion</a>
-        </div>        
-        <ng-template #unlogContent>
-          <div>
-            <a mat-button (click)="onLogout()">Deconnexion</a>
-          </div>
-        </ng-template>
+        
         <div class="searchBlock" fxLayout="row" fxLayoutAlign="start center">
           <div class="searchBar">
             <app-searchbar></app-searchbar>
@@ -28,17 +21,26 @@
         </div>
         <div *ngIf="userIsLogged" fxLayout="row" fxLayoutAlign="end center">
           <div class="usericon">
-              <img src="https://pbs.twimg.com/profile_images/779792649591062529/zySsXy9U.jpg" width="60px" height="60px">
+              <img src="../../../assets/img/avatar/gatsu.jpg" width="60px" height="60px">
           </div>
           <div>
             <p class="username">
               Bonjour Nagarian
               <a class="userprofil" href="blabla">Profil</a>
-              <img src="http://nonprofitquarterly.org/wp-content/blogs.dir/56/files/2017/08/red-cross-x.jpg" width="12px" height="12px">
+              <img src="../../../assets/img/red-cross.jpg" width="12px" height="12px">
             </p>
             <!--<a class="userprofil" href="bleble">Messages(0)</a>-->
           </div>
         </div>
+        
+        <div *ngIf="!userIsLogged;else unlogContent">
+          <a mat-button routerLink="/login">Connexion</a>
+        </div>        
+        <ng-template #unlogContent>
+          <div>
+            <a mat-button (click)="onLogout()">Deconnexion</a>
+          </div>
+        </ng-template>
        
       </div>
 

@@ -1,0 +1,18 @@
+.container {
+    margin-top: 20px;   
+}
+
+.welcome {
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+}
+
+.text {
+    justify-content: center;
+    text-align: justify;
+}
+
+.actionButton {
+    text-align: center;
+    }
