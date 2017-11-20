@@ -5,7 +5,7 @@
         </mat-card-content>
     </mat-card>
 
-    
+
     <mat-card>
         <mat-card-content>
             <!-- div qui contient les checkbox -->
@@ -15,31 +15,53 @@
                 </section>
                 <section class="example-section">
                     <!-- checkBox "Tous" -->
-                    <mat-checkbox class="example-margin" 
-                                  color="warn" 
-                                  [(ngModel)]="selectedAll" 
+                    <mat-checkbox class="example-margin"
+                                  color="warn"
+                                  [(ngModel)]="selectedAll"
                                   (change)="selectAll();">
                         Tous
-                    </mat-checkbox>    
+                    </mat-checkbox>
                 </section>
                 <!-- Autres checkBox -->
                 <section class="example-section" *ngFor="let categorie of categories">
-                    <mat-checkbox class="example-margin" color="warn"[(ngModel)]="categorie.selected" (change)="checkIfAllSelected()"> 
+                    <mat-checkbox class="example-margin" color="warn"[(ngModel)]="categorie.selected" (change)="checkIfAllSelected()">
                         {{categorie.categorie}}
                     </mat-checkbox>
                 </section>
             </div>
-            
+            <hr>
             <!-- div qui contient les résultats -->
-            <div>
-                <mat-card>
-                    <mat-card-content>
+            <div fxLayout="column" fxLayoutAlign="space-around start">
+              <div>
+                <!-- résultat pour Articles-->
+                <div class="resultat" *ngIf="categories[0].selected===true">
+                  <mat-card-header>
+                    <mat-card-subtitle>Articles:</mat-card-subtitle>
+                  </mat-card-header>
+                </div>
 
+                <!-- résultat pour Jeux-->
+                <div class="resultat" *ngIf="categories[1].selected===true">
+                    <mat-card-header>
+                        <mat-card-subtitle>Jeux:</mat-card-subtitle>
+                    </mat-card-header>
+                </div>
 
-                    </mat-card-content>
-                </mat-card>
+                <!-- résultat pour Groupes-->
+                <div class="resultat" *ngIf="categories[2].selected===true">
+                    <mat-card-header>
+                      <mat-card-subtitle>Groupes:</mat-card-subtitle>
+                    </mat-card-header>
+                </div>
 
-                
+                <!-- résultat pour Personnes-->
+                <div class="resultat" *ngIf="categories[3].selected===true">
+                  <mat-card-header>
+                    <mat-card-subtitle>Personnes:</mat-card-subtitle>
+                  </mat-card-header>
+                </div>
+
+              </div>
             </div>
         </mat-card-content>
     </mat-card>
