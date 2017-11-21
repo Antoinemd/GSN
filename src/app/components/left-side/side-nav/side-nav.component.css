@@ -13,7 +13,7 @@
     /* margin-left: 0px; */
     position: fixed;
     background-color: rgba(255, 95, 71, 0.863);
-    border: 1px solid rgba(0, 0, 0, 0.5);
+    /* border: 1px solid rgba(0, 0, 0, 0.5); */
     padding: 2px;
     overflow:hidden;
     z-index: 1;
