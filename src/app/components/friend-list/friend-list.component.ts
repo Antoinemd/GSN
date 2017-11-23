@@ -44,6 +44,11 @@ export class FriendListComponent implements OnInit {
   //toolip position
   position = 'left';
 
+  menuIcon = [
+    {value: 'parametres', viewValue: 'Paramètres', icone: 'settings'},
+    {value: 'amis', viewValue: 'Gérer amis', icone: 'group_add'}
+  ];
+
   constructor( private _ReturnJsonArrayService: ReturnJsonArrayService,
                private loginService: LoginService,
                private router: Router ) {
@@ -88,6 +93,14 @@ export class FriendListComponent implements OnInit {
 
   onClick(): void {
     this.router.navigate(['/login']);
+  }
+
+  navigateOnClick(value):void {
+
+    console.log('on navigue vers ', value);
+    this.router.navigate(['/'+value]);
+
+
   }
 
   // todo: implémenter la méthode naviguer vers fiche description amis
