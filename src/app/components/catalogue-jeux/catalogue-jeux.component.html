@@ -1,79 +1,98 @@
 
 <!-- <div class="containerX" fxFlexOffset="2%" > -->
 <div class="containerX">
+  
+  <!-- <button mat-button (click)="test()">test</button> -->
 
-  <h2>Catalogue des jeux V2</h2>
-
-  <form class="sortList" fxLayout="row" fxLayoutAlign="end center" >
-    <mat-form-field>
-      <mat-select (change)="onChange()" (onOpen)="rebuildFilterMenu()"
-                  placeholder="Trier par:" [(ngModel)]="selectedValue" name="trie">
-        <mat-option *ngFor="let categorie of sortBy" [value]="categorie.viewValue">
-          <!-- https://github.com/angular/material/issues/2242
-          utilisation de 2 méthodes pour 'reconstruire' le menu apres selection
-          d'un choix,car le html et les <mat-icon> ne sont pas supportées -->
-
-            <mat-icon class="material-icons md-24">
-            {{categorie.icone}}
-          </mat-icon>
-
-
-          {{categorie.viewValue}}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-    <!-- <p> test: Selected value, {{selectedValue}}</p> -->
-  </form>
-
+  <mat-card class="title">
+    <mat-card-content>
+      <mat-card-title>Catalogue des jeux V2</mat-card-title>
+    </mat-card-content>
+  </mat-card>
 
   <!-- <mat-icon class="mat-18">sort by alpha</mat-icon> -->
-  <mat-grid-list cols="3" rowHeight="350px" gutterSize="8px">
-    <mat-grid-tile *ngFor="let jeu of ArrayCatalogueJeux" colspan="1" rowspan="1">
-      <!-- <mat-grid-tile-header>
-        <h2 mat-line>{{jeu.nom}}</h2>
-      </mat-grid-tile-header> -->
+  <mat-card class="grid-card">
+    <mat-card-content>
 
-      <img src="../../../assets/{{jeu.img}}" alt="jeu {{jeu.nom}}">
-
-      <mat-grid-tile-footer>
-          <!-- Site web -->
-
-        <h1 mat-line class="titreImagette">
-          {{jeu.nom}}
-        </h1>
-        <span mat-line class="footerIcon" fxLayout="row" fxLayoutAlign="center center">
-          <div class="iconBtn">
-            <!-- Site web -->
-            <!-- <a mat-icon-button routerLink="."><i class="material-icons md-36">link</i></a> -->
-            <button mat-icon-button class="linkIcon">
-              <a href="{{jeu.siteWeb}}"> <i class="material-icons md-36">http</i> </a>
-            </button>
+        <div fxLayout="row" fxLayoutAlign="space-around center">
+            <div class="example-section">
+              <mat-slide-toggle (change)="onSwitch($event)" [color]="color" [checked]="checked" [disabled]="disabled">
+                connecté: {{getuserIsLogged()}}
+              </mat-slide-toggle>
+            </div>
+    
+            <div>
+              <form class="sortList">
+                <mat-form-field>
+                  <mat-select (change)="onChange()" (onOpen)="rebuildFilterMenu()"
+                              placeholder="Trier par:" [(ngModel)]="selectedValue" name="trie">
+                    <mat-option *ngFor="let categorie of sortBy" [value]="categorie.viewValue">
+                      <!-- https://github.com/angular/material/issues/2242
+                      utilisation de 2 méthodes pour 'reconstruire' le menu apres selection
+                      d'un choix,car le html et les <mat-icon> ne sont pas supportées -->
+    
+                      <mat-icon class="material-icons md-24">
+                        {{categorie.icone}}
+                      </mat-icon>
+                      {{categorie.viewValue}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <!-- <p> test: Selected value, {{selectedValue}}</p> -->
+              </form>
+            </div>
           </div>
 
-          <div class="iconBtn">
-            <!-- Result from dialog: {{ result }} -->
-            <button class="infosIcon" mat-icon-button (click)="openDialog(jeu.nom,jeu.description)">
-              <i class="material-icons md-36">info</i>
-            </button>
-          </div>
 
-          <!-- TODO: rendre ce boutton visible uniquement si l'utilisateur est loggé -->
-          <div class="iconBtn">
-            <button mat-icon-button 
-                    class="addIcon" 
-                    (click)="openSnackBar()"
-                    aria-label="Jeux ajouté">
-              <i class="material-icons md-36">add_circle</i>
-            </button>
-         </div>
-        </span>
-        <!-- 2 façons d'importer une icone,mat-icon étant plus
-        reservé pour les formats d'icones svg -->
-        <!-- <mat-icon class="material-icons md-36">info</mat-icon> -->
-        <!-- <i class="material-icons md-36">info</i> -->
-      </mat-grid-tile-footer>
-    </mat-grid-tile>
-  </mat-grid-list>
+      <mat-grid-list cols="3" rowHeight="350px" gutterSize="8px">
+        <mat-grid-tile *ngFor="let jeu of ArrayCatalogueJeux" colspan="1" rowspan="1">
+          <!-- <mat-grid-tile-header>
+            <h2 mat-line>{{jeu.nom}}</h2>
+          </mat-grid-tile-header> -->
+
+          <img src="../../../assets/{{jeu.img}}" alt="jeu {{jeu.nom}}">
+
+          <mat-grid-tile-footer>
+              <!-- Site web -->
+
+            <h1 mat-line class="titreImagette">
+              {{jeu.nom}}
+            </h1>
+            <span mat-line class="footerIcon" fxLayout="row" fxLayoutAlign="center center">
+              <div class="iconBtn">
+                <!-- Site web -->
+                <!-- <a mat-icon-button routerLink="."><i class="material-icons md-36">link</i></a> -->
+                <button mat-icon-button class="linkIcon">
+                  <a href="{{jeu.siteWeb}}"> <i class="material-icons md-36">http</i> </a>
+                </button>
+              </div>
+
+              <div class="iconBtn">
+                <!-- Result from dialog: {{ result }} -->
+                <button class="infosIcon" mat-icon-button (click)="openDialog(jeu.nom,jeu.description)">
+                  <i class="material-icons md-36">info</i>
+                </button>
+              </div>
+
+              <!-- TODO: rendre ce boutton visible uniquement si l'utilisateur est loggé -->
+              <div *ngIf="getuserIsLogged()" class="iconBtn">
+                <button mat-icon-button
+                        class="addIcon"
+                        (click)="openSnackBar(this.jeu.nom)"
+                        aria-label="Jeux ajouté">
+                  <i class="material-icons md-36">add_circle</i>
+                </button>
+            </div>
+            </span>
+            <!-- 2 façons d'importer une icone,mat-icon étant plus
+            reservé pour les formats d'icones svg -->
+            <!-- <mat-icon class="material-icons md-36">info</mat-icon> -->
+            <!-- <i class="material-icons md-36">info</i> -->
+          </mat-grid-tile-footer>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </mat-card-content>
+  </mat-card>
 </div>
 
     <!-- <h2>Catalogue des jeux version 1</h2>

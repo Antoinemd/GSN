@@ -1,5 +1,8 @@
 <!-- article #1 -->
 <button (click)="test()">test</button>
+<mat-slide-toggle (change)="onSwitch($event)" [color]="color" [checked]="checked" [disabled]="disabled">
+    connecté: {{getuserIsLogged()}}
+</mat-slide-toggle>
 <p>
   En mode Déconnecté: liste d'articles random: derniers jeux, patch etc..
   
@@ -11,7 +14,8 @@
     l'utilisateur et le personal(composant à renommer) news contient les  publications peronnelles
   </p>
 
-<div *ngIf="!userIsLogged;else loggedContent"> <!-- Div pour le ngIf: actu générale non connecté -->  
+<!-- Div pour le ngIf: actu générale non connecté -->  
+<div *ngIf="!userIsLogged;else loggedContent"> 
   <div class="container" fxLayout="row" fxLayoutAlign="center center">
     <mat-card class="article">
       <mat-card-header>
@@ -197,7 +201,7 @@
 <!-- Début du template Contenu Connecté -->
 <ng-template #loggedContent>
     <div>
-      TEMPLATE du contenu connecté
+      TEMPLATE du contenu connecté ou il faut rajouter les articles concernantles jeux de l'utilisateur ( bns, w3, destiny2)
     </div>
 </ng-template>
         

@@ -1,0 +1,28 @@
+.containerX {
+  padding: 8px;
+}
+
+.title{
+  text-align: center;
+  margin-top: 20PX;
+  margin-bottom: 20px;
+}
+
+.mat-card-title {
+  margin-top: 20PX;
+  margin-bottom: 20px;
+}
+.example-full-width {
+  width: 100%;
+}
+
+img {
+  width: 200px;
+  height: 200px;;
+}
+
+.btn{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}

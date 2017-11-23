@@ -1,6 +1,6 @@
-<p>
-  personnal-wall works!
-</p>
+<mat-slide-toggle (change)="onSwitch($event)" [color]="color" [checked]="checked" [disabled]="disabled">
+    connecté: {{getuserIsLogged()}}
+</mat-slide-toggle>
 
 <p>
   mettre des messages personneles (ex: comme des tweet, tagger des gens avec des @pseudo etc..)

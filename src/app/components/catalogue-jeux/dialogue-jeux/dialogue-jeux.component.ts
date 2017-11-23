@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material';
 
+/* Serives */
+import { LoginService } from '../../../services/login.service';
+
 
 @Component({
   selector: 'app-dialogue-jeux',
@@ -9,12 +12,23 @@ import { MatDialogRef } from '@angular/material';
 })
 export class DialogueJeuxComponent implements OnInit {
 
+  userIsLogged: boolean;
+
   public title: string;
   public message: string;
 
-  constructor(public dialogRef: MatDialogRef <DialogueJeuxComponent>) { }
+  constructor(private loginService: LoginService,
+              public dialogRef: MatDialogRef <DialogueJeuxComponent>) { }
 
   ngOnInit() {
+    this.loginService.subjectUserIsLoggedIn.subscribe(
+      (estConnecte: boolean) => {
+        if (estConnecte === true) {
+          this.userIsLogged = true;
+        } else {
+          this.userIsLogged = false;
+        }
+      });
   }
 
 }

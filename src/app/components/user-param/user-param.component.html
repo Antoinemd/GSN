@@ -1,0 +1,85 @@
+<div class="containerX">
+
+  <!-- div titre -->
+  <mat-card class="title">
+    <mat-card-content>
+        <mat-card-title> Paramètres </mat-card-title>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- div info  + avatar -->
+  <mat-card class="param">
+    <mat-card-content>
+      <div *ngFor="let infoUser of ArrayInfosUsers"fxLayout="row" fxLayoutAlign="space-around none">
+        <div class="inputFields" fxLayout="column" fxLayoutAlign="start center" >
+          <form>
+
+            <div class="title">
+              <mat-card-title-group>
+              <mat-card-subtitle>Informations personnelles:</mat-card-subtitle>
+              <!-- <h3 class="title">Informations personnelles:</h3> -->
+              </mat-card-title-group>
+            </div>
+          
+            <div style="margin-top:20px">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Votre pseudo:" value="{{infoUser.idPseudo}}">
+              </mat-form-field>
+            </div>
+
+            <div>
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Votre nom:" value="{{infoUser.nom}}">
+              </mat-form-field>
+            </div>
+
+            <div>
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Votre prénom" value="{{infoUser.prenom}}">
+              </mat-form-field>
+            </div>
+
+            <div>
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Votre adresse e-mail" value="{{infoUser.email}}">
+              </mat-form-field>
+            </div>
+
+            <div>
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Votre mot de passe" value="" type="password">
+              </mat-form-field>
+            </div>
+
+            <div>
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Conformer votre mot de passe" value="" type="password">
+              </mat-form-field>
+            </div>
+
+          </form>
+        </div>
+
+
+        <div fxLayout="column" fxLayoutAlign="start center">
+          <div>
+            <div class="title">
+              <mat-card-title-group>
+                <mat-card-subtitle>Avatar:</mat-card-subtitle>
+              </mat-card-title-group>
+            </div>
+            <div>
+              <img class="avatar" mat-card-mat-image src="../../../assets/img/avatar/children-game_dribbble.png">
+            </div>
+            <div class="btn">
+                <button mat-raised-button>Parcourir</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="btn">
+          <button mat-raised-button><strong>Sauvegarder</strong></button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

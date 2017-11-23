@@ -1,17 +1,18 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
-/* Material */ 
-import {MatDialogModule, 
-        MatDialog, 
-        MatDialogRef, 
+/* Material */
+import {MatDialogModule,
+        MatDialog,
+        MatDialogRef,
         MAT_DIALOG_DATA,
         MatMenuModule } from '@angular/material';
 
 /* Composants */
 import { UserFormComponent } from '../../block-login/user-form/user-form.component';
 import { SearchbarComponent } from '../../searchbar/searchbar.component';
-import { Router } from '@angular/router';
 
+/* Services */
 import { LoginService } from '../../../services/login.service';
 
 
@@ -20,24 +21,22 @@ import { LoginService } from '../../../services/login.service';
   templateUrl: './toolbar-menu.component.html',
   styleUrls: ['./toolbar-menu.component.css']
 })
-export class ToolbarMenuComponent implements OnInit, OnDestroy {
+export class ToolbarMenuComponent implements OnInit {
 
-  // estLogged: boolean;
-  
-  // acc_connected: string;
-  private userIsLogged = false;
+  // état boolean loggin
+  public userIsLogged = false;
 
-  constructor(private router: Router, 
-              private loginService: LoginService) { }
+  constructor(private router: Router,
+              private loginService: LoginService) {
+
+
+  }
 
   ngOnInit() {
 
-    // this.estLogged = this.loginService.getUserLoggedIn();
-    // this.setBtnValue();
-    
     this.loginService.subjectUserIsLoggedIn.subscribe(
       (estConnecte: boolean) => {
-        if(estConnecte === true){
+        if (estConnecte === true) {
           this.userIsLogged = true;
         } else {
           this.userIsLogged = false;
@@ -45,21 +44,25 @@ export class ToolbarMenuComponent implements OnInit, OnDestroy {
       });
   }
 
-  ngOnDestroy() {
-    this.loginService.subjectUserIsLoggedIn.unsubscribe();    
-  }
+  // ngOnDestroy(): void {
+  //   this.loginService.subjectUserIsLoggedIn.unsubscribe();
+  // }
 
-  onLogout():void {
+  onLogout(): void {
     this.loginService.setUserLoggedOut();
     this.router.navigate(['/actualites/generales'])
   }
 
-  
-  isUserLogged(): void {
-    console.log('user logged ? ', this.userIsLogged);
+  onSearch(): void {
+    this.router.navigate(['/rechercher']);
   }
 
-  
+  isUserLogged(): void {
+    console.log('user logged ? ', this.userIsLogged);
+    // console.log('component statement service ? ', this.loginService.returnLogginStatus());
+  }
+
+
   openDialog() {
 
   }
