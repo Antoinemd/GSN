@@ -1,0 +1,35 @@
+[
+    {
+        "nom": "Dupont",
+        "prenom": "Jean",
+        "idPseudo": "JeanRage",
+        "avatar": "../../../children-game_dribble.png",
+        "email": "jean.dupont@grosmail.com",
+        "password":"joueur1"
+    },
+    {
+        "nom": "Coffe",
+        "prenom": "Anatole",
+        "idPseudo": "Méladose",
+        "avatar": "../../../children-game_dribble.png",
+        "email": "jean.coffe@sneakmail.com",
+        "password":"joueur2"
+    },
+    {
+        "nom": "Manege",
+        "prenom": "Pierre",
+        "idPseudo": "Ninja32",
+        "avatar": "../../../children-game_dribble.png",
+        "email": "pierre.manege@trollmail.com",
+        "password":"joueur3"
+    },
+    {
+        "nom": "Shante",
+        "prenom": "Sam",
+        "idPseudo": "SamChatouille",
+        "avatar": "../../../children-game_dribble.png",
+        "email": "sam.chatouille@nullpointermail.com",
+        "password":"joueur4"
+    }
+
+]

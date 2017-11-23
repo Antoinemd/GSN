@@ -1,29 +1,126 @@
 <div class="containerX">
-  <mat-card class="title">
+  <mat-card>
     <mat-card-content>
       <!-- Template à affichcher si l'utilisateur n'est pas connecté -->
       <div *ngIf="!userIsLogged;else loggedContent" fxLayout="row" fxLayoutAlign="center center" >
         <div class="friendListNotLogged">
-          <p> Il semblerait que vous ne soyez pas connecté ou pas encore inscrit ! </p>
-
+          <p>
+            Vous devez être connecté pour accéder à ce service !
+          </p>
+          <!-- connexion -->
           <div>
             <button mat-button (click)="onClick()">Connexion</button>
-            <button mat-button (click)="test()">test</button>
-
+            <!-- <button mat-button (click)="test()">test</button> -->
           </div>
         </div>
       </div>
     </mat-card-content>
   </mat-card>
 
+
+  <!-- <mat-card>
+      <mat-card-header>
+          <img matCardAvatar src="Avatar source">
+          <mat-card-title>Title</mat-card-title>
+          <mat-card-subtitle>Subtitle</mat-card-subtitle>
+      </mat-card-header>
+      <img matCardImage src="Card wide image source">
+      <mat-card-content>
+          Text content
+      </mat-card-content>
+      <mat-card-actions align="start">
+          <button mat-button (click)="onAction(event)">Action1</button>
+          <button mat-button (click)="onAction(event)">Action2</button>
+          
+      </mat-card-actions>
+      <mat-card-footer>
+          Footer
+      </mat-card-footer>
+  </mat-card> -->
+
       <!-- Template à afficher si l'utilisateur est connecté -->
       <ng-template #loggedContent>
+
+          <!-- <mat-card class="param">
+              <mat-card-content> -->
+                <div fxLayout="row" fxLayoutAlign="end center" *ngFor="let user of ArrayProfileJoueur">
+                    <!-- avatar -->
+                    <mat-card-header>
+                        <img matCardAvatar src="../../../../assets/{{user.avatar}}">
+                        <mat-card-title style="text-align:center">
+                          Bonjour <strong>{{user.idPseudo}}</strong>
+                        </mat-card-title>
+                        <!-- <mat-card-subtitle>Bonjour {{user.idPseudo}} !</mat-card-subtitle> -->
+                    </mat-card-header>
+                      
+                    <!-- <div>
+                      <img class="user-icon" src="../../../../assets/{{user.avatar}}">
+                    </div> -->
+                    
+                    <!-- username + btn profile -->
+                    <div>
+                      <!-- <section class="username">
+                        Bonjour {{user.idPseudo}}
+                      </section> -->
+                      <!-- <section>
+                        <a class="userprofil" mat-button routerLink="/parametres">Profil</a>
+                        <img src="http://nonprofitquarterly.org/wp-content/blogs.dir/56/files/2017/08/red-cross-x.jpg" width="12px" height="12px">
+                      </section> -->
+                    </div>
+                </div>
+              <!-- </mat-card-content>
+            </mat-card> -->
+        <hr>
+        <!-- bouton de gestion -->
+        <div fxLayout="row" fxLayoutAlign="start center">
+          <div>
+            <button matTooltip="Gérer votre profil" [matTooltipPosition]="position"
+            mat-icon-button [matMenuTriggerFor]="menuGerer">
+              <!-- <mat-icon>more_vert</mat-icon> -->
+              <!-- <i class="material-icons">more_horiz</i> -->
+              <i class="material-icons md-18">more_vert</i>
+            </button>
+          </div>
+          <!-- Définition du menu des status -->
+          <mat-menu #menuGerer="matMenu">
+              <div *ngFor="let state of status">
+                <!-- <button mat-menu-item (click)="setPlayerStatement(this.state)">
+                  <mat-icon>
+                    <div id="circle" [ngStyle]="{'background':state.icone}"></div>
+                  </mat-icon>
+                  <span>{{state.viewValue}}</span>
+                </button> -->
+                todo faire le menu de gestion
+              </div>
+            </mat-menu>
+
+
+        </div>
+
+
+        <hr>
+
         <div class="friendListLogged">
           <!-- Menu permettant de changer le status de l'utilisateur -->
-          <div xLayout="row" fxLayoutAlign="start center" >
-            <button mat-icon-button [matMenuTriggerFor]="menu">
-              <mat-icon>more_vert</mat-icon>
-            </button>
+          <div fxLayout="row" fxLayoutAlign="start center">
+            <div>
+              <button matTooltip="Modifier statut" [matTooltipPosition]="position"
+              mat-icon-button [matMenuTriggerFor]="menu">
+                <!-- <mat-icon>more_vert</mat-icon> -->
+                <!-- <i class="material-icons">more_horiz</i> -->
+                <i class="material-icons md-18">more_vert</i>
+              </button>
+            </div>
+            
+            <div class="status" fxFlexOffset="2">
+              <mat-icon>
+                <div id="circle" [ngStyle]="{'background':playerState.icone}"></div>
+              </mat-icon>
+            </div>
+            <div>
+              <span>{{playerState.viewValue}}</span>
+            </div>
+            <!-- Définition du menu des status -->
             <mat-menu #menu="matMenu">
               <div *ngFor="let state of status">
                 <button mat-menu-item (click)="setPlayerStatement(this.state)">
@@ -34,26 +131,6 @@
                 </button>
               </div>
             </mat-menu>
-            <!-- Affichage du pseudo -->
-            <div *ngFor="let data of ArrayProfileJoueur">
-                {{ data.idPseudo }}
-            </div>
-          </div>
-
-          <hr>
-          <!-- Affichage du status/dispo de l'utilisateur -->
-          <div class="votreStatus">
-              Votre status est:
-          </div>
-          <div fxLayout="row" fxLayoutAlign="start center">
-            <div class="status" fxFlexOffset="10">
-              <mat-icon>
-                <div id="circle" [ngStyle]="{'background':playerState.icone}"></div>
-              </mat-icon>
-            </div>
-            <div>
-                <span>{{playerState.viewValue}}</span>
-            </div>
           </div>
           <hr>
 

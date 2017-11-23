@@ -3,7 +3,7 @@
     "nom": "POK",
     "prenom": "Jean",
     "idPseudo": "Nagarian",
-    "avatar": "../../../children-game_dribble.png",
+    "avatar": "img/avatar/guts-avatar.jpg",
     "email": "jean.pok@grosmail.com",
     "password":"joueur",
     "listeJeux": [
@@ -31,9 +31,9 @@
     ],
     "friendList":[
       {
-        "pseudo": "user2",
+        "pseudo": "Gen287",
         "status": "online",
-        "statusColor": "#2F9395",
+        "statusColor": "#1DBA4C",
         "listeJeux": [
           {
             "jeu1": "accun jeux"
@@ -41,7 +41,7 @@
         ]
       },
       {
-        "pseudo": "user3",
+        "pseudo": "Raven1",
         "status": "away",
         "statusColor": "#F7D969",
         "listeJeux": [
@@ -53,7 +53,7 @@
         ]
       },
       {
-        "pseudo": "user4",
+        "pseudo": "FairToCheat",
         "status": "offline",
         "statusColor": "#5A5050",
         "listeJeux": [

@@ -4,6 +4,10 @@ import {FormControl} from '@angular/forms';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/startWith';
 import 'rxjs/add/operator/map';
+import { Router } from '@angular/router';
+
+/* Services */
+import { SearchBarService } from '../../services/search-bar.service';
 
 
 @Component({
@@ -64,7 +68,7 @@ export class SearchbarComponent implements OnInit {
     }
   ];
 
-  constructor() {
+  constructor(private router: Router, private searchBarService: SearchBarService) {
     this.gameCtrl = new FormControl();
     this.filteredGames = this.gameCtrl.valueChanges
         .startWith(null)
@@ -74,6 +78,11 @@ export class SearchbarComponent implements OnInit {
   filterGames(name: string) {
     return this.games.filter(game =>
       game.name.toLowerCase().indexOf(name.toLowerCase()) === 0);
+  }
+
+  onSearchChange(inputValue: string ) {  
+    console.log("searchBar component:", inputValue);
+    this.searchBarService.setResearchSubject(inputValue);
   }
 
 
