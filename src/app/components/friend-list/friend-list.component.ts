@@ -22,7 +22,7 @@ export class FriendListComponent implements OnInit {
 
   // liste des différents status du joueur
   status = [
-    {value: 'online', viewValue: 'En ligne', icone: '#2F9395'},
+    {value: 'online', viewValue: 'En ligne', icone: '#1DBA4C'},
     {value: 'away', viewValue: 'Absent(e)', icone: '#F7D969'},
     {value: 'busy', viewValue: 'Occupé(e)', icone: '#EC1C4B'},
     {value: 'offline', viewValue: 'Déconnecté(e)', icone: '#5A5050'}
@@ -35,11 +35,14 @@ export class FriendListComponent implements OnInit {
 
   // Status des amis de l'utilisateur (car inaccessile par le Json)
   friendStatus = [
-    {id: 'user2', status: 'online', icone: '#2F9395'},
+    {id: 'user2', status: 'online', icone: '#1DBA4C'},
     {id: 'user3', status: 'away', icone: '#F7D969'},
     {id: 'user4', status: 'busy', icone: '#EC1C4B'},
     {id: 'user5', status: 'offline', icone: '#5A5050'}
   ];
+
+  //toolip position
+  position = 'left';
 
   constructor( private _ReturnJsonArrayService: ReturnJsonArrayService,
                private loginService: LoginService,
@@ -64,7 +67,7 @@ export class FriendListComponent implements OnInit {
 
     // TODO: changer cet appel lors de la connection du joueur
     this.getProfileJoueur(); // récupération des données à l'initialisation du composant
-    this.playerState = { value: 'online', viewValue: 'En ligne', icone: '#2F9395' };
+    this.playerState = { value: 'online', viewValue: 'En ligne', icone: '#1DBA4C' };
   }
 
   // ngOnDestroy(): void {

@@ -160,7 +160,7 @@ export class CatalogueJeuxComponent implements OnInit {
     // avec un simple message
     // this.snackBar.open('simple message ');
     this.snackBar.open(nomJeu,' a bien été ajouté à votre collection !', {
-      duration: 3000,
+      duration: 3500,
     });
 
     // avec un composant

@@ -25,7 +25,8 @@ import {  MatSidenavModule,
           MatTabsModule,
           MatSnackBarModule,
           MatRadioModule,
-          MatCheckboxModule
+          MatCheckboxModule,
+          MatTooltipModule
         } from '@angular/material';
 
 
@@ -62,13 +63,15 @@ import { SearchResultsComponent } from './components/search-results/search-resul
 
 /* Services */
 import { LoginService } from './services/login.service';
+import { SearchBarService } from './services/search-bar.service';
 /* Authguard */
 import { AuthguardGuard } from './authGuard/authguard.guard';
 
 /* Routages des composants */
-// créer un module routing.modul
+// créer un module routing.module
 const appRoutes: Routes = [
-  // { path: '', redirectTo: 'generales', pathMatch: 'full'},
+  // redirection vers par défaut vers actualités générales.
+  { path: '', redirectTo: 'actualites/generales', pathMatch: 'full'},
   { path: 'login', component: LoginAndSubscribeComponent },
   { path: 'actualites', component: FilActualiteComponent,
     canActivateChild: [AuthguardGuard],
@@ -130,10 +133,11 @@ const appRoutes: Routes = [
     MatTabsModule,
     MatSnackBarModule,
     MatRadioModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatTooltipModule
   ],
   entryComponents: [ DialogueJeuxComponent ],
-  providers: [LoginService, AuthguardGuard],
-  bootstrap: [AppComponent]
+  providers: [ LoginService, SearchBarService, AuthguardGuard ],
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }

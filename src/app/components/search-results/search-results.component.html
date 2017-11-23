@@ -32,6 +32,10 @@
             <hr>
             <!-- div qui contient les résultats -->
             <div fxLayout="column" fxLayoutAlign="space-around start">
+                <div>
+                    Résultats de la recherche pour: " {{getInputKeyword()}} ".
+                </div>
+
               <div>
                 <!-- résultat pour Articles-->
                 <div class="resultat" *ngIf="categories[0].selected===true">

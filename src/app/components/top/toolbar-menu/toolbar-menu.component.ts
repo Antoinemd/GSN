@@ -14,25 +14,33 @@ import { SearchbarComponent } from '../../searchbar/searchbar.component';
 
 /* Services */
 import { LoginService } from '../../../services/login.service';
+import { ReturnJsonArrayService } from '../../../services/return-json-array.service';
 
 
 @Component({
   selector: 'app-toolbar-menu',
   templateUrl: './toolbar-menu.component.html',
-  styleUrls: ['./toolbar-menu.component.css']
+  styleUrls: ['./toolbar-menu.component.css'],
+  providers: [ReturnJsonArrayService]  
 })
 export class ToolbarMenuComponent implements OnInit {
 
   // état boolean loggin
   public userIsLogged = false;
+  // variable contenant les infos json
+  private ArrayInfosUsers:any;
+  
 
   constructor(private router: Router,
+              private _returnJsonArrayService:ReturnJsonArrayService,
               private loginService: LoginService) {
 
 
   }
 
   ngOnInit() {
+
+    this.getInfosJoueur();  
 
     this.loginService.subjectUserIsLoggedIn.subscribe(
       (estConnecte: boolean) => {
@@ -62,9 +70,11 @@ export class ToolbarMenuComponent implements OnInit {
     // console.log('component statement service ? ', this.loginService.returnLogginStatus());
   }
 
-
-  openDialog() {
-
+  getInfosJoueur(): void {
+    this._returnJsonArrayService.getUser1_Service()
+    .subscribe(infoUser => this.ArrayInfosUsers = infoUser,
+    error => console.log('erreurs: ', error),
+    () => console.log('Completed loading of JSON file: ', this.ArrayInfosUsers));
   }
 
 }

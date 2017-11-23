@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 /* Services */
 import { ReturnJsonArrayService } from '../../services/return-json-array.service';
 import { LoginService } from '../../services/login.service';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-user-param',
@@ -17,7 +18,8 @@ export class UserParamComponent implements OnInit {
   private userIsLogged = false;
 
   constructor( private _returnJsonArrayService:ReturnJsonArrayService,
-               private _loginService:LoginService ) {
+               private _loginService:LoginService,
+               public snackBar: MatSnackBar ) {
   }
 
   ngOnInit() {
@@ -34,11 +36,20 @@ export class UserParamComponent implements OnInit {
     
   }
 
-  getInfosJoueur() {
+
+  getInfosJoueur(): void {
     this._returnJsonArrayService.getUser1_Service()
     .subscribe(infoUser => this.ArrayInfosUsers = infoUser,
     error => console.log('erreurs: ', error),
     () => console.log('Completed loading of JSON file: ', this.ArrayInfosUsers));
+  }
+
+  openSnackBar(): void {
+    // avec un simple message
+    // this.snackBar.open('simple message ');
+    this.snackBar.open('Vos paramètres on bien été sauvegardé.','', {
+      duration: 3000,
+    });
   }
 
 }

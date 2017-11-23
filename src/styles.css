@@ -10,16 +10,9 @@ purple-green.css
 */
 
  /* some basic resets */
-body {
-    padding: 0;
-    margin: 0;
-    font-family: Roboto, sans-serif;
-}
+body { padding: 0; margin: 0; font-family: Roboto, sans-serif; }
 
-.mat-drawer-content mat-sidenav-content {
-  width: 75% !important;
-
-}
+.mat-drawer-content mat-sidenav-content { width: 75% !important; }
 
 
 /* propriétés globales des icones */
