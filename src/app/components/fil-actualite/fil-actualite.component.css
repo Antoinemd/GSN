@@ -1,5 +1,10 @@
 .containerX { padding: 8px; }
 
-.title{ text-align: center; margin-top: 20px; margin-bottom: 20px; }
+.title { 
+    text-align: center; 
+    margin-top: 20px; 
+    margin-bottom: 20px; 
+    background-color: rgba(220, 220, 220, 0.932);
+}
 
 .mat-tab-link { width: 50%; }
