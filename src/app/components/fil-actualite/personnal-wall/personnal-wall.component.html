@@ -5,3 +5,33 @@
 <p>
   mettre des messages personneles (ex: comme des tweet, tagger des gens avec des @pseudo etc..)
 </p>
+
+  <div class="container" fxLayout="row" fxLayoutAlign="center center">
+    <mat-card class="welcome">
+      <mat-card-header>
+        <mat-card-title>Bienvenu sur GSN, le réseau social pour les gamers !</mat-card-title>
+        <mat-card-subtitle>Et tout cela, sans publicité !</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src="../../../assets/img/big/thumbup.jpg">
+      <mat-card-content>
+        <p class="text" >
+            Pour profiter pleinement des fonctionnalités personnalisées du site avec un choix des
+            actualités que vous souhaiteriez suivre et une communauté florissante, nous vous invitons à vous
+            inscrire de ce pas!
+        </p>
+      </mat-card-content>
+
+      <mat-card-actions class="actionButton">
+        
+          <div *ngIf="!userIsLogged;else unlogContent" fxLayout="row" fxLayoutAlign="center center">
+              <a mat-button routerLink="/login">Connexion</a>
+          </div>
+        
+      </mat-card-actions>
+
+    </mat-card>
+  </div>
+
+  <!--div *ngIf="!userIsLogged;else unlogContent">
+    <a mat-button routerLink="/login">Connexion</a>
+  </div-->
