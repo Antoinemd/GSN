@@ -1,83 +1,82 @@
 <mat-toolbar color="warn">
-    <!-- content global des éléments -->
-      <div class="tb-menu" fxLayout="row" fxLayoutAlign="start center">
-        <!-- Block searchBar: input + bouton icone rechercher -->
-        <div class="searchBlock" fxLayout="row" fxLayoutAlign="start center">
-          <div class="searchBar">
-            <app-searchbar></app-searchbar>
-          </div>
-          <!-- bouton de recherche -->
-          <div>
-            <button mat-button class="linkIcon" (click)="onSearch()">
-              <i class="material-icons md-24">search</i>
-            </button>
-          </div>
+  <!-- content global des éléments -->
+    <div class="tb-menu" fxLayout="row" fxLayoutAlign="start center">
+      <!-- Block searchBar: input + bouton icone rechercher -->
+      <div class="searchBlock" fxLayout="row" fxLayoutAlign="start center">
+        <div class="searchBar">
+          <app-searchbar></app-searchbar>
         </div>
-        <!-- bouton actualités -->
-        <div class="menuBtn">
-          <a mat-button routerLink="/actualites/generales">
-            Actualités<i class="material-icons md-18">rss_feed</i>
-          </a>
-        </div>   
-        <!-- bouton catalogue -->
-        <div class="menuBtn">
-          <a mat-button routerLink="/catalogue">
-            Catalogue<i class="material-icons md-18">local_library</i>
-          </a></div> 
-        <!-- <div><button mat-button>Forum</button></div> -->
-        <div class="menuBtn" *ngIf="userIsLogged">
-          <button mat-button>
-            Messages<i class="material-icons md-18">message</i>
+        <!-- bouton de recherche -->
+        <div>
+          <button mat-button class="linkIcon" (click)="onSearch()">
+            <i class="material-icons md-24">search</i>
           </button>
         </div>
-
-        
-        <div *ngIf="!userIsLogged;else unlogContent" class="menuBtn">
-          <a mat-button routerLink="/login">
-            Connexion<i class="material-icons md-18">input</i>
-          </a>
-        </div>        
-        <!-- bouton deconnexion si user deconnecté -->
-        <ng-template #unlogContent>
-          <div class="menuBtn">
-            <a mat-button (click)="onLogout()">
-              Deconnexion<i class="material-icons md-18">power_settings_new</i>
-            </a>
-          </div>
-        </ng-template>
-
-        <mat-card class="param" *ngIf="userIsLogged">
-          <mat-card-content>
-            <div fxLayout="row" fxLayoutAlign="end center" *ngFor="let user of ArrayInfosUsers">
-                <!-- avatar -->
-                <div>
-                  <img class="user-icon" src="../../../../assets/{{user.avatar}}">
-                </div>
-                
-                <!-- username + btn profile -->
-                <div>
-                  <section class="username">
-                    Bonjour {{user.idPseudo}}
-                  </section>
-                  <section>
-                    <a class="userprofil" mat-button routerLink="/parametres">Profil</a>
-                    <!-- <img src="http://nonprofitquarterly.org/wp-content/blogs.dir/56/files/2017/08/red-cross-x.jpg" width="12px" height="12px"> -->
-                  </section>
-                </div>
-            </div>
-          </mat-card-content>
-        </mat-card>
+      </div>
+      <!-- bouton actualités -->
+      <div class="menuBtn">
+        <a mat-button routerLink="/actualites/generales">
+          Actualités<i class="material-icons md-18">rss_feed</i>
+        </a>
+      </div>  
+      <!-- bouton catalogue -->
+      <div class="menuBtn">
+        <a mat-button routerLink="/catalogue">
+          Catalogue<i class="material-icons md-18">local_library</i>
+        </a></div>
+      <!-- <div><button mat-button>Forum</button></div> -->
+      <div class="menuBtn" *ngIf="userIsLogged">
+        <button mat-button>
+          Messages<i class="material-icons md-18">message</i>
+        </button>
       </div>
 
-      <!--button mat-button (click)="openDialog()">Connexion</button-->
-      <!--button mat-button [matMenuTriggerFor]="loginform">Login</button>
-      
-      <mat-menu #loginform="matMenu">
-        <button mat-button [matMenuTriggerFor]="login">Connexion</button>
-        <button mat-menu-item [matMenuTriggerFor]="login">Connexion</button>
-        <button mat-button [matMenuTriggerFor]="subscr">Inscription</button>
-      </mat-menu-->
-      
-    <!-- </span> -->
+     
+      <div *ngIf="!userIsLogged;else unlogContent" class="menuBtn">
+        <a mat-button routerLink="/login">
+          Connexion<i class="material-icons md-18">input</i>
+        </a>
+      </div>       
+      <!-- bouton deconnexion si user deconnecté -->
+      <ng-template #unlogContent>
+        <div class="menuBtn">
+          <a mat-button (click)="onLogout()">
+            Deconnexion<i class="material-icons md-18">power_settings_new</i>
+          </a>
+        </div>
+      </ng-template>
+
+      <mat-card class="param" *ngIf="userIsLogged">
+        <mat-card-content>
+          <div fxLayout="row" fxLayoutAlign="end center" *ngFor="let user of ArrayInfosUsers">
+              <!-- avatar -->
+              <div>
+                <img class="user-icon" src="../../../../assets/{{user.avatar}}">
+              </div>
+             
+              <!-- username + btn profile -->
+              <div>
+                <section class="username">
+                  Bonjour {{user.idPseudo}}
+                </section>
+                <section>
+                  <a class="userprofil" mat-button routerLink="/parametres">Profil</a>
+                  <!-- <img src="http://nonprofitquarterly.org/wp-content/blogs.dir/56/files/2017/08/red-cross-x.jpg" width="12px" height="12px"> -->
+                </section>
+              </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+    <!--button mat-button (click)="openDialog()">Connexion</button-->
+    <!--button mat-button [matMenuTriggerFor]="loginform">Login</button>
+   
+    <mat-menu #loginform="matMenu">
+      <button mat-button [matMenuTriggerFor]="login">Connexion</button>
+      <button mat-menu-item [matMenuTriggerFor]="login">Connexion</button>
+      <button mat-button [matMenuTriggerFor]="subscr">Inscription</button>
+    </mat-menu-->
+   
+  <!-- </span> -->
 </mat-toolbar>
-  
