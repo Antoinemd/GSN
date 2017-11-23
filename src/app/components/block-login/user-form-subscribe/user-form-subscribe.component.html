@@ -1,39 +1,68 @@
-<form class="full-form" (ngSubmit)="onSignup(f)" #f="ngForm">
-    <div><h1>Pas encore inscrit ?<br>N'attendez plus !</h1>
-      <div class="subs-form" fxLayout="column" fxLayoutAlign="space-around center" >
-        <h2>Inscription</h2>
-        
-        
-        <mat-form-field>
+<mat-card class="full-form">
+  <mat-card-title>
+    Pas encore inscrit ?<br>N'attendez plus !
+  </mat-card-title>
+
+  <!-- <mat-card-subtitle>
+    Connexion
+  </mat-card-subtitle> -->
+  <hr>
+  <mat-card-content>
+    <form (ngSubmit)="onSignup(f)" #f="ngForm">
+    <!-- Input Pseudo -->
+    <!-- <div class="connexion-form" fxLayout="column" fxLayoutAlign="center center"> -->
+      <div class="subs-form" fxLayout="column" fxLayoutAlign="center center" >
+        <!-- pseudo -->
+        <div>
+          <mat-form-field>
             <input matInput placeholder="Pseudo" type="text" required="Vous devez choisir un pseudo">
           </mat-form-field>
-        <mat-form-field>
-          <input matInput placeholder="Nom" type="text" required="required">
-        </mat-form-field>
-        <mat-form-field>
+        </div>
+        <!-- nom -->
+        <div>
+          <mat-form-field>
+            <input matInput placeholder="Nom" type="text" required="required">
+          </mat-form-field>
+        </div>
+        <!-- prénom -->
+        <div>
+          <mat-form-field>
             <input matInput placeholder="Prénom" type="text" required="required">
-        </mat-form-field>
-        <mat-form-field>
+          </mat-form-field>
+        </div>
+        <!-- email -->
+        <div>
+          <mat-form-field>
             <input matInput placeholder="Entrez votre e-mail" [formControl]="email" required>
-            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}
+            <mat-error *ngIf="email.invalid">
+            {{getErrorMessage()}}
             </mat-error>
-        </mat-form-field>
-        <mat-form-field>
-          <input matInput placeholder="Mot de passe" [type]="hide ? 'password' : 'text'" required>
-          <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}
-          </mat-icon>
-        </mat-form-field>
-        <mat-form-field>
+          </mat-form-field>
+        </div>
+        <!-- mot de passe -->
+        <div>
+          <mat-form-field>
+            <input matInput placeholder="Mot de passe" [type]="hide ? 'password' : 'text'" required>
+            <mat-icon matSuffix (click)="hide = !hide">
+              {{hide ? 'visibility' : 'visibility_off'}}
+            </mat-icon>
+          </mat-form-field>
+        </div>
+        <!-- confirmation -->
+        <div>
+          <mat-form-field>
             <input matInput placeholder="Confirmez votre mot de passe" type="password" required>
-        </mat-form-field>
-
-        <!-- <mat-form-field>
-            <input matInput placeholder="Mot de passe" type="password" required="">
-        </mat-form-field> -->
-  
-        
-        <!-- <button>Envoyer</button> -->
-        <button class="grow" mat-button type="submit">S'inscrire</button>        
+          </mat-form-field>
+        </div>
       </div>
-    </div>
-  </form>
+      <!-- btn inscription -->
+      <mat-card-actions align="center">            
+        <div class="actionBtn">
+          <button class="grow" mat-button type="submit">S'inscrire</button>        
+        </div>
+      </mat-card-actions>
+    </form>
+  </mat-card-content>
+</mat-card>
+  
+

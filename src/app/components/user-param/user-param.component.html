@@ -78,7 +78,9 @@
         </div>
       </div>
       <div class="btn">
-          <button mat-raised-button><strong>Sauvegarder</strong></button>
+          <button mat-raised-button (click)="openSnackBar()">
+            <strong>Sauvegarder</strong>
+          </button>
       </div>
     </mat-card-content>
   </mat-card>

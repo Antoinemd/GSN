@@ -1,26 +1,45 @@
-<!-- <form class="full-form" (ngSubmit)="loginUser($event, f)" #f="ngForm"> -->
+  <!-- <form class="full-form" (ngSubmit)="loginUser($event, f)" #f="ngForm"> -->
 <!-- <form class="full-form" (ngSubmit)="loginUser($event)"> -->
-<form class="full-form" (ngSubmit)="directlyLogged()">
-  <div><h1>Déjà membre ?<br>Connectez-vous !</h1>
-    <div class="connexion-form" fxLayout="column" fxLayoutAlign="space-around center" >
-      <h2>Connexion</h2>
-      <hr>
 
-      <mat-form-field>
-        <input matInput placeholder="Pseudo" type="text" id="pseudo"
-               name="pseudo"required="" ngModel>
-      </mat-form-field>
+<mat-card class="full-form">
+  <mat-card-title>
+    Déjà membre ?<br>Connectez-vous !
+  </mat-card-title>
 
-      <mat-form-field>
-        <input matInput placeholder="Mot de Passe" type="password" id="password"
-               name="password" required="" ngModel>
-      </mat-form-field>
-      <div class="input">
-        <button class="grow" mat-button type="submit">Connexion</button>
+  <!-- <mat-card-subtitle>
+    Connexion
+  </mat-card-subtitle> -->
+  <hr>
+  <mat-card-content>
+    <form (ngSubmit)="directlyLogged()">
+      <!-- Input Pseudo -->
+      <div class="connexion-form" fxLayout="column" fxLayoutAlign="center center">
+        <div>
+          <mat-form-field>
+            <input matInput placeholder="Pseudo" type="text" id="pseudo"
+                  name="pseudo"required="" ngModel>
+          </mat-form-field>
+        </div>
+        <!-- Input password -->
+        <div>
+          <mat-form-field>
+            <input matInput placeholder="Mot de Passe" type="password" id="password"
+                  name="password" required="" ngModel>
+          </mat-form-field>  
+        </div>
       </div>
-      <p class="forgottenpw">
-        Mot de passe oublié ?
-      </p>
-    </div>
-  </div>
-</form>
+      <!-- btn connexion -->
+      <mat-card-actions align="center">            
+        <div class="actionBtn">
+          <button class="grow" mat-button type="submit">Connexion</button>
+        </div>
+
+        <div class="actionBtn2">
+          <p class="forgottenpw">
+            Mot de passe oublié ?
+          </p>
+        </div>
+      </mat-card-actions>
+    </form>
+  </mat-card-content>
+</mat-card>

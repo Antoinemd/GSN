@@ -13,6 +13,7 @@ export class ReturnJsonArrayService {
 
   userJeuxJsonPath = '../../../assets/json/user1.json';
   catalogueJeuxJsonPath = '../../../assets/json/catalogueJeux.json';
+  usersJsonPath = '../../../assets/json/users.json';
 
   isVisibleSource: BehaviorSubject <boolean> = new BehaviorSubject(false);
 
@@ -23,6 +24,11 @@ export class ReturnJsonArrayService {
   // getMenuStatus_Service(): boolean {
 
   // }
+
+  getUsers_Service(): Observable<any> {
+    return this._http.get(this.usersJsonPath)
+    .map((response: Response) => response.json());
+  }
 
   getUser1_Service(): Observable<any> {
     return this._http.get(this.userJeuxJsonPath)

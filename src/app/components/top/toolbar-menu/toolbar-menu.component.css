@@ -1,32 +1,21 @@
-.tb-menu {
-    width: 100%;
-}
+.tb-menu { width: 100%; }
 
-.searchBlock {
-    margin-left: 30px;
-}
-.searchBar {
-    z-index: 62;
-}
+.menuBtn { margin-left: 10px; margin-right: 10px; }
 
-.param {
-    padding: 6px;
-}
+.material-icons.md-18 { font-size: 18px; padding-left: 5px; }
+.material-icons.md-24 { font-size: 24px; padding-left: 5px; }
+.material-icons.md-36 { font-size: 36px; padding-left: 5px; }
 
-.user-icon {
-    width: 64px;
-    height: 64px;
-}
+.searchBlock { margin-left: 5%;  margin-right: 30px; }
 
-/* .username {
-    padding-left: 10px;
-    font-size: 15px;
-    color : rgb(124, 104, 104);
-    margin-bottom: 10px;
-} */
+.linkIcon { font-size: small; }
 
-/* .userprofil {
-    padding-left: 10px;
-    color: orange;
-    font-size: 15px;
-} */
+.searchBar { z-index: 62; }
+
+.param { padding: 6px; margin-left: 60px; }
+
+.username { font-size: smaller; padding-left: 5px; padding-right: 5px;}
+
+.user-icon { width: 42px; height: 42px; }
+
+.userprofil.mat-button { min-width: 1%; font-size: smaller }
