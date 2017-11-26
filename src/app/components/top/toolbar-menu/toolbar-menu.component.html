@@ -1,6 +1,10 @@
 <mat-toolbar class="tb">
   <!-- content global des éléments -->
     <div class="tb-menu" fxLayout="row" fxLayoutAlign="start center">
+        <div class="logo">
+            <img src="../../../assets/img/icons/gsn-logo.png"
+            width="50px" height="50px">
+        </div>
       <!-- Block searchBar: input + bouton icone rechercher -->
       <div class="searchBlock" fxLayout="row" fxLayoutAlign="start center">
         <div class="searchBar">
@@ -46,27 +50,27 @@
         </div>
       </ng-template>
 
-      <mat-card class="param" *ngIf="userIsLogged">
+      <!--mat-card class="param" *ngIf="userIsLogged">
         <mat-card-content>
           <div fxLayout="row" fxLayoutAlign="end center" *ngFor="let user of ArrayInfosUsers">
               <!-- avatar -->
-              <div>
+              <!--div>
                 <img class="user-icon" src="../../../../assets/{{user.avatar}}">
               </div>
              
               <!-- username + btn profile -->
-              <div>
+              <!--div>
                 <section class="username">
                   Bonjour {{user.idPseudo}}
                 </section>
                 <section>
                   <a class="userprofil" mat-button routerLink="/parametres">Profil</a>
                   <!-- <img src="http://nonprofitquarterly.org/wp-content/blogs.dir/56/files/2017/08/red-cross-x.jpg" width="12px" height="12px"> -->
-                </section>
+                <!--/section>
               </div>
           </div>
         </mat-card-content>
-      </mat-card>
+      </mat-card-->
     </div>
 
     <!--button mat-button (click)="openDialog()">Connexion</button-->
