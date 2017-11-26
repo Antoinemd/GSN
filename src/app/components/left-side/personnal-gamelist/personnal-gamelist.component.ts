@@ -35,7 +35,10 @@ export class PersonnalGamelistComponent implements OnInit {
               private loginService: LoginService ) {
     // subscribe to home component messages
     this.subscription = this.notifyStateMenuService.getMessage()
-      .subscribe(message => { this.message = message; });
+      .subscribe(message => { 
+        this.message = message; 
+        // console.log('this message= ',this.message);
+      });
   }
 
   ngOnInit() {

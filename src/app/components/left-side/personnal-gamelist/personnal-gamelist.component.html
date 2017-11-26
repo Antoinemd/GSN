@@ -1,15 +1,27 @@
-Ma liste
 <div class="nav-content">
-  <div *ngIf="!userIsLogged;else loggedContent">
-    contenu non logged
+  <div *ngIf="!userIsLogged;else loggedContent" fxFlex>
+    <div *ngIf="(message&&message.boolean)==true;else mouseOut">
+      <div>
+        Vous devez être connecté pour accéder à ce service !
+      </div>
+      <div>
+        <a href="" mat-button color="primary" routerLink="/login">Connexion</a>
+      </div>
+    </div>
+    <!-- template si la souris n'est pas dans la zone en mode non connecté -->
+    <ng-template #mouseOut>
+      <div>
+        <!-- Vide -->
+      </div>
+    </ng-template>
   </div>
 
   <ng-template #loggedContent>
     <div  class="containerX" *ngFor="let jeux of ArrayInfosUser" fxFlex>
-      <div  class="image-et-titre" *ngFor="let jeu of jeux.listeJeux"
-            fxLayout="row" fxLayoutAlign="start center">
+      <div class="image-et-titre" *ngFor="let jeu of jeux.listeJeux"
+           fxLayout="row" fxLayoutAlign="start center">
         <div class="icone">
-          <img src="../../../../assets/{{jeu.img}}" height="60px" width="60px"/>
+          <img src="../../../../assets/{{jeu.img}}"/>
         </div>
         <a mat-button class="bouton" routerLink=".">
           <div class="titre" *ngIf="(message&&message.boolean)==true">
@@ -20,3 +32,23 @@ Ma liste
     </div>
   </ng-template>
 </div>
+
+<!-- <mat-card>
+    <mat-card-header>
+        <img matCardAvatar src="Avatar source">
+        <mat-card-title>Title</mat-card-title>
+        <mat-card-subtitle>Subtitle</mat-card-subtitle>
+    </mat-card-header>
+    <img matCardImage src="Card wide image source">
+    <mat-card-content>
+        Text content
+    </mat-card-content>
+    <mat-card-actions align="start">
+        <button mat-button (click)="onAction(event)">Action1</button>
+        <button mat-button (click)="onAction(event)">Action2</button>
+        
+    </mat-card-actions>
+    <mat-card-footer>
+        Footer
+    </mat-card-footer>
+</mat-card> -->
