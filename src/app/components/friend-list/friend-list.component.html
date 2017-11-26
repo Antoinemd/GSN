@@ -40,38 +40,19 @@
 
       <!-- Template à afficher si l'utilisateur est connecté -->
       <ng-template #loggedContent>
-
-          <!-- <mat-card class="param">
-              <mat-card-content> -->
-                <div fxLayout="row" fxLayoutAlign="end center" *ngFor="let user of ArrayProfileJoueur">
-                    <!-- avatar -->
-                    <mat-card-header>
-                        <img matCardAvatar src="../../../../assets/{{user.avatar}}">
-                        <mat-card-title style="text-align:center">
-                          Bonjour <strong>{{user.idPseudo}}</strong>
-                        </mat-card-title>
-                        <!-- <mat-card-subtitle>Bonjour {{user.idPseudo}} !</mat-card-subtitle> -->
-                    </mat-card-header>
-                      
-                    <!-- <div>
-                      <img class="user-icon" src="../../../../assets/{{user.avatar}}">
-                    </div> -->
-                    
-                    <!-- username + btn profile -->
-                    <div>
-                      <!-- <section class="username">
-                        Bonjour {{user.idPseudo}}
-                      </section> -->
-                      <!-- <section>
-                        <a class="userprofil" mat-button routerLink="/parametres">Profil</a>
-                        <img src="http://nonprofitquarterly.org/wp-content/blogs.dir/56/files/2017/08/red-cross-x.jpg" width="12px" height="12px">
-                      </section> -->
-                    </div>
-                </div>
-              <!-- </mat-card-content>
-            </mat-card> -->
+        <div fxLayout="row" fxLayoutAlign="end center" *ngFor="let user of ArrayProfileJoueur">
+            <!-- avatar -->
+            <mat-card-header>
+                <img matCardAvatar src="../../../../assets/{{user.avatar}}">
+                <mat-card-title style="text-align:center">
+                  Bonjour <strong>{{user.idPseudo}}</strong>
+                </mat-card-title>
+                <!-- <mat-card-subtitle>Bonjour {{user.idPseudo}} !</mat-card-subtitle> -->
+            </mat-card-header>
+            <!-- username + btn profile -->
+        </div>
         <hr>
-        <!-- bouton de gestion -->
+        <!-- Icone menu + Nom menu -->
         <div fxLayout="row" fxLayoutAlign="start center">
           <div>
             <button matTooltip="Gérer votre profil" [matTooltipPosition]="position"
@@ -79,23 +60,26 @@
               <!-- <mat-icon>more_vert</mat-icon> -->
               <!-- <i class="material-icons">more_horiz</i> -->
               <!-- <i class="material-icons md-18">more_vert</i> -->
-              <i class="material-icons">settings</i>
+              <i class="material-icons md-18">menu</i>
             </button>
           </div>
-          <!-- Définition du menu des status -->
+          <!-- nom du menu  -->
+          <div class="menuPamram" fxFlexOffset="2">
+            Menu
+          </div>
+
+          
+          <!-- Définition du menu des paramètres -->
           <mat-menu #menuGerer="matMenu">
-              <div *ngFor="let state of status">
-                <!-- <button mat-menu-item (click)="setPlayerStatement(this.state)">
-                  <mat-icon>
-                    <div id="circle" [ngStyle]="{'background':state.icone}"></div>
-                  </mat-icon>
-                  <span>{{state.viewValue}}</span>
-                </button> -->
-                todo faire le menu de gestion
-              </div>
-            </mat-menu>
-
-
+            <div *ngFor="let choice of menuIcon">
+              <button mat-menu-item (click)="navigateOnClick(this.choice.value)">
+                <mat-icon>
+                  <div><i class="material-icons md-18">{{choice.icone}}</i></div>
+                </mat-icon>
+                <span>{{choice.viewValue}}</span>
+              </button>
+            </div>
+          </mat-menu>
         </div>
 
 
@@ -109,7 +93,7 @@
               mat-icon-button [matMenuTriggerFor]="menu">
                 <!-- <mat-icon>more_vert</mat-icon> -->
                 <!-- <i class="material-icons">more_horiz</i> -->
-                <i class="material-icons md-18">more_vert</i>
+                <i class="material-icons md-18">keyboard_arrow_down</i>
               </button>
             </div>
             
