@@ -1,6 +1,10 @@
+/* .mat-sidenav-content { background-color: black; } */
+
 .sidenavContent {
   width: 80vw;
-  background-color: black; 
+  /* background-color: black;  */
+  background-image: url("../../../../assets/img/background.jpg");
+  
 
     /* z-index: 1; */
     /* display: flex; */
@@ -10,7 +14,8 @@
   }
 
   .leftSidenav {
-    margin-top: 128px;
+    /* 2* 64 de hauteur de toolbar + 10px de padding pour le titre */
+    margin-top: 138px; 
     /* margin-left: 0px; */
     position: fixed;
     background-color: rgba(255, 95, 71, 0.863);
@@ -27,7 +32,13 @@
 
   .container {
     margin: 0;
+    /* background-color: black; */
+    background-image: url("../../../../assets/img/background.jpg");
+    
+    /* background-color: rgba(0, 0, 0, 0.637) */
     /* width: 80vw; */
     /* border: 1px solid rgba(0, 0, 0, 0.5); */
   }
+
+  /* .footer { margin-bottom: 0; position: relative;} */
 

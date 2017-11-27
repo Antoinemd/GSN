@@ -7,14 +7,8 @@
 
 .friendListNotLogged { text-align: center; padding: 10px; }
 
-#circle {
-  width: 15px;
-  height: 15px;
-  -webkit-border-radius: 25px;
-  -moz-border-radius: 25px;
-  border-radius: 25px;
-  /* background: red; */
-}
+#circle { width: 15px; height: 15px; -webkit-border-radius: 25px;
+  -moz-border-radius: 25px; border-radius: 25px; /* background: red; */ }
 
 /* .param { padding: 3px; } */
 .username { font-size: smaller; padding-left: 5px; padding-right: 5px;}
@@ -22,9 +16,7 @@
 .userprofil.mat-button { min-width: 1%; font-size: smaller }
 
 
-.votreStatus{
-  margin-left: 23px;
-}
+.votreStatus{ margin-left: 23px; }
 
 #circleFriends {
   width: 15px;
@@ -36,19 +28,13 @@
   margin-top: 5px;
 }
 
-.status {
-  margin-top: 10px;
-}
+.status { margin-top: 10px;}
 
-.friendsBlock {
-  padding-left: 5px;
-  padding-right: 5px;
-  padding-bottom: 5px;
-}
+.friendsBlock { padding-left: 5px; padding-right: 5px; padding-bottom: 5px; }
 
-.button {
-width: 100%;
-padding: 5px;
-padding-left: 20px;
-}
+.button { width: 100%; padding: 5px; padding-left: 20px; }
 
+.material-icons.md-18 { font-size: 18px; color: rgba(219, 40, 40, 0.829); }
+.material-icons.md-24 { font-size: 24px; color: rgba(219, 40, 40, 0.829); }
+.material-icons.md-36 { font-size: 36px; color: rgba(219, 40, 40, 0.829); }
+.material-icons.md-48 { font-size: 48px; color: rgba(219, 40, 40, 0.829); }
