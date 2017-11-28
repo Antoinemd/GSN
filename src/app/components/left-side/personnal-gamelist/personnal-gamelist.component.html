@@ -5,7 +5,7 @@
         Vous devez être connecté pour accéder à ce service !
       </div>
       <div>
-        <a href="" mat-button color="primary" routerLink="/login">Connexion</a>
+        <a mat-button color="primary" routerLink="/login">Connexion</a>
       </div>
     </div>
     <!-- template si la souris n'est pas dans la zone en mode non connecté -->
@@ -17,16 +17,27 @@
   </div>
 
   <ng-template #loggedContent>
-    <div  class="containerX" *ngFor="let jeux of ArrayInfosUser" fxFlex>
-      <div class="image-et-titre" *ngFor="let jeu of jeux.listeJeux"
-           fxLayout="row" fxLayoutAlign="start center">
-        <div class="icone">
-          <img src="../../../../assets/{{jeu.img}}"/>
-        </div>
-        <a mat-button class="bouton" routerLink=".">
-          <div class="titre" *ngIf="(message&&message.boolean)==true">
-            {{jeu.nomJeu}}
+    <div  class="containerX" fxFlex>
+      <!-- liste de jeux + bouton -->
+      <div *ngFor="let jeux of ArrayInfosUser">
+        <div class="image-et-titre" *ngFor="let jeu of jeux.listeJeux"
+            fxLayout="row" fxLayoutAlign="start center">
+          <div class="icone">
+            <img src="../../../../assets/{{jeu.img}}"/>
           </div>
+          <div>
+            <a mat-button class="bouton" routerLink=".">
+              <div class="titre" *ngIf="(message&&message.boolean)==true">
+                {{jeu.nomJeu}}
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- icone bouton ajouter jeu -->
+      <div align="center" *ngIf="(message&&message.boolean)==true" class="btnAdd" >
+        <a mat-button class="titre" style="padding-top: 5px" routerLink="/catalogue">
+          <i class="material-icons md-48">add_circle_outline</i> Ajouter ..
         </a>
       </div>
     </div>

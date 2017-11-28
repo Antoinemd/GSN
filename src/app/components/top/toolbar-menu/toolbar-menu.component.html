@@ -20,32 +20,38 @@
       <!-- bouton actualités -->
       <div class="menuBtn">
         <a mat-button routerLink="/actualites/generales">
-          Actualités<i class="material-icons md-18">rss_feed</i>
+          Actualités<i class="material-icons md-24">rss_feed</i>
         </a>
       </div>  
       <!-- bouton catalogue -->
       <div class="menuBtn">
         <a mat-button routerLink="/catalogue">
-          Catalogue<i class="material-icons md-18">local_library</i>
+          Catalogue<i class="material-icons md-24">local_library</i>
         </a></div>
-      <!-- <div><button mat-button>Forum</button></div> -->
+      <!-- Bouton message -->
       <div class="menuBtn" *ngIf="userIsLogged">
         <button mat-button>
-          Messages<i class="material-icons md-18">message</i>
+          Messages<i class="material-icons md-24">message</i>
         </button>
       </div>
+      <!-- Bouton Groupes -->
+      <div class="menuBtn" *ngIf="userIsLogged">
+          <button mat-button routerLink="/groupes">
+            Groupes<i class="material-icons md-24">group</i>
+          </button>
+        </div>
 
-     
+     <!-- bouton Connexion si user est déconnecté-->
       <div *ngIf="!userIsLogged;else unlogContent" class="menuBtn">
         <a mat-button routerLink="/login">
-          Connexion<i class="material-icons md-18">input</i>
+          Connexion<i class="material-icons md-24">input</i>
         </a>
       </div>       
-      <!-- bouton deconnexion si user deconnecté -->
+      <!-- bouton deconnexion si user est connecté -->
       <ng-template #unlogContent>
         <div class="menuBtn">
           <a mat-button (click)="onLogout()">
-            Deconnexion<i class="material-icons md-18">power_settings_new</i>
+            Deconnexion<i class="material-icons md-24">power_settings_new</i>
           </a>
         </div>
       </ng-template>

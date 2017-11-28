@@ -10,15 +10,15 @@ import { MatSnackBar } from '@angular/material';
   templateUrl: './user-param.component.html',
   styleUrls: ['./user-param.component.css'],
   providers: [ReturnJsonArrayService]
-  
 })
+
 export class UserParamComponent implements OnInit {
 
-  private ArrayInfosUsers:any;
+  public ArrayInfosUsers: any;
   private userIsLogged = false;
 
-  constructor( private _returnJsonArrayService:ReturnJsonArrayService,
-               private _loginService:LoginService,
+  constructor( private _returnJsonArrayService: ReturnJsonArrayService,
+               private _loginService: LoginService,
                public snackBar: MatSnackBar ) {
   }
 
@@ -33,7 +33,6 @@ export class UserParamComponent implements OnInit {
           this.userIsLogged = false;
         }
       });
-    
   }
 
 

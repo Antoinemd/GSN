@@ -4,14 +4,15 @@
 
 .title{
   text-align: center;
-  margin-top: 20PX;
+  margin-top: 20px;
   margin-bottom: 20px;
 }
 
-.mat-card-title {
-  margin-top: 20PX;
+/* .mat-card-title {
+  margin-top: 20px;
   margin-bottom: 20px;
-}
+} */
+
 .example-full-width {
   width: 100%;
 }

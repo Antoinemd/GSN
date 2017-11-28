@@ -1,10 +1,9 @@
 .tb-menu { width: 100%; }
 
-.logo {
-    padding-top: 9px;
-}
+.logo { padding-top: 9px; }
 
 .menuBtn { margin-left: 10px; margin-right: 10px; }
+.mat-button { font-size: 16px; font-weight: bolder; }
 
 .material-icons.md-18 { font-size: 18px; padding-left: 5px; }
 .material-icons.md-24 { font-size: 24px; padding-left: 5px; }

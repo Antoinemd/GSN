@@ -21,26 +21,24 @@ import { ReturnJsonArrayService } from '../../../services/return-json-array.serv
   selector: 'app-toolbar-menu',
   templateUrl: './toolbar-menu.component.html',
   styleUrls: ['./toolbar-menu.component.css'],
-  providers: [ReturnJsonArrayService]  
+  providers: [ReturnJsonArrayService]
 })
 export class ToolbarMenuComponent implements OnInit {
 
   // état boolean loggin
   public userIsLogged = false;
   // variable contenant les infos json
-  private ArrayInfosUsers:any;
-  
+  private ArrayInfosUsers: any;
+
 
   constructor(private router: Router,
-              private _returnJsonArrayService:ReturnJsonArrayService,
+              private _returnJsonArrayService: ReturnJsonArrayService,
               private loginService: LoginService) {
-
-
   }
 
   ngOnInit() {
 
-    this.getInfosJoueur();  
+    this.getInfosJoueur();
 
     this.loginService.subjectUserIsLoggedIn.subscribe(
       (estConnecte: boolean) => {

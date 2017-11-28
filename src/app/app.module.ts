@@ -60,6 +60,8 @@ import { GlobalNewsComponent } from './components/fil-actualite/global-news/glob
 import { PersonnalWallComponent } from './components/fil-actualite/personnal-wall/personnal-wall.component';
 import { UserParamComponent } from './components/user-param/user-param.component';
 import { SearchResultsComponent } from './components/search-results/search-results.component';
+import { UserRessultComponent } from './components/search-results/user-ressult/user-ressult.component';
+import { UserGroupsComponent } from './components/user-groups/user-groups.component';
 
 /* Services */
 import { LoginService } from './services/login.service';
@@ -81,6 +83,7 @@ const appRoutes: Routes = [
     ]
   },
   { path: 'catalogue', component: CatalogueJeuxComponent },
+  { path: 'groupes', component: UserGroupsComponent },
   { path: 'parametres', component: UserParamComponent, canActivate: [AuthguardGuard] },
   { path: 'rechercher', component: SearchResultsComponent }
 ];
@@ -109,6 +112,8 @@ const appRoutes: Routes = [
     PersonnalWallComponent,
     UserParamComponent,
     SearchResultsComponent,
+    UserRessultComponent,
+    UserGroupsComponent,
   ],
   imports: [
     BrowserModule,
