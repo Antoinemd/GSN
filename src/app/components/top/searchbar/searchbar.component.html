@@ -5,7 +5,7 @@
            (keyup.enter)="onSearchChange($event.target.value)">
     <mat-autocomplete #auto="matAutocomplete">
       <mat-option *ngFor="let game of filteredGames | async" [value]="game.name">
-        <img style="vertical-align:middle;" aria-hidden src="{{game.flag}}" height="25" />
+        <img style="vertical-align:middle;" aria-hidden src="{{game.icone}}" height="30" />
         <span>{{ game.name }}</span>
         <small>Genre: {{game.genre}}</small>
       </mat-option>

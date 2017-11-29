@@ -7,7 +7,7 @@ import 'rxjs/add/operator/map';
 import { Router } from '@angular/router';
 
 /* Services */
-import { SearchBarService } from '../../services/search-bar.service';
+import { SearchBarService } from '../../../services/search-bar.service';
 
 
 @Component({
@@ -24,47 +24,47 @@ export class SearchbarComponent implements OnInit {
     {
       name: 'Ark: Survival Evolved',
       genre: 'Action-Aventure, Survival Game',
-      flag: 'https://upload.wikimedia.org/wikipedia/commons/9/9d/Flag_of_Arkansas.svg'
+      icone: '../../../../assets/img/icons/ark-ico.png'
     },
     {
       name: 'Blade and Soul',
       genre: 'MMORPG, Fantasy',
-      flag: 'https://upload.wikimedia.org/wikipedia/commons/0/01/Flag_of_California.svg'
+      icone: '../../../../assets/img/icons/bns-ico.png'
     },
     {
       name: 'Destiny II',
       genre: 'MMORPG, Science-Fiction',
-      flag: 'https://upload.wikimedia.org/wikipedia/commons/f/f7/Flag_of_Florida.svg'
+      icone: '../../../../assets/img/icons/destiny2-ico.png'
     },
     {
       name: 'Final Fantasy XIV',
       genre: 'RPG, Fantasy',
-      flag: 'https://upload.wikimedia.org/wikipedia/commons/f/f7/Flag_of_Texas.svg'
+      icone: '../../../../assets/img/icons/ff14-ico.png'
     },
     {
       name: 'League of Legends',
       genre: 'Battle Arena',
-      flag: 'https://upload.wikimedia.org/wikipedia/commons/f/f7/Flag_of_Texas.svg'
+      icone: '../../../../assets/img/icons/lol-ico.png'
     },
     {
       name: 'Rocket League',
       genre: 'Sport',
-      flag: 'https://upload.wikimedia.org/wikipedia/commons/f/f7/Flag_of_Texas.svg'
+      icone: '../../../../assets/img/icons/rocketleague-ico.png'
     },
     {
       name: 'Unreal Tournament',
       genre: 'FPS, Science-Fiction',
-      flag: 'https://upload.wikimedia.org/wikipedia/commons/f/f7/Flag_of_Texas.svg'
+      icone: '../../../../assets/img/icons/ut-ico2.png'
     },
     {
       name: 'The Witcher 3 : Wild Hunt',
       genre: 'RPG, Fantasy',
-      flag: 'https://upload.wikimedia.org/wikipedia/commons/f/f7/Flag_of_Texas.svg'
+      icone: '../../../../assets/img/icons/witcher3-ico.png'
     },
     {
       name: 'World Of Warcraft',
       genre: 'MMORPG',
-      flag: 'https://upload.wikimedia.org/wikipedia/commons/f/f7/Flag_of_Texas.svg'
+      icone: '../../../../assets/img/icons/wow-ico.png'
     }
   ];
 

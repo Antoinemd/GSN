@@ -10,7 +10,7 @@ import {MatDialogModule,
 
 /* Composants */
 import { UserFormComponent } from '../../block-login/user-form/user-form.component';
-import { SearchbarComponent } from '../../searchbar/searchbar.component';
+import { SearchbarComponent } from '../../top/searchbar/searchbar.component';
 
 /* Services */
 import { LoginService } from '../../../services/login.service';

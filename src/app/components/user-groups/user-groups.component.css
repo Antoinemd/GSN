@@ -1,10 +1,10 @@
-.containerX {
-    padding: 8px;
-  }
+.containerX { padding: 8px; }
 
+.title { text-align: center; margin-top: 20px; margin-bottom: 20px; }
 
-  .title{
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
+/* .groups { width: 25%; } */
+
+/* .groupcard { margin-right: 15px;} */
+.btnGroup { width: 100%; padding: 5px; margin-bottom: 15p}
+.btnGroup:hover {background-color: rgb(93, 93, 145); border-radius: 5px;}
+.infos-groupes { margin-top: 20px; }
