@@ -1,6 +1,11 @@
 .containerX { padding: 8px; }
 
-.title{ text-align: center; margin-top: 20px; margin-bottom: 20px; }
+.title{ 
+    text-align: center; 
+    margin-top: 20px; 
+    margin-bottom: 20px;
+    background-color: #F5F5F5;
+}
 
 .connexion { width: 50%; }
 
