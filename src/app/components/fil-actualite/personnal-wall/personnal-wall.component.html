@@ -28,7 +28,8 @@
         <mat-card-actions class="actionButton">        
   
             <div *ngIf="!userIsLogged;else unlogContent" fxLayout="row" fxLayoutAlign="center center">
-                <a mat-button routerLink="/login">Connexion</a> 
+                <a mat-button routerLink="/login">Connexion
+                <i class="material-icons md-24">input</i></a> 
             </div>
   
        </mat-card-actions>
@@ -57,18 +58,18 @@
                         <input  class="inputfield" placeholder="Exprimez vous Nagarian...">
                 </mat-card-content>
                 <mat-card-actions class="actionButton">
-                    <!-- boutton daction "envoyer" -->
+                    <!-- bouton d'action "envoyer" -->
                     <button mat-button>
                         <div fxLayout="row" fxLayoutAlign="center center">
                         <div class="iconBtn"><i class="material-icons md-24">comment</i></div>
-                        <div>Send</div>
+                        <div>Envoyer</div>
                         </div>
                             </button>
-                    <!-- boutton daction "joindre" -->
+                    <!-- bouton d'action "joindre" -->
                     <button mat-button>
                             <div fxLayout="row" fxLayoutAlign="center center">
-                            <div class="iconBtn"><i class="material-icons md-24">share</i></div>
-                            <div>Insert</div>
+                            <div class="iconBtn"><i class="material-icons md-24">attachment</i></div>
+                            <div>Joindre</div>
                             </div>
                                 </button>
                 </mat-card-actions>
@@ -106,27 +107,34 @@
                 PS: Cascrânes s'est transfomé en Casscrânes (2 x s) le nom original à été spolié. C'est çà la célébrité :)
         </mat-card-content>
         <mat-card-actions class="actionButton">
-            <!-- boutton daction "like" -->
+            <!-- bouton daction "like" -->
             <button mat-button>
           <div fxLayout="row" fxLayoutAlign="center center">
             <div class="iconBtn"><i class="material-icons md-24">plus_one</i></div>
-            <div>LIKE</div>
+            <div>J'aime</div>
           </div>
             </button>
-        <!-- boutton daction "share" -->
+        <!-- bouton daction "share" -->
             <button mat-button>
             <div fxLayout="row" fxLayoutAlign="center center">
             <div class="iconBtn"><i class="material-icons md-24">share</i></div>
-            <div>SHARE</div>
+            <div>Partager</div>
           </div>
             </button>
-            <!-- boutton daction "comment" -->
+            <!-- bouton d'action "comment" -->
             <button mat-button>
                 <div fxLayout="row" fxLayoutAlign="center center">
                 <div class="iconBtn"><i class="material-icons md-24">comment</i></div>
-                <div>Comment</div>
+                <div>Commenter</div>
                 </div>
                     </button>
+            <!--bouton d'action "afficher les coms"-->
+            <button mat-button>
+                <div fxLayout="collumn" fxLayoutAlign="center center">
+                    <div class="iconBtn"><i class="material-icons md-24">comment</i></div>
+                            <div>Afficher les commentaires</div>
+                </div>
+            </button>
         </mat-card-actions>
         </mat-card>
     </div>
@@ -151,27 +159,28 @@
                 <a href="yop">@Nagarian</a> alors tu l'aimes ma raclette??!!!
             </mat-card-content>
             <mat-card-actions class="actionButton">
-                <!-- boutton daction "like" -->
+                <!-- bouton d'action "like" -->
                 <button mat-button>
                     <div fxLayout="row" fxLayoutAlign="center center">
                         <div class="iconBtn"><i class="material-icons md-24">plus_one</i></div>
-                            <div>LIKE</div>
+                            <div>J'aime</div>
                     </div>
                 </button>
-                <!-- boutton daction "share" -->
+                <!-- bouton d'action "share" -->
                 <button mat-button>
                     <div fxLayout="row" fxLayoutAlign="center center">
                         <div class="iconBtn"><i class="material-icons md-24">share</i></div>
-                            <div>SHARE</div>
+                            <div>Partager</div>
                     </div>
                 </button>
-                <!-- boutton daction "comment" -->
+                <!-- bouton d'action "comment" -->
                 <button mat-button>
                     <div fxLayout="row" fxLayoutAlign="center center">
                         <div class="iconBtn"><i class="material-icons md-24">comment</i></div>
-                            <div>Comment</div>
+                            <div>Commenter</div>
                     </div>
                 </button>
+                <!--bouton d'action "afficher les coms"-->
                 <button mat-button>
                         <div fxLayout="collumn" fxLayoutAlign="center center">
                             <div class="iconBtn"><i class="material-icons md-24">comment</i></div>
