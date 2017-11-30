@@ -1,0 +1,9 @@
+.game-box {
+  width: 250px;
+}
+
+.inputfield {
+    /* width: 300px; */
+    background : white;
+    color: black;
+}

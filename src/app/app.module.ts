@@ -49,7 +49,7 @@ import { UserFormComponent } from './components/block-login/user-form/user-form.
 import { LoginAndSubscribeComponent } from './components/block-login/login-and-subscribe/login-and-subscribe.component';
 import { UserFormSubscribeComponent } from './components/block-login/user-form-subscribe/user-form-subscribe.component';
 import { Searchbv3Component } from './components/searchbv3/searchbv3.component';
-import { SearchbarComponent } from './components/searchbar/searchbar.component';
+import { SearchbarComponent } from './components/top/searchbar/searchbar.component';
 import { SubsFormComponent } from './components/subs-form/subs-form.component';
 import { BotComponent } from './components/bot/bot.component';
 import { ArticleComponent } from './components/article/article.component';
@@ -60,7 +60,6 @@ import { GlobalNewsComponent } from './components/fil-actualite/global-news/glob
 import { PersonnalWallComponent } from './components/fil-actualite/personnal-wall/personnal-wall.component';
 import { UserParamComponent } from './components/user-param/user-param.component';
 import { SearchResultsComponent } from './components/search-results/search-results.component';
-import { UserRessultComponent } from './components/search-results/user-ressult/user-ressult.component';
 import { UserGroupsComponent } from './components/user-groups/user-groups.component';
 
 /* Services */
@@ -112,7 +111,6 @@ const appRoutes: Routes = [
     PersonnalWallComponent,
     UserParamComponent,
     SearchResultsComponent,
-    UserRessultComponent,
     UserGroupsComponent,
   ],
   imports: [

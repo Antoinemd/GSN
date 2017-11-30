@@ -1,29 +1,32 @@
-<mat-toolbar class="botbar">
-<!-- <div class="botbar"> -->
-  <div class="bot-left">
-    <img src="../../../assets/img/icons/gsn-logo.png"
-      width="50px" height="50px">
-  </div>
-  <div class="example-fill-remaining-space"></div>
-  <div class="bot-center">
-    <!--essayer avec des div et utiliser le padding?-->
-    <p class="bottext">
-      Copyright © 2017 GNS Corporation - Société du groupe BNS
-      <br />
-      Jouer comporte des risques : endettement, dépendance, ... Appelez le 09 74 75 13 13 (appel non surtaxé)
-    </p>
-  </div>
-  <div class="example-fill-remaining-space"></div>
-  <div class="bot-right">
-    <a class="fb" href="http://facebook.com">
-      <img src="../../../assets/img/icons/faceimg.jpg " alt="Facebook" width="30px" height="30px"/>
-    </a>
-  </div>
-  <div>    
-    <a class="twitter" href="http://twitter.com">
-      <img src="../../../assets/img/icons/twitimg.jpg " alt="Twitter" width="30px" height="30px"/>
-    </a>
-  </div>
-</mat-toolbar>
-
-<!-->Pour les logos au lieu des titres, voir ceci .fb {background-image: url('/images/icones/facebook.png');}-->
+<!-- <mat-toolbar class="botbar"> -->
+<div class="botbar">
+  <div fxLayout="row" fxLayoutAlign="space-between center">
+    <!-- logo -->
+    <div class="bot-left">
+      <img src="../../../assets/img/icons/gsn-logo.png"width="50px" height="50px">
+    </div>
+    <!-- centre de la barre -->
+    <div class="bot-center" fxLayout="column" fxLayoutAlign="center center">
+      <div>
+        Copyright © 2017 GNS Corporation - Société du groupe BNS
+      </div>
+        <div>
+        Jouer comporte des risques : endettement, dépendance, ... Appelez le 09 74 75 13 13 (appel non surtaxé)
+      </div>
+    </div>
+    <!-- icones réseaux sociaux -->
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+      <div class="bot-right">
+        <a class="fb" href="http://facebook.com">
+          <img src="../../../assets/img/icons/faceimg.jpg " alt="Facebook" width="30px" height="30px"/>
+        </a>
+      </div>
+      <div class="twitter">    
+        <a href="http://twitter.com">
+          <img src="../../../assets/img/icons/twitimg.jpg " alt="Twitter" width="30px" height="30px"/>
+        </a>
+      </div>
+    </div>
+  </div>  
+</div>
+<!-- </mat-toolbar> -->

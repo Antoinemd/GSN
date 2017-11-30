@@ -2,13 +2,72 @@
     
   <!-- div titre -->
   <mat-card class="title">
-      <mat-card-content>
-          <mat-card-title>Groupes</mat-card-title>
-      </mat-card-content>
-    </mat-card>
+    <mat-card-content>
+      <mat-card-title>Groupes</mat-card-title>
+    </mat-card-content>
+  </mat-card>
 
-<p>
-  user-groups works!
-</p>
+  <div fxLayout="row" fxLayoutAlign="start start">
+    <div fxFlex="20">
+      <!-- rajouter un div pour faire un ng for en colone -->
+        <mat-card class="groupcard">
+          <div fxLayout="column" fxLayoutAlign="center center" class="infos-groupes" 
+               *ngFor="let group of groupsArray">                  
+              <div class="btnGroup">
+                <!-- <button mat-button class="btnGroup"> -->
+                <mat-card-header>
+                  <img matCardAvatar src="{{group.icone}}">
+                  <mat-card-title><strong>{{group.nomGroupe}}</strong></mat-card-title>
+                  <mat-card-subtitle>{{group.nomJeu}}</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                  <h4>Informations</h4>
+                  <section><p>Taille: {{group.nbPersonnes}}</p></section>
+                  <section><p>Nouveaux messages: {{group.nbNewMsg}}</p></section>                
+                </mat-card-content>
+              <!-- </button> -->
+              
+              </div>
+            </div>
+        
+          <!-- <img matCardImage src="Card wide image source"> -->
+          <!-- <mat-card-content>
+              Text content
+          </mat-card-content>
+          <mat-card-actions align="start">
+              <button mat-button (click)="onAction(event)">Action1</button>
+              <button mat-button (click)="onAction(event)">Action2</button>
+              
+          </mat-card-actions>
+          <mat-card-footer>
+              Footer
+          </mat-card-footer> -->
+        </mat-card>
+    </div>
+
+    <div fxFlex>
+
+    </div>
+
+    <div fxFlex="75">
+      <mat-card class="groups">
+          <mat-card-header>
+            <mat-card-title>Title</mat-card-title>
+            <mat-card-subtitle>Subtitle</mat-card-subtitle>
+          </mat-card-header>
+          <img matCardImage src="Card wide image source">
+          <mat-card-content>
+            Text content
+          </mat-card-content>
+          <mat-card-actions align="start">
+            <button mat-button (click)="onAction1">Action1</button>
+                
+          </mat-card-actions>
+          <mat-card-footer>
+            Footer
+          </mat-card-footer>
+        </mat-card>
+    </div>
+</div>
 
 </div>
