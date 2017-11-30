@@ -5,7 +5,9 @@
         Vous devez être connecté pour accéder à ce service !
       </div>
       <div>
-        <a mat-button color="primary" routerLink="/login">Connexion</a>
+        <a mat-button color="primary" routerLink="/login">
+          <strong>Connexion </strong><i class="material-icons md-24">input</i>
+        </a>
       </div>
     </div>
     <!-- template si la souris n'est pas dans la zone en mode non connecté -->
@@ -43,23 +45,3 @@
     </div>
   </ng-template>
 </div>
-
-<!-- <mat-card>
-    <mat-card-header>
-        <img matCardAvatar src="Avatar source">
-        <mat-card-title>Title</mat-card-title>
-        <mat-card-subtitle>Subtitle</mat-card-subtitle>
-    </mat-card-header>
-    <img matCardImage src="Card wide image source">
-    <mat-card-content>
-        Text content
-    </mat-card-content>
-    <mat-card-actions align="start">
-        <button mat-button (click)="onAction(event)">Action1</button>
-        <button mat-button (click)="onAction(event)">Action2</button>
-        
-    </mat-card-actions>
-    <mat-card-footer>
-        Footer
-    </mat-card-footer>
-</mat-card> -->

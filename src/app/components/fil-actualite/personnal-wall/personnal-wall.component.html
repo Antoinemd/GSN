@@ -2,21 +2,17 @@
     connecté: {{getuserIsLogged()}}
 </mat-slide-toggle>
 
-
-
 <div *ngIf="!userIsLogged;else unlogContent" class="container" fxLayout="row" fxLayoutAlign="center center">
   
-   <mat-card class="article">
-    
-      <mat-card-header> 
-          <mat-card-title>Bienvenu sur GSN, le réseau social pour les gamers !</mat-card-title>
-  
-          <mat-card-subtitle>Et tout cela, sans publicité !</mat-card-subtitle>  
+    <mat-card class="article">
+        <mat-card-header> 
+            <mat-card-title>Bienvenu sur GSN, le réseau social pour les gamers !</mat-card-title>
+            <mat-card-subtitle>Et tout cela, sans publicité !</mat-card-subtitle>  
         </mat-card-header>
         
-        <img mat-card-image src="../../../assets/img/big/thumbup.jpg"
-            width="300px" height="200px" >
-        
+        <div style="text-align:center;">
+            <img src="../../../assets/img/big/thumbup.jpg">
+        </div>
         <mat-card-content>  
           <p class="text" > 
               Pour profiter pleinement des fonctionnalités personnalisées du site avec un choix des

@@ -1,7 +1,6 @@
 .containerX { padding: 8px; height: 700px;}
 
-.title { text-align: center; margin-top: 20px; margin-bottom: 20px; }
-
+.title{ text-align: center;margin-top: 20px;margin-bottom: 20px;background-color: #F5F5F5;}
 .search-keyword { margin-top: 20px; margin-bottom: 30px;}
 
 .example-margin { margin: 0 10px; }

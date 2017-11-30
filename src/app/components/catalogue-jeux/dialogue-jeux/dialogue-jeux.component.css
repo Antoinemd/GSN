@@ -1,3 +1,6 @@
 .dialogTitle {
-  background: #f44336;;
+  background: #3E51B5;
+  padding-top: 2px;
 }
+
+.dialogDesc { text-align: justify;}

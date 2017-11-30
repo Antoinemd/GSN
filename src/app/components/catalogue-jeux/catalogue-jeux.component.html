@@ -1,9 +1,5 @@
 
-<!-- <div class="containerX" fxFlexOffset="2%" > -->
 <div class="containerX">
-  
-  <!-- <button mat-button (click)="test()">test</button> -->
-
   <mat-card class="title">
     <mat-card-content>
       <!-- <mat-card-title>Catalogue des jeux V2</mat-card-title> -->
@@ -11,7 +7,6 @@
     </mat-card-content>
   </mat-card>
 
-  <!-- <mat-icon class="mat-18">sort by alpha</mat-icon> -->
   <mat-card class="grid-card">
     <mat-card-content>
 
@@ -57,7 +52,7 @@
               <!-- Site web -->
 
             <h1 mat-line class="titreImagette">
-              {{jeu.nom}}
+              <strong>{{jeu.nom}}</strong>
             </h1>
             <span mat-line class="footerIcon" fxLayout="row" fxLayoutAlign="center center">
               <div class="iconBtn">
@@ -75,7 +70,6 @@
                 </button>
               </div>
 
-              <!-- TODO: rendre ce boutton visible uniquement si l'utilisateur est loggé -->
               <div *ngIf="getuserIsLogged()" class="iconBtn">
                 <button mat-icon-button
                         class="addIcon"
@@ -85,42 +79,10 @@
                 </button>
             </div>
             </span>
-            <!-- 2 façons d'importer une icone,mat-icon étant plus
-            reservé pour les formats d'icones svg -->
-            <!-- <mat-icon class="material-icons md-36">info</mat-icon> -->
-            <!-- <i class="material-icons md-36">info</i> -->
           </mat-grid-tile-footer>
         </mat-grid-tile>
       </mat-grid-list>
     </mat-card-content>
   </mat-card>
 </div>
-
-    <!-- <h2>Catalogue des jeux version 1</h2>
-
-    <div class="container"  fxLayout="row"
-                            fxLayout.xs="column"
-                            fxLayoutWrap="wrap">
-      <div *ngFor="let jeu of ArrayCatalogueJeux">
-        <div class="item">
-          <div class="image">
-            <img src="../../../assets/{{jeu.img}}" alt="jeu {{jeu.nom}}">
-          </div>
-
-          <div class="infos">
-            <mat-grid-tile-footer>
-              <h4 mat-line>{{jeu.nom}}</h4>
-
-              <button mat-icon-button (click)="showDetails(model)">
-                  <mat-icon>info</mat-icon>
-              </button>
-
-              <span mat-line>
-                <a href="{{jeu.siteWeb}}">Site officiel</a>
-              </span>
-            </mat-grid-tile-footer>
-          </div>
-        </div>
-      </div>
-    </div>  -->
 

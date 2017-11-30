@@ -35,8 +35,9 @@
                     [routerLink]="routeLink.link"
                     routerLinkActive #rla="routerLinkActive"
                     [active]="rla.isActive"
-                    [routerLinkActiveOptions]="{exact: true}">
-                {{routeLink.label}}
+                    [routerLinkActiveOptions]="{exact: true}"
+                    style="color: red;font-size:17px;">
+                <strong>{{routeLink.label}}</strong>
                 </a>
                 </nav>
                 <router-outlet></router-outlet>
