@@ -1,4 +1,4 @@
-/*.botbar {
+.botbar {
     position : relative;
     box-sizing: border-box;
     background-color: grey;
@@ -37,4 +37,4 @@
 .bottext {
     font-size: 15px;
 }
- */
+ 

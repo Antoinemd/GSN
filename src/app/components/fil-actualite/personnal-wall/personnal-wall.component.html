@@ -2,23 +2,21 @@
     connecté: {{getuserIsLogged()}}
 </mat-slide-toggle>
 
-<p>
-  mettre des messages personnels (ex: comme des tweet, tagger des gens avec des @pseudo etc..) pour le mode connecté
-</p>
 
-<div class="container" fxLayout="row" fxLayoutAlign="center center">
+
+<div *ngIf="!userIsLogged;else unlogContent" class="container" fxLayout="row" fxLayoutAlign="center center">
   
-   <mat-card class="welcome">
-  
+   <mat-card class="article">
+    
       <mat-card-header> 
           <mat-card-title>Bienvenu sur GSN, le réseau social pour les gamers !</mat-card-title>
   
           <mat-card-subtitle>Et tout cela, sans publicité !</mat-card-subtitle>  
         </mat-card-header>
-  
+        
         <img mat-card-image src="../../../assets/img/big/thumbup.jpg"
             width="300px" height="200px" >
-  
+        
         <mat-card-content>  
           <p class="text" > 
               Pour profiter pleinement des fonctionnalités personnalisées du site avec un choix des
@@ -36,7 +34,154 @@
        </mat-card-actions>
   
       </mat-card>
+</div>
+
+<!--Mode connecté-->
+<div *ngIf="userIsLogged">
+
+        <div class="container" fxLayout="row" fxLayoutAlign="center center">
+                <mat-card class="comment">
+                <mat-card-header>
+                    <div mat-card-avatar class="game-icon">
+                            <img src= "../../../assets/img/avatar/guts-avatar.jpg" 
+                                width="40px" height="40px">
+                    </div>
+                    <mat-card-title class="username">
+                        Nagarian
+                    </mat-card-title>
+                    <mat-card-subtitle>
+                        
+                    </mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                        <input  class="inputfield" placeholder="Exprimez vous Nagarian...">
+                </mat-card-content>
+                <mat-card-actions class="actionButton">
+                    <!-- boutton daction "envoyer" -->
+                    <button mat-button>
+                        <div fxLayout="row" fxLayoutAlign="center center">
+                        <div class="iconBtn"><i class="material-icons md-24">comment</i></div>
+                        <div>Send</div>
+                        </div>
+                            </button>
+                    <!-- boutton daction "joindre" -->
+                    <button mat-button>
+                            <div fxLayout="row" fxLayoutAlign="center center">
+                            <div class="iconBtn"><i class="material-icons md-24">share</i></div>
+                            <div>Insert</div>
+                            </div>
+                                </button>
+                </mat-card-actions>
+                </mat-card>
+            </div>
+            <hr class="separator">    
+
+    <!--Commentaire n°1-->
+    <div class="container" fxLayout="row" fxLayoutAlign="center center">
+        <mat-card class="comment">
+        <mat-card-header>
+            <div mat-card-avatar class="game-icon">
+                    <img src= "../../../assets/img/avatar/guts-avatar.jpg" 
+                        width="40px" height="40px">
+            </div>
+            <mat-card-title class="username">
+                Nagarian
+            </mat-card-title>
+            <mat-card-subtitle>
+                Cascrânes le retour ! #WoW #Recrutement
+            </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+                Bonjour à tous,
+                
+                La guilde Cascrânes réouvre ses portes sur le serveur Ysondre après deux ans d'inactivité.
+                Guilde formée à Vanilla sur Sinstralis elle s'est éteinte après le down de Néfa (Cata). Ses fidèles membres avaient sans doute trouvés mieux à faire que de farmer les Raids. Aujourd'hui conscient de notre erreur nous revenons avec un noyau dur motivé pour avancer dans la bonne ambiance et le sérieux qui nous caractérisent.
+                
+                Nous recherchons activement et principalement un SP / Equi / Elem pour nous contenter de son buff hâte qui nous fait tant défaut en R10 (mini 2soirs/semaine).
+                
+                Au niveau du stuff, nous exigeons un minimum de 545ilvl et 8/14 xp sur SoO. Nous sommes bien évidement ouverts à la discussion sachant que le Brain paisera indéniablement dans la balance. Alors toi Kevin overstuff tourant à 100kdps qui bavera surement sur ton micro en entendant la douce voix de Diaman t'expliquer la strat tu comprendras que tu n'es pas le bienvenue. Non pas parce que nous ne t'aimons pas mais simplement parce que tu ne corresponds pas aux critères du projet.
+                
+                Pour tous renseignements c'est simple nous n'avons pas de forum, après 8 ans de jeu on s'est rendu compte que ca ne servait à rien à part être référencé (merci Google). Contactez plutôt le taulier spirituel : Moi ! Sinon les GM à qui je délègue : Fako, Huz, Azio, Diaman IG.
+                
+                PS: Cascrânes s'est transfomé en Casscrânes (2 x s) le nom original à été spolié. C'est çà la célébrité :)
+        </mat-card-content>
+        <mat-card-actions class="actionButton">
+            <!-- boutton daction "like" -->
+            <button mat-button>
+          <div fxLayout="row" fxLayoutAlign="center center">
+            <div class="iconBtn"><i class="material-icons md-24">plus_one</i></div>
+            <div>LIKE</div>
+          </div>
+            </button>
+        <!-- boutton daction "share" -->
+            <button mat-button>
+            <div fxLayout="row" fxLayoutAlign="center center">
+            <div class="iconBtn"><i class="material-icons md-24">share</i></div>
+            <div>SHARE</div>
+          </div>
+            </button>
+            <!-- boutton daction "comment" -->
+            <button mat-button>
+                <div fxLayout="row" fxLayoutAlign="center center">
+                <div class="iconBtn"><i class="material-icons md-24">comment</i></div>
+                <div>Comment</div>
+                </div>
+                    </button>
+        </mat-card-actions>
+        </mat-card>
     </div>
+    <hr class="separator">
+
+    <!--Commentaire n°2-->
+    <div class="container" fxLayout="row" fxLayoutAlign="center center">
+        <mat-card class="comment">
+            <mat-card-header>
+                <div mat-card-avatar class="game-icon">
+                        <img src= "../../../assets/img/avatar/gatsu.jpg" 
+                            width="40px" height="40px">
+                </div>
+                <mat-card-title class="username">
+                    Antonidas
+                </mat-card-title>
+                <mat-card-subtitle>
+                    Raclette party sur Azeroth!
+                </mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <a href="yop">@Nagarian</a> alors tu l'aimes ma raclette??!!!
+            </mat-card-content>
+            <mat-card-actions class="actionButton">
+                <!-- boutton daction "like" -->
+                <button mat-button>
+                    <div fxLayout="row" fxLayoutAlign="center center">
+                        <div class="iconBtn"><i class="material-icons md-24">plus_one</i></div>
+                            <div>LIKE</div>
+                    </div>
+                </button>
+                <!-- boutton daction "share" -->
+                <button mat-button>
+                    <div fxLayout="row" fxLayoutAlign="center center">
+                        <div class="iconBtn"><i class="material-icons md-24">share</i></div>
+                            <div>SHARE</div>
+                    </div>
+                </button>
+                <!-- boutton daction "comment" -->
+                <button mat-button>
+                    <div fxLayout="row" fxLayoutAlign="center center">
+                        <div class="iconBtn"><i class="material-icons md-24">comment</i></div>
+                            <div>Comment</div>
+                    </div>
+                </button>
+                <button mat-button>
+                        <div fxLayout="collumn" fxLayoutAlign="center center">
+                            <div class="iconBtn"><i class="material-icons md-24">comment</i></div>
+                                <div>Afficher les commentaires</div>
+                        </div>
+                    </button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>
   
     <!--div *ngIf="!userIsLogged;else unlogContent">
   
