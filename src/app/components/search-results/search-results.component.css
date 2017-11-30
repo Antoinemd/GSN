@@ -2,10 +2,23 @@
 
 .title { text-align: center; margin-top: 20px; margin-bottom: 20px; }
 
+.search-keyword { margin-top: 20px; margin-bottom: 30px;}
+
 .example-margin { margin: 0 10px; }
 
 .example-checkbox-group { display: inline-flex; flex-direction: row; }
 
 .example-section { margin: 20px; }
 
-.resultat { margin-top: 24px;}
+.global-res { width: 100%; }
+
+.resultat { margin-top: 24px; }
+
+.single-res { width: 90%; margin-top: 10px; margin-bottom: 20px; }
+
+.mat-card-actions { height: 30px;}
+
+.material-icons.md-18 { font-size: 18px; color: rgba(219, 40, 40, 0.829); }
+.material-icons.md-24 { font-size: 24px; color: rgba(219, 40, 40, 0.829); }
+.material-icons.md-36 { font-size: 36px; color: rgba(219, 40, 40, 0.829); }
+.material-icons.md-48 { font-size: 48px; color: rgba(219, 40, 40, 0.829); }

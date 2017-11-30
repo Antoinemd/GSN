@@ -46,7 +46,8 @@ export class FriendListComponent implements OnInit {
 
   menuIcon = [
     {value: 'parametres', viewValue: 'Paramètres', icone: 'settings'},
-    {value: 'amis', viewValue: 'Gérer amis', icone: 'group_add'}
+    {value: 'amis', viewValue: 'Gérer amis', icone: 'person'},
+    {value: 'messages', viewValue: 'Messagerie', icone: 'message'}
   ];
 
   constructor( private _ReturnJsonArrayService: ReturnJsonArrayService,

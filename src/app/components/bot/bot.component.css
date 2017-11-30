@@ -5,9 +5,10 @@
     font-size: 20px;
     z-index: 63;
     bottom: 0;
-    /*margin-bottom: 0;*/
+    margin-bottom: 0;
 
 }
+
 
 .bot-left {
     padding-top: 9px;
@@ -36,4 +37,4 @@
 .bottext {
     font-size: 15px;
 }
-
+ 
