@@ -1,9 +1,9 @@
 <!-- article #1 -->
-<button (click)="test()">test</button>
+<!-- <button (click)="test()">test</button> -->
 <mat-slide-toggle (change)="onSwitch($event)" [color]="color" [checked]="checked" [disabled]="disabled">
     connecté: {{getuserIsLogged()}}
 </mat-slide-toggle>
-<p>
+<!-- <p>
   En mode Déconnecté: liste d'articles random: derniers jeux, patch etc..
   
   L'onglet news personnal publication personnelle contient un message d'information 
@@ -12,7 +12,7 @@
 <p>
     En mode Connecté: globale news contient des articles concernant la collection de jeux de 
     l'utilisateur et le personal(composant à renommer) news contient les  publications peronnelles
-  </p>
+  </p> -->
 
 <!-- Div pour le ngIf: actu générale non connecté -->  
 <div *ngIf="!userIsLogged;else loggedContent"> 
@@ -52,7 +52,7 @@
         </button>
       </mat-card-actions>
       <mat-card-footer>
-        <div>
+        <div *ngIf="userIsLogged">
           <mat-form-field class="comment">
             <div fxLayout="row" fxLayoutAlign="center center">
             <input matInput placeholder="Commentaire..">
@@ -63,7 +63,7 @@
           </mat-form-field>
         </div>
         <div>
-          <a class="listcom" href="blibli">Afficher les commentaires</a>
+          <a class="listcom">Afficher les commentaires</a>
         </div>
       </mat-card-footer>
     </mat-card>
@@ -109,7 +109,7 @@
         </button>
       </mat-card-actions>
       <mat-card-footer>
-        <div>
+        <div *ngIf="userIsLogged">
           <mat-form-field class="comment">
             <div fxLayout="row" fxLayoutAlign="center center">
             <input matInput placeholder="Commentaire..">
@@ -120,7 +120,7 @@
           </mat-form-field>
         </div>
         <div>
-          <a class="listcom" href="blibli">Afficher les commentaires</a>
+          <a class="listcom">Afficher les commentaires</a>
         </div>
       </mat-card-footer>
     </mat-card>
@@ -168,7 +168,7 @@
         </button>
       </mat-card-actions>
       <mat-card-footer>
-        <div>
+        <div *ngIf="userIsLogged">
           <mat-form-field class="comment">
             <div fxLayout="row" fxLayoutAlign="center center">
             <input matInput placeholder="Commentaire..">
@@ -179,7 +179,7 @@
           </mat-form-field>
         </div>
         <div>
-          <a class="listcom" href="blibli">Afficher les commentaires</a>
+          <a class="listcom">Afficher les commentaires</a>
         </div>
       </mat-card-footer>
     </mat-card>
@@ -227,7 +227,7 @@
         </button>
       </mat-card-actions>
       <mat-card-footer>
-        <div>
+        <div *ngIf="userIsLogged">
           <mat-form-field class="comment">
             <div fxLayout="row" fxLayoutAlign="center center">
             <input matInput placeholder="Commentaire..">
@@ -238,18 +238,244 @@
           </mat-form-field>
         </div>
         <div>
-          <a class="listcom" href="blibli">Afficher les commentaires</a>
+          <a class="listcom">Afficher les commentaires</a>
         </div>
       </mat-card-footer>
     </mat-card>
   </div>
 </div> <!-- Fin du contenu Non connecté-->
 
-<!-- Début du template Contenu Connecté -->
+<!--                 Début du template Contenu Connecté                  -->
 <ng-template #loggedContent>
-    <div>
-      TEMPLATE du contenu connecté ou il faut rajouter les articles concernantles jeux de l'utilisateur ( bns, w3, destiny2)
+  <div> 
+    <div class="container" fxLayout="row" fxLayoutAlign="center center">
+      <mat-card class="article">
+        <mat-card-header>
+          <div mat-card-avatar class="game-icon">
+          <img src= "../../../assets/img/big/lolart.jpg" 
+               width="40px" height="40px">
+          </div>
+          <mat-card-title>League of Legends Finals</mat-card-title>
+          <mat-card-subtitle>SK Telecom VS Samsung Galaxy : Le choc</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="../../../assets/img/big/lolart.jpg" alt="Icône du Jeu">
+        <mat-card-content>
+          <p class="text">
+              Les Worlds 2017 sont lancés ! Après les Play In, puis la phase de Groupe, ces Mondiaux 2017 touchent à leur fin.
+              Dans cet article, vous pourrez retrouver toutes les dernières informations sur la compétition, le programme, des analyses, des résumés et bien plus encore.
+              Qui sera sacré champion du monde de League of Legends pour cette année 2017 ? 
+              La compétition s'annonce plus serrée que jamais...
+          </p>
+        </mat-card-content>
+        <!-- boutton daction "like" -->
+        <mat-card-actions class="actionButton">
+          <button mat-button>
+            <div fxLayout="row" fxLayoutAlign="center center">
+              <div class="iconBtn"><i class="material-icons md-24">plus_one</i></div>
+              <div>J'aime</div>
+            </div>
+          </button>
+          <!-- boutton daction "share" -->
+          <button mat-button>
+              <div fxLayout="row" fxLayoutAlign="center center">
+              <div class="iconBtn"><i class="material-icons md-24">share</i></div>
+              <div>Partager</div>
+            </div>
+          </button>
+        </mat-card-actions>
+        <mat-card-footer>
+          <div *ngIf="userIsLogged">
+            <mat-form-field class="comment">
+              <div fxLayout="row" fxLayoutAlign="center center">
+              <input matInput placeholder="Commentaire..">
+              <button mat-button>
+                <div fxLayout="row" fxLayoutAlign="center center">
+                </div>Envoyer</button><div class="iconBtn"><i class="material-icons md-24">comment</i></div>
+              </div>
+            </mat-form-field>
+          </div>
+          <div>
+            <a class="listcom">Afficher les commentaires</a>
+          </div>
+        </mat-card-footer>
+      </mat-card>
     </div>
+    <hr class="separator">
+  
+    <!-- article #2 -->
+    <div class="container" fxLayout="row" fxLayoutAlign="center center">
+      <mat-card class="article">
+        <mat-card-header>
+          <div mat-card-avatar class="game-icon">
+          <img src= "../../../assets/img/big/mhart.jpg" 
+               width="40px" height="40px">
+          </div>
+          <mat-card-title>La sortie de Monster Hunter World très attendue!</mat-card-title>
+          <mat-card-subtitle>Et ça vaut le détour...</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="../../../assets/img/big/mhart.jpg" alt="Icône du Jeu">
+        <mat-card-content>
+          <p class="text">
+            Alors que les fans attendent avec impatience le 26 janvier prochain pour mettre les mains sur 
+            Monster Hunter World, Capcom dévoile aujourd'hui de nouveaux éléments autour du jeu.
+            Premièrement, le Star's Ship, une taverne implantée à l'intérieur d'un énorme galion qui
+            fera office de hub social pour le jeu. Les joueurs pourront y commercer et 
+            modifier leurs équipement, accéder au bonus en ligne, participer à des mini-jeux, 
+            et même du combat aux poings à la manière de The Witcher 3. Également, les joueurs 
+            pourront y prendre ou rendre leurs quêtes, accéder au multijoueurs et aux leaderboards. Et bien évidemment, acheter et boire des godets.
+          </p>
+        </mat-card-content>
+        <mat-card-actions class="actionButton">
+          <button mat-button>
+            <div fxLayout="row" fxLayoutAlign="center center">
+              <div class="iconBtn"><i class="material-icons md-24">plus_one</i></div>
+              <div>J'aime</div>
+            </div>
+          </button>
+          
+          <button mat-button>
+            <div fxLayout="row" fxLayoutAlign="center center">
+              <div class="iconBtn"><i class="material-icons md-24">share</i></div>
+              <div>Partager</div>
+            </div>
+          </button>
+        </mat-card-actions>
+        <mat-card-footer>
+          <div *ngIf="userIsLogged">
+            <mat-form-field class="comment">
+              <div fxLayout="row" fxLayoutAlign="center center">
+              <input matInput placeholder="Commentaire..">
+              <button mat-button>
+                <div fxLayout="row" fxLayoutAlign="right right">
+                  </div>Envoyer</button><div class="iconBtn"><i class="material-icons md-24">comment</i></div>
+              </div>
+            </mat-form-field>
+          </div>
+          <div>
+            <a class="listcom">Afficher les commentaires</a>
+          </div>
+        </mat-card-footer>
+      </mat-card>
+    </div>
+  
+    <!-- article #3 -->
+    <div class="container" fxLayout="row" fxLayoutAlign="center center">
+      <mat-card class="article">
+        <mat-card-header>
+          <div mat-card-avatar class="game-icon">
+          <img src= "../../../assets/img/big/thewart.jpg" 
+               width="40px" height="40px">
+          </div>
+          <mat-card-title>The Witcher 3 confirmé comme l'un des jeux de la décennie!</mat-card-title>
+          <mat-card-subtitle>En doutiez-vous?</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="../../../assets/img/big/thewart.jpg" alt="Icône du Jeu">
+        <mat-card-content>
+          <p class="text">
+            QUEL scénario ! Digne successeur des livres dont il est adapté, le conte de Geralt de Riv 
+            se voit ici sublimé de par une mise en scène plus vrai que nature et des choix cornéliens 
+            qui vous toucheront au plus profond de votre âme, chaque nouvelle partie est comme une redécouverte 
+            du jeu, un exemple du genre. Chaque PNJ semble aussi intéressant que Geralt lui-même et chaque quête 
+            annexe semble aussi immersive que le scénario principal, de bout en bout vous serez transportés donc ne ratez rien !
+            Les doublages tout d’abord qui sont juste parfaits et peu importe la langue, parlant plusieurs de celles-ci, 
+            j’ai pu constater un souci du détail assez impressionnant et une mise en scène sans accroche et sans ridicule. 
+            Parlons maintenant de son plus gros point fort à savoir la bande son, il n’y a pas de superlatifs assez 
+            grands pour décrire l’orgasme auditif que l’on se prend à chaque seconde de chaque minute de chaque heure 
+            passée à voyager de ville en ville.
+          </p>
+        </mat-card-content>
+        <mat-card-actions class="actionButton">
+          <button mat-button>
+            <div fxLayout="row" fxLayoutAlign="center center">
+              <div class="iconBtn"><i class="material-icons md-24">plus_one</i></div>
+              <div>J'aime</div>
+            </div>
+          </button>
+          
+          <button mat-button>
+            <div fxLayout="row" fxLayoutAlign="center center">
+              <div class="iconBtn"><i class="material-icons md-24">share</i></div>
+              <div>Partager</div>
+            </div>
+          </button>
+        </mat-card-actions>
+        <mat-card-footer>
+          <div *ngIf="userIsLogged">
+            <mat-form-field class="comment">
+              <div fxLayout="row" fxLayoutAlign="center center">
+              <input matInput placeholder="Commentaire..">
+              <button mat-button>
+                <div fxLayout="row" fxLayoutAlign="right right">
+                  </div>Envoyer</button><div class="iconBtn"><i class="material-icons md-24">comment</i></div>
+              </div>
+            </mat-form-field>
+          </div>
+          <div>
+            <a class="listcom">Afficher les commentaires</a>
+          </div>
+        </mat-card-footer>
+      </mat-card>
+    </div>
+  
+  
+    <!-- article #4 -->
+    <div class="container" fxLayout="row" fxLayoutAlign="center center">
+      <mat-card class="article">
+        <mat-card-header>
+          <div mat-card-avatar class="game-icon">
+          <img src= "../../../assets/img/icons/wow-ico.png" 
+               width="40px" height="40px">
+          </div>
+          <mat-card-title>Tout sur WoW : Battle of Azeroth</mat-card-title>
+          <mat-card-subtitle>Découvrez la toute nouvelle extension de World Of Warcraft !</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="../../../assets/img/big/wowart.jpg" alt="Icône du Jeu">
+        <mat-card-content>
+          <p class="text">
+              Dans cette nouvelle extension, vous pourrez évoluer jusqu'au niveau 120, et découvrir les deux 
+              nouveaux continents jouables : Kul Tiras pour l'Alliance et Zandalar pour la Horde. 
+              C'est d'ailleurs le théâtre de non pas quatre comme nous le pensions mais six nouvelles
+               « races alliées » qui devraient pouvoir être jouables : Les elfes Sacrenuit, 
+               les taurens de Haut-roc et les trolls Zandalari seront les nouveaux alliés de la Horde. 	
+               Les elfes du Vide, les draeneï sancteforge et les nains Sombrefer seront les nouveaux compagnons 
+               de combat de l'Alliance. Bien entendu, Battle for Azeroth mettra également en scène de nouvelles 
+               fonctionnalités comme le Coeur d'Azeroth, et d'autres lieux, comme les Fronts de guerre ou les 
+               fameuses Îles inexplorées.
+          </p>
+        </mat-card-content>
+        <mat-card-actions class="actionButton">
+          <button mat-button>
+            <div fxLayout="row" fxLayoutAlign="center center">
+              <div class="iconBtn"><i class="material-icons md-24">plus_one</i></div>
+              <div>J'aime</div>
+            </div>
+          </button>
+          
+          <button mat-button>
+            <div fxLayout="row" fxLayoutAlign="center center">
+              <div class="iconBtn"><i class="material-icons md-24">share</i></div>
+              <div>Partager</div>
+            </div>
+          </button>
+        </mat-card-actions>
+        <mat-card-footer>
+          <div *ngIf="userIsLogged">
+            <mat-form-field class="comment">
+              <div fxLayout="row" fxLayoutAlign="center center">
+              <input matInput placeholder="Commentaire..">
+              <button mat-button>
+                <div fxLayout="row" fxLayoutAlign="right right">
+                  </div>Envoyer</button><div class="iconBtn"><i class="material-icons md-24">comment</i></div>
+              </div>
+            </mat-form-field>
+          </div>
+          <div>
+            <a class="listcom">Afficher les commentaires</a>
+          </div>
+        </mat-card-footer>
+      </mat-card>
+    </div>
+  </div>
 </ng-template>
         
 

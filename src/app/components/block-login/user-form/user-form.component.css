@@ -1,18 +1,11 @@
-/* h1 {
+.full-form { 
+  width: 60%; 
+  margin-top: 20px;
   text-align: center;
-  height: 100%;
-  width: 100%;
-  font-size: 20px;
-  background: #18aa8d;
-  color: white;
-  line-height: 150%;
-  border-radius: 3px 3px 0 0;
-  box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.2);
-} */
+  background-color: #F5F5F5;
+ }
 
-.full-form { width: 60%; margin-top: 20px; text-align: center; }
-
-.mat-card-title { font-size: 25px; }
+.mat-card-title { font-size: 25px;}
 
 .mat-form-field { margin-top: 10px; }
 
