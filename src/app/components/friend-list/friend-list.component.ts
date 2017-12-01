@@ -45,8 +45,8 @@ export class FriendListComponent implements OnInit {
   position = 'left';
 
   menuIcon = [
-    {value: 'parametres', viewValue: 'Paramètres', icone: 'settings'},
-    {value: 'amis', viewValue: 'Gérer amis', icone: 'person'},
+    {value: 'parametres', viewValue: 'Profil', icone: 'person'},
+    {value: 'amis', viewValue: 'Gérer amis', icone: 'group'},
     {value: 'messages', viewValue: 'Messagerie', icone: 'message'}
   ];
 
